@@ -21,6 +21,7 @@ namespace HorarioPlus_v1._1.Presentacion
             timerHora.Start();
         }
 
+        #region Eventos Internos
         private void timerHora_Tick(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToString("hh:mm:ss tt");
@@ -45,6 +46,9 @@ namespace HorarioPlus_v1._1.Presentacion
                 return new Empleados();
             }
         }
+        #endregion
+
+        #region Eventos Click
         private void btnMarcarRegistro_Click(object sender, EventArgs e)
         {
             bool volverAMarcar = true;
@@ -90,5 +94,6 @@ namespace HorarioPlus_v1._1.Presentacion
             frmCerrarSistema frmCerrarConfirmacionDialogo = new frmCerrarSistema();
             frmCerrarConfirmacionDialogo.ShowDialog();
         }
+        #endregion
     }
 }

@@ -1,0 +1,29 @@
+[
+  {
+    "IdEmpleado": "1",
+    "Nombre": "Richard",
+    "Apellido1": "Rodriguez",
+    "Apellido2": "Castro",
+    "Edad": 20,
+    "Correo": "richard@gmail.com",
+    "Rol": "Administrador"
+  },
+  {
+    "IdEmpleado": "2",
+    "Nombre": "Juan",
+    "Apellido1": "Rodriguez",
+    "Apellido2": "",
+    "Edad": 20,
+    "Correo": "juan@gmail.com",
+    "Rol": "Empleado"
+  },
+  {
+    "IdEmpleado": "3",
+    "Nombre": "Carlos",
+    "Apellido1": "Lopez",
+    "Apellido2": "",
+    "Edad": 20,
+    "Correo": "richard@gmail.com",
+    "Rol": "Administrador"
+  }
+]

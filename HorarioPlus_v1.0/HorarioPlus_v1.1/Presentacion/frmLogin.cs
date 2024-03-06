@@ -25,7 +25,6 @@ namespace HorarioPlus_v1._1.Presentacion
         {
             lblHora.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
-
         public Empleados BuscarEmpleado(string idEmpleado)
         {
             try
@@ -46,7 +45,6 @@ namespace HorarioPlus_v1._1.Presentacion
                 return new Empleados();
             }
         }
-
         private void btnMarcarRegistro_Click(object sender, EventArgs e)
         {
             bool volverAMarcar = true;
@@ -87,8 +85,6 @@ namespace HorarioPlus_v1._1.Presentacion
                 }
             }
         }
-
-
         private void lblCerrarApp_Click(object sender, EventArgs e)
         {
             frmCerrarSistema frmCerrarConfirmacionDialogo = new frmCerrarSistema();

@@ -36,7 +36,7 @@ namespace HorarioPlus_v1._1.Presentacion
                 // Deserializar el contenido del archivo JSON en una lista de objetos Empleado
                 List<Empleados> empleados = JsonSerializer.Deserialize<List<Empleados>>(json);
 
-                // Buscar el empleado correspondiente al ID
+                // Regresa el empleado correspondiente al ID
                 return empleados.Find(e => e.IdEmpleado == idEmpleado);
             }
             catch (Exception ex)

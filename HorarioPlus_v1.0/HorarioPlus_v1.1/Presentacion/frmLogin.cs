@@ -96,11 +96,6 @@ namespace HorarioPlus_v1._1.Presentacion
                 }
             }
         }
-        private void lblCerrarApp_Click(object sender, EventArgs e)
-        {
-            frmCerrarSistema frmCerrarConfirmacionDialogo = new frmCerrarSistema();
-            frmCerrarConfirmacionDialogo.ShowDialog();
-        }
         #endregion
     }
 }

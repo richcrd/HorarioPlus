@@ -80,5 +80,11 @@ namespace HorarioPlus_v1._1.Presentacion
                 formularioLogin.Show();
             }
         }
+
+        private void btnAjustes_Click(object sender, EventArgs e)
+        {
+            frmCerrarSistema frmCerrarConfirmacionDialogo = new frmCerrarSistema();
+            frmCerrarConfirmacionDialogo.ShowDialog();
+        }
     }
 }

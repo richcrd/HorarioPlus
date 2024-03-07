@@ -40,10 +40,11 @@
             this.pagosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.deduccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nominasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelContenedor = new System.Windows.Forms.Panel();
-            this.btnCerrarSesionAdmin = new FontAwesome.Sharp.IconButton();
             this.iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
             this.iconMenuItem2 = new FontAwesome.Sharp.IconMenuItem();
+            this.panelContenedor = new System.Windows.Forms.Panel();
+            this.btnCerrarSesionAdmin = new FontAwesome.Sharp.IconButton();
+            this.btnAjustes = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.SuspendLayout();
@@ -54,27 +55,30 @@
             this.panel1.Controls.Add(this.lblUsuario);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(126, 0);
+            this.panel1.Location = new System.Drawing.Point(149, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(674, 35);
+            this.panel1.Size = new System.Drawing.Size(1042, 54);
             this.panel1.TabIndex = 5;
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.ForeColor = System.Drawing.Color.Red;
-            this.lblUsuario.Location = new System.Drawing.Point(91, 9);
+            this.lblUsuario.Location = new System.Drawing.Point(136, 14);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(83, 13);
+            this.lblUsuario.Size = new System.Drawing.Size(124, 20);
             this.lblUsuario.TabIndex = 1;
             this.lblUsuario.Text = "Nombre Usuario";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(18, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 13);
+            this.label1.Size = new System.Drawing.Size(111, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Administrador:";
             // 
@@ -82,6 +86,8 @@
             // 
             this.menuPanel.BackColor = System.Drawing.Color.LightBlue;
             this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuPanel.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuPanel.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuPanel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.asistenciaToolStripMenuItem,
             this.menuEmpleados,
@@ -91,7 +97,7 @@
             this.iconMenuItem2});
             this.menuPanel.Location = new System.Drawing.Point(0, 0);
             this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(126, 496);
+            this.menuPanel.Size = new System.Drawing.Size(149, 737);
             this.menuPanel.TabIndex = 4;
             this.menuPanel.Text = "menuStrip1";
             // 
@@ -100,7 +106,7 @@
             this.asistenciaToolStripMenuItem.BackColor = System.Drawing.Color.LightBlue;
             this.asistenciaToolStripMenuItem.Name = "asistenciaToolStripMenuItem";
             this.asistenciaToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4);
-            this.asistenciaToolStripMenuItem.Size = new System.Drawing.Size(113, 27);
+            this.asistenciaToolStripMenuItem.Size = new System.Drawing.Size(130, 37);
             this.asistenciaToolStripMenuItem.Text = "Asistencia";
             this.asistenciaToolStripMenuItem.Click += new System.EventHandler(this.asistenciaToolStripMenuItem_Click);
             // 
@@ -113,7 +119,7 @@
             this.menuEmpleados.IconColor = System.Drawing.Color.Black;
             this.menuEmpleados.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.menuEmpleados.Name = "menuEmpleados";
-            this.menuEmpleados.Size = new System.Drawing.Size(113, 20);
+            this.menuEmpleados.Size = new System.Drawing.Size(130, 29);
             this.menuEmpleados.Text = "Empleados";
             this.menuEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -123,7 +129,7 @@
             this.submenuNuevoRegistro.IconColor = System.Drawing.Color.Black;
             this.submenuNuevoRegistro.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.submenuNuevoRegistro.Name = "submenuNuevoRegistro";
-            this.submenuNuevoRegistro.Size = new System.Drawing.Size(180, 22);
+            this.submenuNuevoRegistro.Size = new System.Drawing.Size(275, 34);
             this.submenuNuevoRegistro.Text = "Nuevo Registro";
             this.submenuNuevoRegistro.Click += new System.EventHandler(this.submenuNuevoRegistro_Click);
             // 
@@ -133,7 +139,7 @@
             this.submenuHorarioEmpleados.IconColor = System.Drawing.Color.Black;
             this.submenuHorarioEmpleados.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.submenuHorarioEmpleados.Name = "submenuHorarioEmpleados";
-            this.submenuHorarioEmpleados.Size = new System.Drawing.Size(180, 22);
+            this.submenuHorarioEmpleados.Size = new System.Drawing.Size(275, 34);
             this.submenuHorarioEmpleados.Text = "Horarios Empleados";
             // 
             // pagosToolStripMenuItem
@@ -144,19 +150,19 @@
             this.deduccionesToolStripMenuItem});
             this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
             this.pagosToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4);
-            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(113, 27);
+            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(130, 37);
             this.pagosToolStripMenuItem.Text = "Pagos";
             // 
             // pagosToolStripMenuItem1
             // 
             this.pagosToolStripMenuItem1.Name = "pagosToolStripMenuItem1";
-            this.pagosToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.pagosToolStripMenuItem1.Size = new System.Drawing.Size(215, 34);
             this.pagosToolStripMenuItem1.Text = "Pagos";
             // 
             // deduccionesToolStripMenuItem
             // 
             this.deduccionesToolStripMenuItem.Name = "deduccionesToolStripMenuItem";
-            this.deduccionesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.deduccionesToolStripMenuItem.Size = new System.Drawing.Size(215, 34);
             this.deduccionesToolStripMenuItem.Text = "Deducciones";
             // 
             // nominasToolStripMenuItem
@@ -164,16 +170,35 @@
             this.nominasToolStripMenuItem.BackColor = System.Drawing.Color.LightBlue;
             this.nominasToolStripMenuItem.Name = "nominasToolStripMenuItem";
             this.nominasToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4);
-            this.nominasToolStripMenuItem.Size = new System.Drawing.Size(113, 27);
+            this.nominasToolStripMenuItem.Size = new System.Drawing.Size(130, 37);
             this.nominasToolStripMenuItem.Text = "Nominas";
+            // 
+            // iconMenuItem1
+            // 
+            this.iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconMenuItem1.IconColor = System.Drawing.Color.Black;
+            this.iconMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItem1.Name = "iconMenuItem1";
+            this.iconMenuItem1.Size = new System.Drawing.Size(130, 29);
+            this.iconMenuItem1.Text = "Carnet";
+            // 
+            // iconMenuItem2
+            // 
+            this.iconMenuItem2.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconMenuItem2.IconColor = System.Drawing.Color.Black;
+            this.iconMenuItem2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItem2.Name = "iconMenuItem2";
+            this.iconMenuItem2.Size = new System.Drawing.Size(130, 29);
+            this.iconMenuItem2.Text = "Actividad";
             // 
             // panelContenedor
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.Silver;
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(126, 35);
+            this.panelContenedor.Location = new System.Drawing.Point(149, 54);
+            this.panelContenedor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(674, 461);
+            this.panelContenedor.Size = new System.Drawing.Size(1042, 683);
             this.panelContenedor.TabIndex = 7;
             // 
             // btnCerrarSesionAdmin
@@ -188,43 +213,49 @@
             this.btnCerrarSesionAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrarSesionAdmin.IconSize = 15;
             this.btnCerrarSesionAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesionAdmin.Location = new System.Drawing.Point(12, 461);
+            this.btnCerrarSesionAdmin.Location = new System.Drawing.Point(22, 634);
+            this.btnCerrarSesionAdmin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCerrarSesionAdmin.Name = "btnCerrarSesionAdmin";
-            this.btnCerrarSesionAdmin.Size = new System.Drawing.Size(70, 23);
+            this.btnCerrarSesionAdmin.Size = new System.Drawing.Size(105, 35);
             this.btnCerrarSesionAdmin.TabIndex = 8;
             this.btnCerrarSesionAdmin.Text = "Cerrar Sesion";
             this.btnCerrarSesionAdmin.UseVisualStyleBackColor = false;
             this.btnCerrarSesionAdmin.Click += new System.EventHandler(this.btnCerrarSesionAdmin_Click);
             // 
-            // iconMenuItem1
+            // btnAjustes
             // 
-            this.iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconMenuItem1.IconColor = System.Drawing.Color.Black;
-            this.iconMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMenuItem1.Name = "iconMenuItem1";
-            this.iconMenuItem1.Size = new System.Drawing.Size(113, 20);
-            this.iconMenuItem1.Text = "Carnet";
-            // 
-            // iconMenuItem2
-            // 
-            this.iconMenuItem2.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconMenuItem2.IconColor = System.Drawing.Color.Black;
-            this.iconMenuItem2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMenuItem2.Name = "iconMenuItem2";
-            this.iconMenuItem2.Size = new System.Drawing.Size(113, 20);
-            this.iconMenuItem2.Text = "Actividad";
+            this.btnAjustes.BackColor = System.Drawing.Color.Silver;
+            this.btnAjustes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAjustes.FlatAppearance.BorderSize = 0;
+            this.btnAjustes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAjustes.ForeColor = System.Drawing.Color.White;
+            this.btnAjustes.IconChar = FontAwesome.Sharp.IconChar.Gear;
+            this.btnAjustes.IconColor = System.Drawing.Color.White;
+            this.btnAjustes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAjustes.IconSize = 15;
+            this.btnAjustes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAjustes.Location = new System.Drawing.Point(22, 579);
+            this.btnAjustes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAjustes.Name = "btnAjustes";
+            this.btnAjustes.Size = new System.Drawing.Size(105, 35);
+            this.btnAjustes.TabIndex = 9;
+            this.btnAjustes.Text = "Ajustes Sistema";
+            this.btnAjustes.UseVisualStyleBackColor = false;
+            this.btnAjustes.Click += new System.EventHandler(this.btnAjustes_Click);
             // 
             // frmPanelAdministrador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 496);
+            this.ClientSize = new System.Drawing.Size(1191, 737);
+            this.Controls.Add(this.btnAjustes);
             this.Controls.Add(this.btnCerrarSesionAdmin);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuPanel);
-            this.MaximumSize = new System.Drawing.Size(816, 535);
-            this.MinimumSize = new System.Drawing.Size(816, 535);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximumSize = new System.Drawing.Size(1213, 793);
+            this.MinimumSize = new System.Drawing.Size(1213, 793);
             this.Name = "frmPanelAdministrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel Administrador";
@@ -256,5 +287,6 @@
         private FontAwesome.Sharp.IconButton btnCerrarSesionAdmin;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem2;
+        private FontAwesome.Sharp.IconButton btnAjustes;
     }
 }

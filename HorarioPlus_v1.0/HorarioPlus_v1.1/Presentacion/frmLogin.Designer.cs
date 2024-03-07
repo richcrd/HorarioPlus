@@ -133,7 +133,7 @@
             // 
             // frmLogin
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(819, 489);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

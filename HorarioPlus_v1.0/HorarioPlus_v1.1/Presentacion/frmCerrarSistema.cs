@@ -13,28 +13,35 @@ namespace HorarioPlus_v1._1.Presentacion
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            string idEmpleado = txtIDconfirmacion.Text;
-            frmLogin Busqueda = new frmLogin(); // Creamos instancia
-
-            Empleados empleado = Busqueda.BuscarEmpleado(idEmpleado); // llamado
-            if (empleado != null)
+            try 
             {
-                if (empleado.Rol == "Administrador")
+                string idEmpleado = txtIDconfirmacion.Text;
+                frmLogin Busqueda = new frmLogin(); // Creamos instancia
+
+                Empleados empleado = Busqueda.BuscarEmpleado(idEmpleado); // llamado
+                if (empleado != null)
                 {
-                    DialogResult resultadoCierre = MessageBox.Show("Confirmas el cierre del sistema", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                    if (resultadoCierre == DialogResult.OK)
+                    if (empleado.Rol == "Administrador")
                     {
-                        Application.Exit();
+                        DialogResult resultadoCierre = MessageBox.Show("Confirmas el cierre del sistema", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                        if (resultadoCierre == DialogResult.OK)
+                        {
+                            Application.Exit();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No tienes suficientes permisos para hacer esta accion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No tienes suficientes permisos para hacer esta accion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El ID del empleado no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            else
+            } 
+            catch (Exception ex)
             {
-                MessageBox.Show("El ID del empleado no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error inesperado: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

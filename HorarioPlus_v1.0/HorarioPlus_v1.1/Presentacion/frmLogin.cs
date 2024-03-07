@@ -83,8 +83,6 @@ namespace HorarioPlus_v1._1.Presentacion
                     }
                     else
                     {
-                        string mensaje1 = "El ID del empleado no es administrador.";
-                        MessageBox.Show(mensaje1, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtEmpleadoId.Clear();
                         volverAMarcar = false;
                     }

@@ -73,11 +73,12 @@ namespace HorarioPlus_v1._1.Presentacion
                             this.Hide();
                             frmPanelAdministrador frmPanelAdmin = new frmPanelAdministrador(empleado.Nombre, empleado.Apellido1);
                             frmPanelAdmin.ShowDialog();
+                            volverAMarcar = false; // No volver a marcar si el usuario decide ingresar como administrador
                         }
                         else
                         {
-                            // Si el usuario elige "No", volvemos a marcar
-                            volverAMarcar = true;
+                            // Si el usuario elige "No", no volvemos a marcar y salimos del bucle
+                            volverAMarcar = false;
                         }
                     }
                 }
@@ -85,7 +86,8 @@ namespace HorarioPlus_v1._1.Presentacion
                 {
                     // Si el ID del empleado no existe, mostramos un mensaje de error
                     MessageBox.Show("El ID del empleado no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    volverAMarcar = false; // Salimos del bucle
+                    txtEmpleadoId.Clear();
+                    volverAMarcar = false; // No volvemos a marcar si el id del empleado no existe
                 }
             }
         }

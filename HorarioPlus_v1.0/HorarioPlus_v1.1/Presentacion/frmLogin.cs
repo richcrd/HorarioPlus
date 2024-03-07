@@ -12,7 +12,7 @@ namespace HorarioPlus_v1._1.Presentacion
     public partial class frmLogin : Form
     {
         #region RUTA_ARCHIVOS_JSON
-        private const string RUTA_ARCHIVO_EMPLEADOS = @"D:\Horario+\archivos_empleados\Empleados.json";
+        private const string RUTA_ARCHIVO_EMPLEADOS = @"C:\Users\Richard\OneDrive\Escritorio\Horario+\archivos_empleados";
         #endregion
 
         public frmLogin()

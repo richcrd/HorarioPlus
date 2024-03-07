@@ -27,6 +27,10 @@ namespace HorarioPlus_v1._1.Presentacion
                         Application.Exit();
                     }
                 }
+                else
+                {
+                    MessageBox.Show("No tienes suficientes permisos para hacer esta accion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {

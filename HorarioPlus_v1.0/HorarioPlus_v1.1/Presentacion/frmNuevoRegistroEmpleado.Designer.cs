@@ -86,7 +86,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(245, 411);
+            this.panel1.Size = new System.Drawing.Size(245, 461);
             this.panel1.TabIndex = 0;
             // 
             // iconButton3
@@ -283,7 +283,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(245, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(456, 411);
+            this.panel2.Size = new System.Drawing.Size(509, 461);
             this.panel2.TabIndex = 1;
             // 
             // btnLimpiar
@@ -384,10 +384,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(701, 411);
+            this.ClientSize = new System.Drawing.Size(754, 461);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaximumSize = new System.Drawing.Size(770, 500);
+            this.MinimumSize = new System.Drawing.Size(770, 500);
             this.Name = "frmNuevoRegistroEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Registro";

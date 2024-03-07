@@ -94,7 +94,7 @@
             this.menuPanel.Location = new System.Drawing.Point(0, 0);
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuPanel.Size = new System.Drawing.Size(105, 611);
+            this.menuPanel.Size = new System.Drawing.Size(105, 461);
             this.menuPanel.TabIndex = 4;
             this.menuPanel.Text = "menuStrip1";
             // 
@@ -194,7 +194,7 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(105, 35);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(779, 576);
+            this.panelContenedor.Size = new System.Drawing.Size(779, 426);
             this.panelContenedor.TabIndex = 7;
             // 
             // btnCerrarSesionAdmin
@@ -241,13 +241,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 611);
+            this.ClientSize = new System.Drawing.Size(884, 461);
             this.Controls.Add(this.btnAjustes);
             this.Controls.Add(this.btnCerrarSesionAdmin);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuPanel);
-            this.MinimumSize = new System.Drawing.Size(900, 650);
+            this.MinimumSize = new System.Drawing.Size(900, 450);
             this.Name = "frmPanelAdministrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel Administrador";

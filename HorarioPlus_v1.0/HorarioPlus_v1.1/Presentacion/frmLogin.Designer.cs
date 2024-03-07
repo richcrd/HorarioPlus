@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            this.lblCerrarApp = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,27 +43,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblCerrarApp
-            // 
-            this.lblCerrarApp.AutoSize = true;
-            this.lblCerrarApp.BackColor = System.Drawing.Color.Silver;
-            this.lblCerrarApp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCerrarApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrarApp.ForeColor = System.Drawing.Color.Red;
-            this.lblCerrarApp.Location = new System.Drawing.Point(766, 14);
-            this.lblCerrarApp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCerrarApp.Name = "lblCerrarApp";
-            this.lblCerrarApp.Size = new System.Drawing.Size(31, 29);
-            this.lblCerrarApp.TabIndex = 13;
-            this.lblCerrarApp.Text = "X";
-            this.lblCerrarApp.Click += new System.EventHandler(this.lblCerrarApp_Click);
-            // 
             // label3
             // 
             this.label3.Location = new System.Drawing.Point(452, 169);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(380, 43);
+            this.label3.Size = new System.Drawing.Size(341, 43);
             this.label3.TabIndex = 12;
             this.label3.Text = "Por favor, ingrese su ID de empleado tal como aparece en su carnet";
             // 
@@ -149,10 +133,8 @@
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(819, 489);
-            this.Controls.Add(this.lblCerrarApp);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
@@ -173,8 +155,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblCerrarApp;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;

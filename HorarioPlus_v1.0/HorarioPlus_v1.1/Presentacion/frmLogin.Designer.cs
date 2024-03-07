@@ -58,6 +58,8 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(453, 95);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.MaximumSize = new System.Drawing.Size(178, 36);
+            this.label2.MinimumSize = new System.Drawing.Size(178, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(178, 36);
             this.label2.TabIndex = 11;
@@ -72,18 +74,18 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(410, 489);
+            this.panel1.Size = new System.Drawing.Size(410, 450);
             this.panel1.TabIndex = 10;
             // 
             // lblHora
             // 
             this.lblHora.AutoSize = true;
-            this.lblHora.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblHora.Location = new System.Drawing.Point(61, 353);
+            this.lblHora.Location = new System.Drawing.Point(47, 346);
             this.lblHora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(255, 48);
+            this.lblHora.Size = new System.Drawing.Size(308, 60);
             this.lblHora.TabIndex = 1;
             this.lblHora.Text = "07: 55: 30 AM";
             // 
@@ -100,6 +102,7 @@
             // 
             // btnMarcarRegistro
             // 
+            this.btnMarcarRegistro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMarcarRegistro.Location = new System.Drawing.Point(460, 346);
             this.btnMarcarRegistro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnMarcarRegistro.Name = "btnMarcarRegistro";
@@ -114,6 +117,8 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(456, 246);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.MaximumSize = new System.Drawing.Size(172, 20);
+            this.label1.MinimumSize = new System.Drawing.Size(172, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(172, 20);
             this.label1.TabIndex = 8;
@@ -123,6 +128,8 @@
             // 
             this.txtEmpleadoId.Location = new System.Drawing.Point(456, 275);
             this.txtEmpleadoId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtEmpleadoId.MaximumSize = new System.Drawing.Size(234, 26);
+            this.txtEmpleadoId.MinimumSize = new System.Drawing.Size(234, 26);
             this.txtEmpleadoId.Name = "txtEmpleadoId";
             this.txtEmpleadoId.Size = new System.Drawing.Size(234, 26);
             this.txtEmpleadoId.TabIndex = 7;
@@ -133,8 +140,9 @@
             // 
             // frmLogin
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(819, 489);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(819, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
@@ -143,6 +151,8 @@
             this.Controls.Add(this.txtEmpleadoId);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximumSize = new System.Drawing.Size(819, 450);
+            this.MinimumSize = new System.Drawing.Size(819, 450);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";

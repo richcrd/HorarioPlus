@@ -72,11 +72,11 @@ namespace HorarioPlus_v1._1.Presentacion
 
         private void btnCerrarSesionAdmin_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("Estas seguro que deseas cerrar tu Sesion?", "Confirmar Cierre Sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("Estas seguro que deseas cerrar tu sesion?", "Confirmar Cierre Sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
                 this.Close();
-                frmLogin formularioLogin = new frmLogin();
+                frmLogin formularioLogin = new frmLogin(); // Crea instancia y llamado al login
                 formularioLogin.Show();
             }
         }

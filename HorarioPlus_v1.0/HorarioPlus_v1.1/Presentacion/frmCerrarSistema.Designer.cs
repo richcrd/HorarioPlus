@@ -36,19 +36,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 18);
+            this.label1.Location = new System.Drawing.Point(32, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 13);
+            this.label1.Size = new System.Drawing.Size(128, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID de Empleado:";
             // 
             // txtIDconfirmacion
             // 
             this.txtIDconfirmacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDconfirmacion.Location = new System.Drawing.Point(24, 35);
+            this.txtIDconfirmacion.Location = new System.Drawing.Point(36, 54);
+            this.txtIDconfirmacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtIDconfirmacion.Name = "txtIDconfirmacion";
             this.txtIDconfirmacion.PasswordChar = '*';
-            this.txtIDconfirmacion.Size = new System.Drawing.Size(172, 26);
+            this.txtIDconfirmacion.Size = new System.Drawing.Size(256, 35);
             this.txtIDconfirmacion.TabIndex = 1;
             // 
             // btnAceptar
@@ -56,9 +58,10 @@
             this.btnAceptar.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Location = new System.Drawing.Point(24, 67);
+            this.btnAceptar.Location = new System.Drawing.Point(36, 103);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(89, 29);
+            this.btnAceptar.Size = new System.Drawing.Size(134, 45);
             this.btnAceptar.TabIndex = 2;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -66,14 +69,15 @@
             // 
             // frmCerrarSistema
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(234, 116);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(364, 208);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtIDconfirmacion);
             this.Controls.Add(this.label1);
-            this.MaximumSize = new System.Drawing.Size(250, 155);
-            this.MinimumSize = new System.Drawing.Size(250, 155);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximumSize = new System.Drawing.Size(364, 208);
+            this.MinimumSize = new System.Drawing.Size(364, 208);
             this.Name = "frmCerrarSistema";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cerrar Sistema";

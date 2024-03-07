@@ -99,9 +99,4 @@ C:\Users\Richard\OneDrive\Escritorio\Horario+\HorarioPlus_v1.0\HorarioPlus_v1.1\
 C:\Users\Richard\OneDrive\Escritorio\Horario+\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1.1.exe
 C:\Users\Richard\OneDrive\Escritorio\Horario+\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1.1.pdb
 =======
-C:\Users\Richard\OneDrive\Escritorio\Horario+\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\HorarioPlus_v1.1.exe
-C:\Users\Richard\OneDrive\Escritorio\Horario+\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\FontAwesome.Sharp.dll
-C:\Users\Richard\OneDrive\Escritorio\Horario+\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\Richard\OneDrive\Escritorio\Horario+\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.Text.Encodings.Web.dll
-C:\Users\Richard\OneDrive\Escritorio\Horario+\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.Text.Json.dll
 >>>>>>> 00b85617bf4b475c64fce9b172f09b8fe1b98c95

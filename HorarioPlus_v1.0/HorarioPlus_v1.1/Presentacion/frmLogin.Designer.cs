@@ -51,7 +51,8 @@
             this.lblCerrarApp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblCerrarApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCerrarApp.ForeColor = System.Drawing.Color.Red;
-            this.lblCerrarApp.Location = new System.Drawing.Point(511, 9);
+            this.lblCerrarApp.Location = new System.Drawing.Point(766, 14);
+            this.lblCerrarApp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCerrarApp.Name = "lblCerrarApp";
             this.lblCerrarApp.Size = new System.Drawing.Size(31, 29);
             this.lblCerrarApp.TabIndex = 13;
@@ -60,9 +61,10 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(301, 110);
+            this.label3.Location = new System.Drawing.Point(452, 169);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(253, 28);
+            this.label3.Size = new System.Drawing.Size(380, 43);
             this.label3.TabIndex = 12;
             this.label3.Text = "Por favor, ingrese su ID de empleado tal como aparece en su carnet";
             // 
@@ -70,7 +72,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(302, 62);
+            this.label2.Location = new System.Drawing.Point(453, 95);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(178, 36);
             this.label2.TabIndex = 11;
@@ -83,8 +86,9 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(273, 318);
+            this.panel1.Size = new System.Drawing.Size(410, 489);
             this.panel1.TabIndex = 10;
             // 
             // lblHora
@@ -92,7 +96,8 @@
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblHora.Location = new System.Drawing.Point(12, 225);
+            this.lblHora.Location = new System.Drawing.Point(18, 346);
+            this.lblHora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(255, 48);
             this.lblHora.TabIndex = 1;
@@ -101,18 +106,20 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(32, 52);
+            this.pictureBox1.Location = new System.Drawing.Point(48, 80);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(194, 142);
+            this.pictureBox1.Size = new System.Drawing.Size(291, 218);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // btnMarcarRegistro
             // 
-            this.btnMarcarRegistro.Location = new System.Drawing.Point(307, 225);
+            this.btnMarcarRegistro.Location = new System.Drawing.Point(460, 346);
+            this.btnMarcarRegistro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnMarcarRegistro.Name = "btnMarcarRegistro";
-            this.btnMarcarRegistro.Size = new System.Drawing.Size(87, 36);
+            this.btnMarcarRegistro.Size = new System.Drawing.Size(130, 55);
             this.btnMarcarRegistro.TabIndex = 9;
             this.btnMarcarRegistro.Text = "Marcar";
             this.btnMarcarRegistro.UseVisualStyleBackColor = true;
@@ -121,17 +128,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(304, 160);
+            this.label1.Location = new System.Drawing.Point(456, 246);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 13);
+            this.label1.Size = new System.Drawing.Size(172, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "Digite su ID Empleado:";
             // 
             // txtEmpleadoId
             // 
-            this.txtEmpleadoId.Location = new System.Drawing.Point(304, 179);
+            this.txtEmpleadoId.Location = new System.Drawing.Point(456, 275);
+            this.txtEmpleadoId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmpleadoId.Name = "txtEmpleadoId";
-            this.txtEmpleadoId.Size = new System.Drawing.Size(157, 20);
+            this.txtEmpleadoId.Size = new System.Drawing.Size(234, 26);
             this.txtEmpleadoId.TabIndex = 7;
             // 
             // timerHora
@@ -140,9 +149,9 @@
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 318);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(819, 489);
             this.Controls.Add(this.lblCerrarApp);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -151,6 +160,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEmpleadoId);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";

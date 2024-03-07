@@ -55,7 +55,7 @@ namespace HorarioPlus_v1._1.Presentacion
 
             while (volverAMarcar)
             {
-                string idEmpleado = txtEmpleadoId.Text;
+                string idEmpleado = txtEmpleadoId.Text; // Agregar funcionalidad de mostrar ID con checkBoxs
                 Empleados empleado = BuscarEmpleado(idEmpleado);
 
                 if (empleado != null)
@@ -80,6 +80,13 @@ namespace HorarioPlus_v1._1.Presentacion
                             // Si el usuario elige "No", no volvemos a marcar y salimos del bucle
                             volverAMarcar = false;
                         }
+                    }
+                    else
+                    {
+                        string mensaje1 = "El ID del empleado no es administrador.";
+                        MessageBox.Show(mensaje1, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtEmpleadoId.Clear();
+                        volverAMarcar = false;
                     }
                 }
                 else

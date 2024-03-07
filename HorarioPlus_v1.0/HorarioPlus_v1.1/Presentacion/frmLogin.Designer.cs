@@ -102,14 +102,16 @@
             // 
             // btnMarcarRegistro
             // 
+            this.btnMarcarRegistro.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnMarcarRegistro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMarcarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMarcarRegistro.Location = new System.Drawing.Point(460, 346);
             this.btnMarcarRegistro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnMarcarRegistro.Name = "btnMarcarRegistro";
             this.btnMarcarRegistro.Size = new System.Drawing.Size(130, 55);
             this.btnMarcarRegistro.TabIndex = 9;
             this.btnMarcarRegistro.Text = "Marcar";
-            this.btnMarcarRegistro.UseVisualStyleBackColor = true;
+            this.btnMarcarRegistro.UseVisualStyleBackColor = false;
             this.btnMarcarRegistro.Click += new System.EventHandler(this.btnMarcarRegistro_Click);
             // 
             // label1
@@ -140,8 +142,7 @@
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(819, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

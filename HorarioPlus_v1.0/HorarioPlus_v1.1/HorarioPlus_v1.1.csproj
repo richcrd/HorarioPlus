@@ -82,6 +82,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\Empleados.cs" />
+    <Compile Include="Presentacion\frmAsistencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmAsistencias.Designer.cs">
+      <DependentUpon>frmAsistencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\frmCerrarSistema.cs">
       <SubType>Form</SubType>
     </Compile>

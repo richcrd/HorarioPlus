@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlTop = new System.Windows.Forms.Panel();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.menuPanel = new System.Windows.Forms.MenuStrip();
+            this.pnlMenu = new System.Windows.Forms.MenuStrip();
             this.menuCarnet = new FontAwesome.Sharp.IconMenuItem();
             this.menuActividad = new FontAwesome.Sharp.IconMenuItem();
-            this.panelContenedor = new System.Windows.Forms.Panel();
+            this.pnlContenedor = new System.Windows.Forms.Panel();
             this.btnCerrarSesionAdmin = new FontAwesome.Sharp.IconButton();
             this.btnAjustes = new FontAwesome.Sharp.IconButton();
             this.menuEmpleados = new FontAwesome.Sharp.IconMenuItem();
@@ -45,23 +45,22 @@
             this.subMenuPagos = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuDeducciones = new FontAwesome.Sharp.IconMenuItem();
             this.menuNominas = new FontAwesome.Sharp.IconMenuItem();
-            this.panel1.SuspendLayout();
-            this.menuPanel.SuspendLayout();
-            this.panelContenedor.SuspendLayout();
+            this.pnlTop.SuspendLayout();
+            this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlTop
             // 
-            this.panel1.BackColor = System.Drawing.Color.SkyBlue;
-            this.panel1.Controls.Add(this.lblUsuario);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnCerrarSesionAdmin);
-            this.panel1.Controls.Add(this.btnAjustes);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(884, 44);
-            this.panel1.TabIndex = 5;
+            this.pnlTop.BackColor = System.Drawing.Color.SkyBlue;
+            this.pnlTop.Controls.Add(this.lblUsuario);
+            this.pnlTop.Controls.Add(this.label1);
+            this.pnlTop.Controls.Add(this.btnCerrarSesionAdmin);
+            this.pnlTop.Controls.Add(this.btnAjustes);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(884, 44);
+            this.pnlTop.TabIndex = 5;
             // 
             // lblUsuario
             // 
@@ -84,23 +83,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Administrador:";
             // 
-            // menuPanel
+            // pnlMenu
             // 
-            this.menuPanel.BackColor = System.Drawing.Color.LightBlue;
-            this.menuPanel.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuPanel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pnlMenu.BackColor = System.Drawing.Color.LightBlue;
+            this.pnlMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.pnlMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAsistencias,
             this.menuEmpleados,
             this.menuPagos,
             this.menuNominas,
             this.menuCarnet,
             this.menuActividad});
-            this.menuPanel.Location = new System.Drawing.Point(0, 44);
-            this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuPanel.Size = new System.Drawing.Size(884, 56);
-            this.menuPanel.TabIndex = 4;
-            this.menuPanel.Text = "menuStrip1";
+            this.pnlMenu.Location = new System.Drawing.Point(0, 44);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.pnlMenu.Size = new System.Drawing.Size(884, 56);
+            this.pnlMenu.TabIndex = 4;
+            this.pnlMenu.Text = "menuStrip1";
             // 
             // menuCarnet
             // 
@@ -126,16 +125,13 @@
             this.menuActividad.Text = "Actividad";
             this.menuActividad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // panelContenedor
+            // pnlContenedor
             // 
-            this.panelContenedor.BackColor = System.Drawing.Color.Silver;
-            this.panelContenedor.Controls.Add(this.menuPanel);
-            this.panelContenedor.Controls.Add(this.panel1);
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(0, 0);
-            this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(884, 561);
-            this.panelContenedor.TabIndex = 7;
+            this.pnlContenedor.BackColor = System.Drawing.Color.Silver;
+            this.pnlContenedor.Location = new System.Drawing.Point(0, 97);
+            this.pnlContenedor.Name = "pnlContenedor";
+            this.pnlContenedor.Size = new System.Drawing.Size(884, 464);
+            this.pnlContenedor.TabIndex = 7;
             // 
             // btnCerrarSesionAdmin
             // 
@@ -221,6 +217,7 @@
             this.menuAsistencias.Size = new System.Drawing.Size(77, 54);
             this.menuAsistencias.Text = "Asistencias";
             this.menuAsistencias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.menuAsistencias.Click += new System.EventHandler(this.menuAsistencias_Click);
             // 
             // menuPagos
             // 
@@ -272,30 +269,31 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 561);
-            this.Controls.Add(this.panelContenedor);
+            this.Controls.Add(this.pnlMenu);
+            this.Controls.Add(this.pnlContenedor);
+            this.Controls.Add(this.pnlTop);
             this.MaximumSize = new System.Drawing.Size(900, 600);
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "frmPanelAdministrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel Administrador";
             this.Load += new System.EventHandler(this.frmPanelAdministrador_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.menuPanel.ResumeLayout(false);
-            this.menuPanel.PerformLayout();
-            this.panelContenedor.ResumeLayout(false);
-            this.panelContenedor.PerformLayout();
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
+            this.pnlMenu.ResumeLayout(false);
+            this.pnlMenu.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MenuStrip menuPanel;
-        private System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.MenuStrip pnlMenu;
+        private System.Windows.Forms.Panel pnlContenedor;
         private FontAwesome.Sharp.IconButton btnCerrarSesionAdmin;
         private FontAwesome.Sharp.IconMenuItem menuCarnet;
         private FontAwesome.Sharp.IconMenuItem menuActividad;

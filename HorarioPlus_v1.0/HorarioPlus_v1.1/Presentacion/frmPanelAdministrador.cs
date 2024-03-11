@@ -45,7 +45,7 @@ namespace HorarioPlus_v1._1.Presentacion
             formulario.Dock = DockStyle.Fill;
             formulario.BackColor = Color.SteelBlue;
 
-            panelContenedor.Controls.Add(formulario);
+            pnlContenedor.Controls.Add(formulario);
             formulario.Show();
 
             
@@ -59,15 +59,10 @@ namespace HorarioPlus_v1._1.Presentacion
 
         private void submenuNuevoRegistro_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(subMenuNuevoRegistro, new frmNuevoRegistroEmpleado());
+            AbrirFormulario(menuEmpleados, new frmNuevoRegistroEmpleado());
             //frmNuevoRegistroEmpleado f = new frmNuevoRegistroEmpleado();
             //f.MdiParent = this;
             //f.Show();
-        }
-
-        private void asistenciaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void btnCerrarSesionAdmin_Click(object sender, EventArgs e)
@@ -88,6 +83,11 @@ namespace HorarioPlus_v1._1.Presentacion
             {
                 Application.Exit();
             }
+        }
+
+        private void menuAsistencias_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmAsistencias());
         }
     }
 }

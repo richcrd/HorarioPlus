@@ -106,6 +106,7 @@
     <Compile Include="Presentacion\frmPanelAdministrador.Designer.cs">
       <DependentUpon>frmPanelAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Utilidades\OpcionCombo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentacion\frmCerrarSistema.resx">

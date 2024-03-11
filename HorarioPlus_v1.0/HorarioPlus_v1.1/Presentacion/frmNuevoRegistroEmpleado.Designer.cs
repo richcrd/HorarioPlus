@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.cbxRol = new System.Windows.Forms.ComboBox();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.label6 = new System.Windows.Forms.Label();
             this.numEdad = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,12 +51,19 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.dgvTablaEmpleados = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cbxCategoriaBuscar = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrimerApellidoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SegundoApellidoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EdadEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CorreoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RolEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numEdad)).BeginInit();
             this.panel2.SuspendLayout();
@@ -65,12 +73,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.iconButton3);
+            this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.cbxRol);
-            this.panel1.Controls.Add(this.iconButton2);
+            this.panel1.Controls.Add(this.btnEditar);
             this.panel1.Controls.Add(this.txtCorreo);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.iconButton1);
+            this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.numEdad);
             this.panel1.Controls.Add(this.label5);
@@ -89,24 +97,23 @@
             this.panel1.Size = new System.Drawing.Size(245, 461);
             this.panel1.TabIndex = 0;
             // 
-            // iconButton3
+            // btnEliminar
             // 
-            this.iconButton3.BackColor = System.Drawing.Color.Crimson;
-            this.iconButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton3.ForeColor = System.Drawing.Color.White;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.iconButton3.IconColor = System.Drawing.Color.White;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 1;
-            this.iconButton3.Location = new System.Drawing.Point(187, 378);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(31, 23);
-            this.iconButton3.TabIndex = 19;
-            this.iconButton3.Text = "X";
-            this.iconButton3.UseVisualStyleBackColor = false;
+            this.btnEliminar.BackColor = System.Drawing.Color.Crimson;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnEliminar.IconColor = System.Drawing.Color.White;
+            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminar.IconSize = 15;
+            this.btnEliminar.Location = new System.Drawing.Point(187, 378);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(31, 23);
+            this.btnEliminar.TabIndex = 19;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // cbxRol
             // 
@@ -116,24 +123,24 @@
             this.cbxRol.Size = new System.Drawing.Size(190, 21);
             this.cbxRol.TabIndex = 16;
             // 
-            // iconButton2
+            // btnEditar
             // 
-            this.iconButton2.BackColor = System.Drawing.Color.SteelBlue;
-            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.ForeColor = System.Drawing.Color.White;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.iconButton2.IconColor = System.Drawing.Color.White;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 15;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(106, 378);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(75, 23);
-            this.iconButton2.TabIndex = 18;
-            this.iconButton2.Text = "Editar";
-            this.iconButton2.UseVisualStyleBackColor = false;
+            this.btnEditar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.btnEditar.IconColor = System.Drawing.Color.White;
+            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditar.IconSize = 15;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(106, 378);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 18;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = false;
             // 
             // txtCorreo
             // 
@@ -151,25 +158,25 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Correo";
             // 
-            // iconButton1
+            // btnGuardar
             // 
-            this.iconButton1.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Cloud;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 15;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(28, 378);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(72, 23);
-            this.iconButton1.TabIndex = 17;
-            this.iconButton1.Text = "Guardar";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.btnGuardar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Cloud;
+            this.btnGuardar.IconColor = System.Drawing.Color.White;
+            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardar.IconSize = 15;
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.Location = new System.Drawing.Point(28, 378);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(72, 23);
+            this.btnGuardar.TabIndex = 17;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
@@ -307,23 +314,32 @@
             // 
             this.dgvTablaEmpleados.AllowUserToAddRows = false;
             this.dgvTablaEmpleados.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTablaEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTablaEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTablaEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID});
+            this.btnSeleccionar,
+            this.IdEmpleado,
+            this.NombreEmpleado,
+            this.PrimerApellidoEmpleado,
+            this.SegundoApellidoEmpleado,
+            this.EdadEmpleado,
+            this.CorreoEmpleado,
+            this.RolEmpleado});
             this.dgvTablaEmpleados.Location = new System.Drawing.Point(22, 120);
+            this.dgvTablaEmpleados.MultiSelect = false;
             this.dgvTablaEmpleados.Name = "dgvTablaEmpleados";
             this.dgvTablaEmpleados.ReadOnly = true;
             this.dgvTablaEmpleados.RowHeadersWidth = 62;
             this.dgvTablaEmpleados.Size = new System.Drawing.Size(464, 281);
             this.dgvTablaEmpleados.TabIndex = 21;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 8;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 150;
             // 
             // btnBuscar
             // 
@@ -380,6 +396,59 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "Lista Empleados";
             // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.HeaderText = "";
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ReadOnly = true;
+            this.btnSeleccionar.Width = 30;
+            // 
+            // IdEmpleado
+            // 
+            this.IdEmpleado.HeaderText = "ID";
+            this.IdEmpleado.Name = "IdEmpleado";
+            this.IdEmpleado.ReadOnly = true;
+            this.IdEmpleado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.IdEmpleado.Width = 40;
+            // 
+            // NombreEmpleado
+            // 
+            this.NombreEmpleado.HeaderText = "Nombre";
+            this.NombreEmpleado.Name = "NombreEmpleado";
+            this.NombreEmpleado.ReadOnly = true;
+            // 
+            // PrimerApellidoEmpleado
+            // 
+            this.PrimerApellidoEmpleado.HeaderText = "Apellido 1";
+            this.PrimerApellidoEmpleado.Name = "PrimerApellidoEmpleado";
+            this.PrimerApellidoEmpleado.ReadOnly = true;
+            // 
+            // SegundoApellidoEmpleado
+            // 
+            this.SegundoApellidoEmpleado.HeaderText = "Apellido 2";
+            this.SegundoApellidoEmpleado.Name = "SegundoApellidoEmpleado";
+            this.SegundoApellidoEmpleado.ReadOnly = true;
+            // 
+            // EdadEmpleado
+            // 
+            this.EdadEmpleado.HeaderText = "Edad";
+            this.EdadEmpleado.Name = "EdadEmpleado";
+            this.EdadEmpleado.ReadOnly = true;
+            this.EdadEmpleado.Width = 50;
+            // 
+            // CorreoEmpleado
+            // 
+            this.CorreoEmpleado.HeaderText = "Correo";
+            this.CorreoEmpleado.Name = "CorreoEmpleado";
+            this.CorreoEmpleado.ReadOnly = true;
+            // 
+            // RolEmpleado
+            // 
+            this.RolEmpleado.HeaderText = "Rol";
+            this.RolEmpleado.Name = "RolEmpleado";
+            this.RolEmpleado.ReadOnly = true;
+            this.RolEmpleado.Width = 50;
+            // 
             // frmNuevoRegistroEmpleado
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -421,9 +490,9 @@
         private System.Windows.Forms.ComboBox cbxRol;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label7;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton btnGuardar;
+        private FontAwesome.Sharp.IconButton btnEditar;
+        private FontAwesome.Sharp.IconButton btnEliminar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.ComboBox cbxCategoriaBuscar;
@@ -432,6 +501,13 @@
         private System.Windows.Forms.DataGridView dgvTablaEmpleados;
         private FontAwesome.Sharp.IconButton btnBuscar;
         private FontAwesome.Sharp.IconButton btnLimpiar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrimerApellidoEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SegundoApellidoEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EdadEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CorreoEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RolEmpleado;
     }
 }

@@ -314,7 +314,7 @@
             this.dgvTablaEmpleados.Name = "dgvTablaEmpleados";
             this.dgvTablaEmpleados.ReadOnly = true;
             this.dgvTablaEmpleados.RowHeadersWidth = 62;
-            this.dgvTablaEmpleados.Size = new System.Drawing.Size(413, 281);
+            this.dgvTablaEmpleados.Size = new System.Drawing.Size(464, 281);
             this.dgvTablaEmpleados.TabIndex = 21;
             // 
             // ID
@@ -392,6 +392,7 @@
             this.Name = "frmNuevoRegistroEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Registro";
+            this.Load += new System.EventHandler(this.frmNuevoRegistroEmpleado_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numEdad)).EndInit();

@@ -16,5 +16,10 @@ namespace HorarioPlus_v1._1.Presentacion
         {
             InitializeComponent();
         }
+
+        private void frmNuevoRegistroEmpleado_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

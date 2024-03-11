@@ -100,3 +100,36 @@ C:\Users\Richard\OneDrive\Escritorio\Horario+\HorarioPlus_v1.0\HorarioPlus_v1.1\
 C:\Users\Richard\OneDrive\Escritorio\Horario+\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1.1.pdb
 =======
 >>>>>>> 00b85617bf4b475c64fce9b172f09b8fe1b98c95
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\HorarioPlus_v1.1.exe.config
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\HorarioPlus_v1.1.exe
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\HorarioPlus_v1.1.pdb
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.Buffers.dll
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.Memory.dll
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.Text.Json.dll
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.ValueTuple.dll
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.Buffers.xml
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.Memory.xml
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.Text.Json.xml
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.ValueTuple.xml
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1.1.csproj.AssemblyReference.cache
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1._1.Presentacion.frmCerrarSistema.resources
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1._1.Presentacion.frmLogin.resources
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1._1.Presentacion.frmNuevoRegistroEmpleado.resources
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1._1.Presentacion.frmPanelAdministrador.resources
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1._1.Properties.Resources.resources
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1.1.csproj.GenerateResource.cache
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1.1.csproj.CoreCompileInputs.cache
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1.1.csproj.CopyComplete
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1.1.exe
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1.1.pdb

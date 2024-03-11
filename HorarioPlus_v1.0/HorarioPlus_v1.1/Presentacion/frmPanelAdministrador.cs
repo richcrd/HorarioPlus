@@ -57,14 +57,6 @@ namespace HorarioPlus_v1._1.Presentacion
             lblUsuario.Text = $"{NombreAdministrador} {ApellidoAdministrador}";
         }
 
-        private void submenuNuevoRegistro_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(menuEmpleados, new frmNuevoRegistroEmpleado());
-            //frmNuevoRegistroEmpleado f = new frmNuevoRegistroEmpleado();
-            //f.MdiParent = this;
-            //f.Show();
-        }
-
         private void btnCerrarSesionAdmin_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show("Estas seguro que deseas cerrar tu sesion?", "Confirmar Cierre Sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -88,6 +80,14 @@ namespace HorarioPlus_v1._1.Presentacion
         private void menuAsistencias_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmAsistencias());
+        }
+
+        private void subMenuNuevoRegistro_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuEmpleados, new frmNuevoRegistroEmpleado());
+            //frmNuevoRegistroEmpleado f = new frmNuevoRegistroEmpleado();
+            //f.MdiParent = this;
+            //f.Show();
         }
     }
 }

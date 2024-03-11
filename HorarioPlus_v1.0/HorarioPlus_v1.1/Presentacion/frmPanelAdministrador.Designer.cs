@@ -199,6 +199,7 @@
             this.subMenuNuevoRegistro.Name = "subMenuNuevoRegistro";
             this.subMenuNuevoRegistro.Size = new System.Drawing.Size(188, 30);
             this.subMenuNuevoRegistro.Text = "Nuevo Registro";
+            this.subMenuNuevoRegistro.Click += new System.EventHandler(this.subMenuNuevoRegistro_Click_1);
             // 
             // subMenuHorarios
             // 

@@ -30,7 +30,7 @@ namespace HorarioPlus_v1._1.Presentacion
         {
             if (MenuActivo != null)
             {
-                MenuActivo.BackColor = Color.DarkBlue;
+                MenuActivo.BackColor = Color.LightBlue;
             }
             menu.BackColor = Color.Silver;
             MenuActivo = menu;

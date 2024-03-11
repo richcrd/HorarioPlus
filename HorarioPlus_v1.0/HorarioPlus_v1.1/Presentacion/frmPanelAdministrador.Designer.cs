@@ -130,7 +130,7 @@
             this.pnlContenedor.BackColor = System.Drawing.Color.Silver;
             this.pnlContenedor.Location = new System.Drawing.Point(0, 97);
             this.pnlContenedor.Name = "pnlContenedor";
-            this.pnlContenedor.Size = new System.Drawing.Size(884, 464);
+            this.pnlContenedor.Size = new System.Drawing.Size(884, 504);
             this.pnlContenedor.TabIndex = 7;
             // 
             // btnCerrarSesionAdmin
@@ -268,12 +268,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(884, 599);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlContenedor);
             this.Controls.Add(this.pnlTop);
-            this.MaximumSize = new System.Drawing.Size(900, 600);
-            this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "frmPanelAdministrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel Administrador";

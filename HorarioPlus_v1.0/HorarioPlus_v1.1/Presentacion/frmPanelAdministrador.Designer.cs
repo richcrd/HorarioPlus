@@ -59,7 +59,7 @@
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(884, 44);
+            this.pnlTop.Size = new System.Drawing.Size(770, 44);
             this.pnlTop.TabIndex = 5;
             // 
             // lblUsuario
@@ -97,7 +97,7 @@
             this.pnlMenu.Location = new System.Drawing.Point(0, 44);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.pnlMenu.Size = new System.Drawing.Size(884, 56);
+            this.pnlMenu.Size = new System.Drawing.Size(770, 56);
             this.pnlMenu.TabIndex = 4;
             this.pnlMenu.Text = "menuStrip1";
             // 
@@ -130,7 +130,7 @@
             this.pnlContenedor.BackColor = System.Drawing.Color.Silver;
             this.pnlContenedor.Location = new System.Drawing.Point(0, 97);
             this.pnlContenedor.Name = "pnlContenedor";
-            this.pnlContenedor.Size = new System.Drawing.Size(884, 504);
+            this.pnlContenedor.Size = new System.Drawing.Size(770, 450);
             this.pnlContenedor.TabIndex = 7;
             // 
             // btnCerrarSesionAdmin
@@ -145,7 +145,7 @@
             this.btnCerrarSesionAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrarSesionAdmin.IconSize = 15;
             this.btnCerrarSesionAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesionAdmin.Location = new System.Drawing.Point(802, 12);
+            this.btnCerrarSesionAdmin.Location = new System.Drawing.Point(679, 9);
             this.btnCerrarSesionAdmin.Name = "btnCerrarSesionAdmin";
             this.btnCerrarSesionAdmin.Size = new System.Drawing.Size(70, 23);
             this.btnCerrarSesionAdmin.TabIndex = 8;
@@ -166,7 +166,7 @@
             this.btnAjustes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAjustes.IconSize = 15;
             this.btnAjustes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAjustes.Location = new System.Drawing.Point(726, 12);
+            this.btnAjustes.Location = new System.Drawing.Point(603, 9);
             this.btnAjustes.Name = "btnAjustes";
             this.btnAjustes.Size = new System.Drawing.Size(70, 23);
             this.btnAjustes.TabIndex = 9;
@@ -269,10 +269,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 599);
+            this.ClientSize = new System.Drawing.Size(770, 547);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlContenedor);
             this.Controls.Add(this.pnlTop);
+            this.MaximumSize = new System.Drawing.Size(786, 586);
+            this.MinimumSize = new System.Drawing.Size(786, 586);
             this.Name = "frmPanelAdministrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel Administrador";

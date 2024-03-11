@@ -59,7 +59,7 @@ namespace HorarioPlus_v1._1.Presentacion
 
         private void submenuNuevoRegistro_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menuEmpleados, new frmNuevoRegistroEmpleado());
+            AbrirFormulario(subMenuNuevoRegistro, new frmNuevoRegistroEmpleado());
             //frmNuevoRegistroEmpleado f = new frmNuevoRegistroEmpleado();
             //f.MdiParent = this;
             //f.Show();

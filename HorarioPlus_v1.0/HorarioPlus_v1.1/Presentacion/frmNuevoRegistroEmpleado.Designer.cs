@@ -65,6 +65,7 @@
             this.cbxCategoriaBuscar = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnLimpiarDetalles = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numEdad)).BeginInit();
             this.panel2.SuspendLayout();
@@ -74,6 +75,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.btnLimpiarDetalles);
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.cbxRol);
             this.panel1.Controls.Add(this.btnEditar);
@@ -469,6 +471,24 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "Lista Empleados";
             // 
+            // btnLimpiarDetalles
+            // 
+            this.btnLimpiarDetalles.BackColor = System.Drawing.Color.Gray;
+            this.btnLimpiarDetalles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiarDetalles.FlatAppearance.BorderSize = 0;
+            this.btnLimpiarDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiarDetalles.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiarDetalles.IconChar = FontAwesome.Sharp.IconChar.Brush;
+            this.btnLimpiarDetalles.IconColor = System.Drawing.Color.White;
+            this.btnLimpiarDetalles.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiarDetalles.IconSize = 15;
+            this.btnLimpiarDetalles.Location = new System.Drawing.Point(168, 70);
+            this.btnLimpiarDetalles.Name = "btnLimpiarDetalles";
+            this.btnLimpiarDetalles.Size = new System.Drawing.Size(50, 22);
+            this.btnLimpiarDetalles.TabIndex = 23;
+            this.btnLimpiarDetalles.UseVisualStyleBackColor = false;
+            this.btnLimpiarDetalles.Click += new System.EventHandler(this.btnLimpiarDetalles_Click);
+            // 
             // frmNuevoRegistroEmpleado
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -527,5 +547,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Edad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
+        private FontAwesome.Sharp.IconButton btnLimpiarDetalles;
     }
 }

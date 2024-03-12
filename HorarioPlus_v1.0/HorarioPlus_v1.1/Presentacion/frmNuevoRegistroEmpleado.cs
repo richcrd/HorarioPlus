@@ -81,12 +81,10 @@ namespace HorarioPlus_v1._1.Presentacion
                      MessageBoxButtons.OK,
                      MessageBoxIcon.Error);
             }
-            ManejadorEmpleados.CargarInfoEmpleados(dgvTablaEmpleados);
         }
 
         private void LimpiarEntradasTexto()
         {
-            txtIdEmpleado.Text = "0";
             txtNombre.Text = "";
             txtPrimerApellido.Text = "";
             txtSegundoApellido.Text = "";
@@ -150,6 +148,16 @@ namespace HorarioPlus_v1._1.Presentacion
                      MessageBoxButtons.OK,
                      MessageBoxIcon.Error);
             }
+        }
+
+        private void btnLimpiarDetalles_Click(object sender, EventArgs e)
+        {
+            txtNombre.Text = "";
+            txtPrimerApellido.Text = "";
+            txtSegundoApellido.Text = "";
+            txtCorreo.Text = "";
+            numEdad.Value = 0;
+            cbxRol.SelectedIndex = 0;
         }
     }
 }

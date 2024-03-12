@@ -53,11 +53,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.dgvTablaEmpleados = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.cbxCategoriaBuscar = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +61,11 @@
             this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.cbxCategoriaBuscar = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numEdad)).BeginInit();
             this.panel2.SuspendLayout();
@@ -256,9 +256,10 @@
             // 
             // txtIdEmpleado
             // 
+            this.txtIdEmpleado.BackColor = System.Drawing.Color.Silver;
             this.txtIdEmpleado.Location = new System.Drawing.Point(28, 70);
             this.txtIdEmpleado.Name = "txtIdEmpleado";
-            this.txtIdEmpleado.Size = new System.Drawing.Size(190, 22);
+            this.txtIdEmpleado.Size = new System.Drawing.Size(72, 22);
             this.txtIdEmpleado.TabIndex = 2;
             // 
             // label1
@@ -326,7 +327,7 @@
             this.dgvTablaEmpleados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -361,6 +362,59 @@
             this.dgvTablaEmpleados.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvTablaEmpleados.Size = new System.Drawing.Size(464, 281);
             this.dgvTablaEmpleados.TabIndex = 21;
+            // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.HeaderText = "";
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ReadOnly = true;
+            this.btnSeleccionar.Width = 30;
+            // 
+            // IdEmpleado
+            // 
+            this.IdEmpleado.HeaderText = "ID";
+            this.IdEmpleado.Name = "IdEmpleado";
+            this.IdEmpleado.ReadOnly = true;
+            this.IdEmpleado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.IdEmpleado.Width = 40;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Apellido1
+            // 
+            this.Apellido1.HeaderText = "Apellido 1";
+            this.Apellido1.Name = "Apellido1";
+            this.Apellido1.ReadOnly = true;
+            // 
+            // Apellido2
+            // 
+            this.Apellido2.HeaderText = "Apellido 2";
+            this.Apellido2.Name = "Apellido2";
+            this.Apellido2.ReadOnly = true;
+            // 
+            // Edad
+            // 
+            this.Edad.HeaderText = "Edad";
+            this.Edad.Name = "Edad";
+            this.Edad.ReadOnly = true;
+            this.Edad.Width = 50;
+            // 
+            // Correo
+            // 
+            this.Correo.HeaderText = "Correo";
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
+            // 
+            // Rol
+            // 
+            this.Rol.HeaderText = "Rol";
+            this.Rol.Name = "Rol";
+            this.Rol.ReadOnly = true;
+            this.Rol.Width = 50;
             // 
             // btnBuscar
             // 
@@ -416,59 +470,6 @@
             this.label8.Size = new System.Drawing.Size(133, 21);
             this.label8.TabIndex = 20;
             this.label8.Text = "Lista Empleados";
-            // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.HeaderText = "";
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.ReadOnly = true;
-            this.btnSeleccionar.Width = 30;
-            // 
-            // IdEmpleado
-            // 
-            this.IdEmpleado.HeaderText = "ID";
-            this.IdEmpleado.Name = "IdEmpleado";
-            this.IdEmpleado.ReadOnly = true;
-            this.IdEmpleado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.IdEmpleado.Width = 40;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Apellido1
-            // 
-            this.Apellido1.HeaderText = "Apellido 1";
-            this.Apellido1.Name = "Apellido1";
-            this.Apellido1.ReadOnly = true;
-            // 
-            // Apellido2
-            // 
-            this.Apellido2.HeaderText = "Apellido 2";
-            this.Apellido2.Name = "Apellido2";
-            this.Apellido2.ReadOnly = true;
-            // 
-            // Edad
-            // 
-            this.Edad.HeaderText = "Edad";
-            this.Edad.Name = "Edad";
-            this.Edad.ReadOnly = true;
-            this.Edad.Width = 50;
-            // 
-            // Correo
-            // 
-            this.Correo.HeaderText = "Correo";
-            this.Correo.Name = "Correo";
-            this.Correo.ReadOnly = true;
-            // 
-            // Rol
-            // 
-            this.Rol.HeaderText = "Rol";
-            this.Rol.Name = "Rol";
-            this.Rol.ReadOnly = true;
-            this.Rol.Width = 50;
             // 
             // frmNuevoRegistroEmpleado
             // 

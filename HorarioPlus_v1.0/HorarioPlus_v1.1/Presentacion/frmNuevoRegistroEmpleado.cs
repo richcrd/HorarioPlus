@@ -33,14 +33,18 @@ namespace HorarioPlus_v1._1.Presentacion
             cbxRol.ValueMember = "Valor";
             cbxRol.SelectedIndex = 0;
 
-            foreach(DataGridViewColumn columna in dgvTablaEmpleados.Columns)
+            foreach (DataGridViewColumn columna in dgvTablaEmpleados.Columns)
             {
-                if(columna.Visible == true && columna.Name != "btnSeleccionar")
+                if (columna.Visible && columna.Name != "btnSeleccionar")
                 {
+                    // Acceder directamente al encabezado de columna
+                    string nombreColumna = columna.HeaderText;
+
+                    // Agregar un nuevo elemento al ComboBox
                     cbxCategoriaBuscar.Items.Add(new OpcionCombo()
                     {
                         Valor = columna.Name,
-                        Texto = columna.HeaderText
+                        Texto = nombreColumna
                     });
                 }
             }

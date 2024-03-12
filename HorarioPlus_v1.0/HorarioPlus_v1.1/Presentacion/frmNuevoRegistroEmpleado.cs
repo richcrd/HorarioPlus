@@ -33,6 +33,19 @@ namespace HorarioPlus_v1._1.Presentacion
                 ((OpcionCombo)cbxRol.SelectedItem).Valor.ToString(),
                 ((OpcionCombo)cbxRol.SelectedItem).Texto.ToString(),
             });
+
+            LimpiarEntradasTexto();
+        }
+
+        private void LimpiarEntradasTexto()
+        {
+            txtIdEmpleado.Text = "0";
+            txtNombre.Text = "";
+            txtPrimerApellido.Text = "";
+            txtSegundoApellido.Text = "";
+            txtCorreo.Text = "";
+            numEdad.Value = 0;
+            cbxRol.SelectedIndex = 0;
         }
     }
 }

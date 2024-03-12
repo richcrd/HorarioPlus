@@ -89,5 +89,35 @@ namespace HorarioPlus_v1._1.Presentacion
             //f.MdiParent = this;
             //f.Show();
         }
+
+        private void subMenuHorarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuEmpleados, new frmHorarioEmpleados());
+        }
+
+        private void subMenuPagos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuPagos, new frmPagos());
+        }
+
+        private void subMenuDeducciones_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuPagos, new frmDeducciones());
+        }
+
+        private void menuNominas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmNominas());
+        }
+
+        private void menuCarnet_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmCarnet());
+        }
+
+        private void menuActividad_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmActividad());
+        }
     }
 }

@@ -31,20 +31,20 @@
             this.pnlTop = new System.Windows.Forms.Panel();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pnlMenu = new System.Windows.Forms.MenuStrip();
-            this.menuCarnet = new FontAwesome.Sharp.IconMenuItem();
-            this.menuActividad = new FontAwesome.Sharp.IconMenuItem();
-            this.pnlContenedor = new System.Windows.Forms.Panel();
             this.btnCerrarSesionAdmin = new FontAwesome.Sharp.IconButton();
             this.btnAjustes = new FontAwesome.Sharp.IconButton();
+            this.pnlMenu = new System.Windows.Forms.MenuStrip();
+            this.menuAsistencias = new FontAwesome.Sharp.IconMenuItem();
             this.menuEmpleados = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuNuevoRegistro = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuHorarios = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuAsistencias = new FontAwesome.Sharp.IconMenuItem();
             this.menuPagos = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuPagos = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuDeducciones = new FontAwesome.Sharp.IconMenuItem();
             this.menuNominas = new FontAwesome.Sharp.IconMenuItem();
+            this.menuCarnet = new FontAwesome.Sharp.IconMenuItem();
+            this.menuActividad = new FontAwesome.Sharp.IconMenuItem();
+            this.pnlContenedor = new System.Windows.Forms.Panel();
             this.pnlTop.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +67,7 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.Red;
-            this.lblUsuario.Location = new System.Drawing.Point(117, 17);
+            this.lblUsuario.Location = new System.Drawing.Point(115, 12);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(98, 15);
             this.lblUsuario.TabIndex = 1;
@@ -77,61 +77,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Location = new System.Drawing.Point(10, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Administrador:";
-            // 
-            // pnlMenu
-            // 
-            this.pnlMenu.BackColor = System.Drawing.Color.LightBlue;
-            this.pnlMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.pnlMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuAsistencias,
-            this.menuEmpleados,
-            this.menuPagos,
-            this.menuNominas,
-            this.menuCarnet,
-            this.menuActividad});
-            this.pnlMenu.Location = new System.Drawing.Point(0, 44);
-            this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.pnlMenu.Size = new System.Drawing.Size(770, 56);
-            this.pnlMenu.TabIndex = 4;
-            this.pnlMenu.Text = "menuStrip1";
-            // 
-            // menuCarnet
-            // 
-            this.menuCarnet.IconChar = FontAwesome.Sharp.IconChar.IdCard;
-            this.menuCarnet.IconColor = System.Drawing.Color.Black;
-            this.menuCarnet.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuCarnet.IconSize = 35;
-            this.menuCarnet.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.menuCarnet.Name = "menuCarnet";
-            this.menuCarnet.Size = new System.Drawing.Size(54, 54);
-            this.menuCarnet.Text = "Carnet";
-            this.menuCarnet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // menuActividad
-            // 
-            this.menuActividad.IconChar = FontAwesome.Sharp.IconChar.List;
-            this.menuActividad.IconColor = System.Drawing.Color.Black;
-            this.menuActividad.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuActividad.IconSize = 35;
-            this.menuActividad.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.menuActividad.Name = "menuActividad";
-            this.menuActividad.Size = new System.Drawing.Size(69, 54);
-            this.menuActividad.Text = "Actividad";
-            this.menuActividad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // pnlContenedor
-            // 
-            this.pnlContenedor.BackColor = System.Drawing.Color.Silver;
-            this.pnlContenedor.Location = new System.Drawing.Point(0, 97);
-            this.pnlContenedor.Name = "pnlContenedor";
-            this.pnlContenedor.Size = new System.Drawing.Size(770, 450);
-            this.pnlContenedor.TabIndex = 7;
             // 
             // btnCerrarSesionAdmin
             // 
@@ -175,6 +125,37 @@
             this.btnAjustes.UseVisualStyleBackColor = false;
             this.btnAjustes.Click += new System.EventHandler(this.btnAjustes_Click);
             // 
+            // pnlMenu
+            // 
+            this.pnlMenu.BackColor = System.Drawing.Color.LightBlue;
+            this.pnlMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.pnlMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuAsistencias,
+            this.menuEmpleados,
+            this.menuPagos,
+            this.menuNominas,
+            this.menuCarnet,
+            this.menuActividad});
+            this.pnlMenu.Location = new System.Drawing.Point(0, 44);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.pnlMenu.Size = new System.Drawing.Size(770, 56);
+            this.pnlMenu.TabIndex = 4;
+            this.pnlMenu.Text = "menuStrip1";
+            // 
+            // menuAsistencias
+            // 
+            this.menuAsistencias.IconChar = FontAwesome.Sharp.IconChar.Calendar;
+            this.menuAsistencias.IconColor = System.Drawing.Color.Black;
+            this.menuAsistencias.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuAsistencias.IconSize = 35;
+            this.menuAsistencias.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuAsistencias.Name = "menuAsistencias";
+            this.menuAsistencias.Size = new System.Drawing.Size(77, 54);
+            this.menuAsistencias.Text = "Asistencias";
+            this.menuAsistencias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.menuAsistencias.Click += new System.EventHandler(this.menuAsistencias_Click);
+            // 
             // menuEmpleados
             // 
             this.menuEmpleados.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -197,7 +178,7 @@
             this.subMenuNuevoRegistro.IconColor = System.Drawing.Color.Black;
             this.subMenuNuevoRegistro.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuNuevoRegistro.Name = "subMenuNuevoRegistro";
-            this.subMenuNuevoRegistro.Size = new System.Drawing.Size(188, 30);
+            this.subMenuNuevoRegistro.Size = new System.Drawing.Size(155, 22);
             this.subMenuNuevoRegistro.Text = "Nuevo Registro";
             this.subMenuNuevoRegistro.Click += new System.EventHandler(this.subMenuNuevoRegistro_Click_1);
             // 
@@ -206,19 +187,7 @@
             this.subMenuHorarios.Name = "subMenuHorarios";
             this.subMenuHorarios.Size = new System.Drawing.Size(188, 30);
             this.subMenuHorarios.Text = "Horarios";
-            // 
-            // menuAsistencias
-            // 
-            this.menuAsistencias.IconChar = FontAwesome.Sharp.IconChar.Calendar;
-            this.menuAsistencias.IconColor = System.Drawing.Color.Black;
-            this.menuAsistencias.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuAsistencias.IconSize = 35;
-            this.menuAsistencias.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.menuAsistencias.Name = "menuAsistencias";
-            this.menuAsistencias.Size = new System.Drawing.Size(77, 54);
-            this.menuAsistencias.Text = "Asistencias";
-            this.menuAsistencias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.menuAsistencias.Click += new System.EventHandler(this.menuAsistencias_Click);
+            this.subMenuHorarios.Click += new System.EventHandler(this.subMenuHorarios_Click);
             // 
             // menuPagos
             // 
@@ -243,6 +212,7 @@
             this.subMenuPagos.Name = "subMenuPagos";
             this.subMenuPagos.Size = new System.Drawing.Size(188, 30);
             this.subMenuPagos.Text = "Pagos";
+            this.subMenuPagos.Click += new System.EventHandler(this.subMenuPagos_Click);
             // 
             // subMenuDeducciones
             // 
@@ -252,6 +222,7 @@
             this.subMenuDeducciones.Name = "subMenuDeducciones";
             this.subMenuDeducciones.Size = new System.Drawing.Size(188, 30);
             this.subMenuDeducciones.Text = "Deducciones";
+            this.subMenuDeducciones.Click += new System.EventHandler(this.subMenuDeducciones_Click);
             // 
             // menuNominas
             // 
@@ -264,6 +235,41 @@
             this.menuNominas.Size = new System.Drawing.Size(67, 54);
             this.menuNominas.Text = "Nominas";
             this.menuNominas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.menuNominas.Click += new System.EventHandler(this.menuNominas_Click);
+            // 
+            // menuCarnet
+            // 
+            this.menuCarnet.IconChar = FontAwesome.Sharp.IconChar.IdCard;
+            this.menuCarnet.IconColor = System.Drawing.Color.Black;
+            this.menuCarnet.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuCarnet.IconSize = 35;
+            this.menuCarnet.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuCarnet.Name = "menuCarnet";
+            this.menuCarnet.Size = new System.Drawing.Size(54, 54);
+            this.menuCarnet.Text = "Carnet";
+            this.menuCarnet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.menuCarnet.Click += new System.EventHandler(this.menuCarnet_Click);
+            // 
+            // menuActividad
+            // 
+            this.menuActividad.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.menuActividad.IconColor = System.Drawing.Color.Black;
+            this.menuActividad.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuActividad.IconSize = 35;
+            this.menuActividad.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuActividad.Name = "menuActividad";
+            this.menuActividad.Size = new System.Drawing.Size(69, 54);
+            this.menuActividad.Text = "Actividad";
+            this.menuActividad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.menuActividad.Click += new System.EventHandler(this.menuActividad_Click);
+            // 
+            // pnlContenedor
+            // 
+            this.pnlContenedor.BackColor = System.Drawing.Color.Silver;
+            this.pnlContenedor.Location = new System.Drawing.Point(0, 97);
+            this.pnlContenedor.Name = "pnlContenedor";
+            this.pnlContenedor.Size = new System.Drawing.Size(770, 450);
+            this.pnlContenedor.TabIndex = 7;
             // 
             // frmPanelAdministrador
             // 

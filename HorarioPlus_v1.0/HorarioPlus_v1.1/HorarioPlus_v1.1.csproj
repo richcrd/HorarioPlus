@@ -82,17 +82,41 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\Empleados.cs" />
+    <Compile Include="Presentacion\frmActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmActividad.Designer.cs">
+      <DependentUpon>frmActividad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\frmAsistencias.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\frmAsistencias.Designer.cs">
       <DependentUpon>frmAsistencias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\frmCarnet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmCarnet.Designer.cs">
+      <DependentUpon>frmCarnet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\frmCerrarSistema.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\frmCerrarSistema.Designer.cs">
       <DependentUpon>frmCerrarSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmDeducciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmDeducciones.Designer.cs">
+      <DependentUpon>frmDeducciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmHorarioEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmHorarioEmpleados.Designer.cs">
+      <DependentUpon>frmHorarioEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\frmLogin.cs">
       <SubType>Form</SubType>
@@ -106,11 +130,23 @@
     <Compile Include="Presentacion\frmNuevoRegistroEmpleado.Designer.cs">
       <DependentUpon>frmNuevoRegistroEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\frmPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmPagos.Designer.cs">
+      <DependentUpon>frmPagos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\frmPanelAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\frmPanelAdministrador.Designer.cs">
       <DependentUpon>frmPanelAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmNominas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmNominas.Designer.cs">
+      <DependentUpon>frmNominas.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Utilidades\OpcionCombo.cs" />
     <Compile Include="Program.cs" />

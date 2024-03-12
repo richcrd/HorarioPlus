@@ -53,19 +53,19 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.dgvTablaEmpleados = new System.Windows.Forms.DataGridView();
-            this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrimerApellidoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SegundoApellidoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EdadEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CorreoEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RolEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cbxCategoriaBuscar = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numEdad)).BeginInit();
             this.panel2.SuspendLayout();
@@ -337,12 +337,12 @@
             this.dgvTablaEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnSeleccionar,
             this.IdEmpleado,
-            this.NombreEmpleado,
-            this.PrimerApellidoEmpleado,
-            this.SegundoApellidoEmpleado,
-            this.EdadEmpleado,
-            this.CorreoEmpleado,
-            this.RolEmpleado});
+            this.Nombre,
+            this.Apellido1,
+            this.Apellido2,
+            this.Edad,
+            this.Correo,
+            this.Rol});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -361,59 +361,6 @@
             this.dgvTablaEmpleados.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvTablaEmpleados.Size = new System.Drawing.Size(464, 281);
             this.dgvTablaEmpleados.TabIndex = 21;
-            // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.HeaderText = "";
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.ReadOnly = true;
-            this.btnSeleccionar.Width = 30;
-            // 
-            // IdEmpleado
-            // 
-            this.IdEmpleado.HeaderText = "ID";
-            this.IdEmpleado.Name = "IdEmpleado";
-            this.IdEmpleado.ReadOnly = true;
-            this.IdEmpleado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.IdEmpleado.Width = 40;
-            // 
-            // NombreEmpleado
-            // 
-            this.NombreEmpleado.HeaderText = "Nombre";
-            this.NombreEmpleado.Name = "NombreEmpleado";
-            this.NombreEmpleado.ReadOnly = true;
-            // 
-            // PrimerApellidoEmpleado
-            // 
-            this.PrimerApellidoEmpleado.HeaderText = "Apellido 1";
-            this.PrimerApellidoEmpleado.Name = "PrimerApellidoEmpleado";
-            this.PrimerApellidoEmpleado.ReadOnly = true;
-            // 
-            // SegundoApellidoEmpleado
-            // 
-            this.SegundoApellidoEmpleado.HeaderText = "Apellido 2";
-            this.SegundoApellidoEmpleado.Name = "SegundoApellidoEmpleado";
-            this.SegundoApellidoEmpleado.ReadOnly = true;
-            // 
-            // EdadEmpleado
-            // 
-            this.EdadEmpleado.HeaderText = "Edad";
-            this.EdadEmpleado.Name = "EdadEmpleado";
-            this.EdadEmpleado.ReadOnly = true;
-            this.EdadEmpleado.Width = 50;
-            // 
-            // CorreoEmpleado
-            // 
-            this.CorreoEmpleado.HeaderText = "Correo";
-            this.CorreoEmpleado.Name = "CorreoEmpleado";
-            this.CorreoEmpleado.ReadOnly = true;
-            // 
-            // RolEmpleado
-            // 
-            this.RolEmpleado.HeaderText = "Rol";
-            this.RolEmpleado.Name = "RolEmpleado";
-            this.RolEmpleado.ReadOnly = true;
-            this.RolEmpleado.Width = 50;
             // 
             // btnBuscar
             // 
@@ -470,6 +417,59 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "Lista Empleados";
             // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.HeaderText = "";
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ReadOnly = true;
+            this.btnSeleccionar.Width = 30;
+            // 
+            // IdEmpleado
+            // 
+            this.IdEmpleado.HeaderText = "ID";
+            this.IdEmpleado.Name = "IdEmpleado";
+            this.IdEmpleado.ReadOnly = true;
+            this.IdEmpleado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.IdEmpleado.Width = 40;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Apellido1
+            // 
+            this.Apellido1.HeaderText = "Apellido 1";
+            this.Apellido1.Name = "Apellido1";
+            this.Apellido1.ReadOnly = true;
+            // 
+            // Apellido2
+            // 
+            this.Apellido2.HeaderText = "Apellido 2";
+            this.Apellido2.Name = "Apellido2";
+            this.Apellido2.ReadOnly = true;
+            // 
+            // Edad
+            // 
+            this.Edad.HeaderText = "Edad";
+            this.Edad.Name = "Edad";
+            this.Edad.ReadOnly = true;
+            this.Edad.Width = 50;
+            // 
+            // Correo
+            // 
+            this.Correo.HeaderText = "Correo";
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
+            // 
+            // Rol
+            // 
+            this.Rol.HeaderText = "Rol";
+            this.Rol.Name = "Rol";
+            this.Rol.ReadOnly = true;
+            this.Rol.Width = 50;
+            // 
             // frmNuevoRegistroEmpleado
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -523,11 +523,11 @@
         private FontAwesome.Sharp.IconButton btnLimpiar;
         private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrimerApellidoEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SegundoApellidoEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EdadEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CorreoEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RolEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Edad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
     }
 }

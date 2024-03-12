@@ -28,7 +28,7 @@ namespace HorarioPlus_v1._1.Presentacion
 
             ManejadorEmpleados.CargarInfoEmpleados(dgvTablaEmpleados);
             cbxRol.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Empleado" });
-            cbxRol.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Administrador" });
+            cbxRol.Items.Add(new OpcionCombo() { Valor = 2, Texto = "Administrador" });
             cbxRol.DisplayMember = "Texto";
             cbxRol.ValueMember = "Valor";
             cbxRol.SelectedIndex = 0;

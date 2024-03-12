@@ -60,26 +60,33 @@ namespace HorarioPlus_v1._1.Datos
 
                 // Deserializar el contenido del archivo JSON en una lista de objetos Empleado
                 List<Empleados> empleados = JsonSerializer.Deserialize<List<Empleados>>(json);
-                
-                foreach(Empleados empleado in empleados)
+
+                foreach (Empleados empleado in empleados)
                 {
+                    // Agregar una nueva fila al DataGridView
                     int rowIndex = dataGridView.Rows.Add();
-                    dataGridView.Rows[rowIndex].Cells[1].Value = empleado.IdEmpleado;
-                    dataGridView.Rows[rowIndex].Cells[2].Value = empleado.Nombre;
-                    dataGridView.Rows[rowIndex].Cells[3].Value = empleado.Apellido1;
-                    dataGridView.Rows[rowIndex].Cells[4].Value = empleado.Apellido2;
-                    dataGridView.Rows[rowIndex].Cells[5].Value = empleado.Edad;
-                    dataGridView.Rows[rowIndex].Cells[6].Value = empleado.Correo;
-                    dataGridView.Rows[rowIndex].Cells[7].Value = empleado.Rol;
+
+                    // Verificar si la fila se agregó correctamente antes de asignar valores a las celdas
+                    if (rowIndex >= 0 && rowIndex < dataGridView.Rows.Count)
+                    {
+                        // Asignar valores a las celdas de la nueva fila
+                        dataGridView.Rows[rowIndex].Cells[0].Value = empleado.IdEmpleado;
+                        dataGridView.Rows[rowIndex].Cells[1].Value = empleado.Nombre;
+                        dataGridView.Rows[rowIndex].Cells[2].Value = empleado.Apellido1;
+                        dataGridView.Rows[rowIndex].Cells[3].Value = empleado.Apellido2;
+                        dataGridView.Rows[rowIndex].Cells[4].Value = empleado.Edad;
+                        dataGridView.Rows[rowIndex].Cells[5].Value = empleado.Correo;
+                        dataGridView.Rows[rowIndex].Cells[6].Value = empleado.Rol;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar la fila al DataGridView.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar el archivo de empleados en el DataGridView: " + 
-                    ex.Message, 
-                    "Error", 
-                    MessageBoxButtons.OK, 
-                    MessageBoxIcon.Error);
+                MessageBox.Show("Error al cargar el archivo de empleados en el DataGridView: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

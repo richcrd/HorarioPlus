@@ -73,8 +73,8 @@ namespace HorarioPlus_v1._1.Presentacion
                         dgvTablaEmpleados.Rows[rowIndex].Cells[1].Value = txtNombre.Text;
                         dgvTablaEmpleados.Rows[rowIndex].Cells[2].Value = txtPrimerApellido.Text;
                         dgvTablaEmpleados.Rows[rowIndex].Cells[3].Value = txtSegundoApellido.Text;
-                        dgvTablaEmpleados.Rows[rowIndex].Cells[4].Value = txtCorreo.Text;
-                        dgvTablaEmpleados.Rows[rowIndex].Cells[5].Value = numEdad.Value.ToString();
+                        dgvTablaEmpleados.Rows[rowIndex].Cells[4].Value = numEdad.Value.ToString();
+                        dgvTablaEmpleados.Rows[rowIndex].Cells[5].Value = txtCorreo.Text;
                         dgvTablaEmpleados.Rows[rowIndex].Cells[6].Value = textoRol;
                     }
                     else

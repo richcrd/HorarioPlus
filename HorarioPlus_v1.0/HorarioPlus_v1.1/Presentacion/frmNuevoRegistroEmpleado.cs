@@ -24,10 +24,6 @@ namespace HorarioPlus_v1._1.Presentacion
 
         private void frmNuevoRegistroEmpleado_Load(object sender, EventArgs e)
         {
-            string nuevoIdEmpleado = ManejadorEmpleados.GenerarNuevoIdEmpleado();
-            txtIdEmpleado.Text = nuevoIdEmpleado;
-            txtIdEmpleado.ReadOnly = true;
-
             cbxRol.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Empleado" });
             cbxRol.Items.Add(new OpcionCombo() { Valor = 2, Texto = "Administrador" });
             cbxRol.DisplayMember = "Texto";
@@ -49,63 +45,45 @@ namespace HorarioPlus_v1._1.Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            OpcionCombo rolSeleccionado = (OpcionCombo)cbxRol.SelectedItem;
-            string textoRol = rolSeleccionado.Texto;
-
-            ManejadorEmpleados manejadorEmpleados = new ManejadorEmpleados();
-
-            string errorMsg = manejadorEmpleados.ValidarCamposEmpleado(
-                txtIdEmpleado.Text, 
-                txtNombre.Text, 
-                txtPrimerApellido.Text, 
-                txtSegundoApellido.Text, 
-                txtCorreo.Text, 
-                (int)numEdad.Value);
-
-            if (string.IsNullOrEmpty(errorMsg))
+            if (dgvTablaEmpleados != null)
             {
-                if(dgvTablaEmpleados.SelectedRows.Count > 0)
+                OpcionCombo rolSeleccionado = (OpcionCombo)cbxRol.SelectedItem;
+                string textoRol = rolSeleccionado.Texto;
+
+                ManejadorEmpleados manejadorEmpleados = new ManejadorEmpleados();
+
+                string errorMsg = manejadorEmpleados.ValidarCamposEmpleado(
+                    txtIdEmpleado.Text,
+                    txtNombre.Text,
+                    txtPrimerApellido.Text,
+                    txtSegundoApellido.Text,
+                    txtCorreo.Text,
+                    (int)numEdad.Value);
+
+                if (string.IsNullOrEmpty(errorMsg))
                 {
-                    string idEmpleadoEditar = dgvTablaEmpleados.SelectedRows[0].Cells[1].Value.ToString();
-                    Empleados empleadoModificado = new Empleados()
-                    {
-                        IdEmpleado = idEmpleadoEditar,
-                        Nombre = txtNombre.Text,
-                        Apellido1 = txtPrimerApellido.Text,
-                        Apellido2 = txtSegundoApellido.Text,
-                        Edad = (int)numEdad.Value,
-                        Correo = txtCorreo.Text,
-                        Rol = textoRol
-                    };
-                    ManejadorEmpleados.ActualizarEmpleado(idEmpleadoEditar, empleadoModificado);
-                    ManejadorEmpleados.CargarInfoEmpleados(dgvTablaEmpleados);
+                    dgvTablaEmpleados.Rows.Add(new object[] { "",
+                txtIdEmpleado.Text,
+                txtNombre.Text,
+                txtPrimerApellido.Text,
+                txtSegundoApellido.Text,
+                txtCorreo.Text, numEdad.Value.ToString(),
+                textoRol});
+                    LimpiarEntradasTexto();
                 }
                 else
                 {
-                    // Si no hay una fila seleccionada, agregar un nuevo empleado
-                    string nuevoIdEmpleado = ManejadorEmpleados.GenerarNuevoIdEmpleado();
-                    Empleados nuevoEmpleado = new Empleados()
-                    {
-
-                        IdEmpleado = nuevoIdEmpleado,
-                        Nombre = txtNombre.Text,
-                        Apellido1 = txtPrimerApellido.Text,
-                        Apellido2 = txtSegundoApellido.Text,
-                        Edad = (int)numEdad.Value,
-                        Correo = txtCorreo.Text,
-                        Rol = textoRol
-                    };
-                    ManejadorEmpleados.AgregarEmpleado(nuevoEmpleado);
-                    ManejadorEmpleados.CargarInfoEmpleados(dgvTablaEmpleados);
+                    MessageBox.Show("Se encontraron los siguiente errores : " + Environment.NewLine +
+                         errorMsg,
+                         "Error de validación",
+                         MessageBoxButtons.OK,
+                         MessageBoxIcon.Error);
                 }
-
-                LimpiarEntradasTexto();
             }
             else
             {
-                MessageBox.Show("Se encontraron los siguiente errores : " + Environment.NewLine +
-                     errorMsg,
-                     "Errot de validacion",
+                MessageBox.Show("El DataGridView no se ha inicializado correctamente.",
+                     "Error",
                      MessageBoxButtons.OK,
                      MessageBoxIcon.Error);
             }

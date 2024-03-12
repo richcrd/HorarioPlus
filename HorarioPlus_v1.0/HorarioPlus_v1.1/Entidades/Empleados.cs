@@ -16,6 +16,11 @@ namespace HorarioPlus_v1._1.Datos
         public string Correo { get; set; }
         public string Rol { get; set; }
 
+        public Empleados()
+        {
+
+        }
+
         public Empleados(string id, string nombre, string apellido1, string apellido2, int edad, string correo, string rol)
         {
             this.IdEmpleado = id;

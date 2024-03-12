@@ -64,13 +64,41 @@ namespace HorarioPlus_v1._1.Presentacion
 
             if (string.IsNullOrEmpty(errorMsg))
             {
-                dgvTablaEmpleados.Rows.Add(new object[] { "", 
-                    txtIdEmpleado.Text, 
-                    txtNombre.Text, 
-                    txtPrimerApellido.Text, 
-                    txtSegundoApellido.Text, 
-                    txtCorreo.Text, numEdad.Value.ToString(), 
-                    textoRol});
+                if(dgvTablaEmpleados.SelectedRows.Count > 0)
+                {
+                    string idEmpleadoEditar = dgvTablaEmpleados.SelectedRows[0].Cells[1].Value.ToString();
+                    Empleados empleadoModificado = new Empleados()
+                    {
+                        IdEmpleado = idEmpleadoEditar,
+                        Nombre = txtNombre.Text,
+                        Apellido1 = txtPrimerApellido.Text,
+                        Apellido2 = txtSegundoApellido.Text,
+                        Edad = (int)numEdad.Value,
+                        Correo = txtCorreo.Text,
+                        Rol = textoRol
+                    };
+                    ManejadorEmpleados.ActualizarEmpleado(idEmpleadoEditar, empleadoModificado);
+                    ManejadorEmpleados.CargarInfoEmpleados(dgvTablaEmpleados);
+                }
+                else
+                {
+                    // Si no hay una fila seleccionada, agregar un nuevo empleado
+                    string nuevoIdEmpleado = ManejadorEmpleados.GenerarNuevoIdEmpleado();
+                    Empleados nuevoEmpleado = new Empleados()
+                    {
+
+                        IdEmpleado = nuevoIdEmpleado,
+                        Nombre = txtNombre.Text,
+                        Apellido1 = txtPrimerApellido.Text,
+                        Apellido2 = txtSegundoApellido.Text,
+                        Edad = (int)numEdad.Value,
+                        Correo = txtCorreo.Text,
+                        Rol = textoRol
+                    };
+                    ManejadorEmpleados.AgregarEmpleado(nuevoEmpleado);
+                    ManejadorEmpleados.CargarInfoEmpleados(dgvTablaEmpleados);
+                }
+
                 LimpiarEntradasTexto();
             }
             else
@@ -150,14 +178,11 @@ namespace HorarioPlus_v1._1.Presentacion
             }
         }
 
-        private void btnLimpiarDetalles_Click(object sender, EventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
         {
-            txtNombre.Text = "";
-            txtPrimerApellido.Text = "";
-            txtSegundoApellido.Text = "";
-            txtCorreo.Text = "";
-            numEdad.Value = 0;
-            cbxRol.SelectedIndex = 0;
+            string nuevoIdEmpleado = ManejadorEmpleados.GenerarNuevoIdEmpleado();
+            txtIdEmpleado.Text = nuevoIdEmpleado;
+            LimpiarEntradasTexto();
         }
     }
 }

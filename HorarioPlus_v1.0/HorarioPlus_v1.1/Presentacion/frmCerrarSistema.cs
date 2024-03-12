@@ -18,7 +18,7 @@ namespace HorarioPlus_v1._1.Presentacion
                 string idEmpleado = txtIDconfirmacion.Text;
                 frmLogin Busqueda = new frmLogin(); // Creamos instancia
 
-                Empleados empleado = Busqueda.BuscarEmpleado(idEmpleado); // llamado
+                Empleados empleado = ManejadorEmpleados.BuscarEmpleado(idEmpleado); // llamado
                 if (empleado != null)
                 {
                     if (empleado.Rol == "Administrador")

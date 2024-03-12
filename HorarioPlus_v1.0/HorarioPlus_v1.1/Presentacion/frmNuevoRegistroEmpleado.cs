@@ -37,15 +37,11 @@ namespace HorarioPlus_v1._1.Presentacion
             {
                 if (columna.Visible && columna.Name != "btnSeleccionar")
                 {
-                    // Acceder directamente al encabezado de columna
+                    // Obtener el nombre de la columna
                     string nombreColumna = columna.HeaderText;
 
-                    // Agregar un nuevo elemento al ComboBox
-                    cbxCategoriaBuscar.Items.Add(new OpcionCombo()
-                    {
-                        Valor = columna.Name,
-                        Texto = nombreColumna
-                    });
+                    // Agregar el nombre de la columna directamente al ComboBox
+                    cbxCategoriaBuscar.Items.Add(nombreColumna);
                 }
             }
         }

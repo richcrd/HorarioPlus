@@ -53,7 +53,6 @@ namespace HorarioPlus_v1._1.Presentacion
             string textoRol = rolSeleccionado.Texto;
 
             dgvTablaEmpleados.Rows.Add(new object[] { "", txtIdEmpleado.Text, txtNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text, txtCorreo.Text, numEdad.Value.ToString(),
-                valorRol,
                 textoRol,
             });
             LimpiarEntradasTexto();

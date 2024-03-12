@@ -44,10 +44,14 @@ namespace HorarioPlus_v1._1.Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            string nuevoIdEmpleado = ManejadorEmpleados.GenerarNuevoIdEmpleado();
+
             dgvTablaEmpleados.Rows.Add(new object[] { "", txtIdEmpleado.Text, txtNombre.Text, txtPrimerApellido.Text, txtSegundoApellido.Text, txtCorreo.Text, numEdad.Value.ToString(),
                 ((OpcionCombo)cbxRol.SelectedItem).Valor.ToString(),
                 ((OpcionCombo)cbxRol.SelectedItem).Texto.ToString(),
             });
+            txtIdEmpleado.Text = nuevoIdEmpleado;
+            txtIdEmpleado.ReadOnly = true;
 
             LimpiarEntradasTexto();
         }

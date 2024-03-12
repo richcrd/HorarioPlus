@@ -13,7 +13,27 @@ namespace HorarioPlus_v1._1.Datos
     public class ManejadorEmpleados
     {
         private const string RUTA_ARCHIVO_EMPLEADOS = @"C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\archivos_empleados\Empleados.json";
+        private static int ultimoIdEmpleado = 0;
 
+        static ManejadorEmpleados()
+        {
+            try
+            {
+                string json = File.ReadAllText(RUTA_ARCHIVO_EMPLEADOS);
+                List<Empleados> empleados = JsonSerializer.Deserialize<List<Empleados>>(json);
+
+                foreach(var empleado in empleados)
+                {
+                    int idEmpleado = Convert.ToInt32(empleado.IdEmpleado);
+                    if (idEmpleado > ultimoIdEmpleado)
+                        ultimoIdEmpleado = idEmpleado;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al cargar el archivo de empleados: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         public static void CargarInfoEmpleados(DataGridView dataGridView)
         {
             try
@@ -28,7 +48,7 @@ namespace HorarioPlus_v1._1.Datos
                 {
                     int rowIndex = dataGridView.Rows.Add();
                     dataGridView.Rows[rowIndex].Cells["IdEmpleado"].Value = empleado.IdEmpleado;
-                    dataGridView.Rows[rowIndex].Cells["NombreEmpleado"].Value = empleado.Nombre;
+                    dataGridView.Rows[rowIndex].Cells["Nombre"].Value = empleado.Nombre;
                     dataGridView.Rows[rowIndex].Cells["Apellido1"].Value = empleado.Apellido1;
                     dataGridView.Rows[rowIndex].Cells["Apellido2"].Value = empleado.Apellido2;
                     dataGridView.Rows[rowIndex].Cells["Correo"].Value = empleado.Correo;
@@ -63,6 +83,12 @@ namespace HorarioPlus_v1._1.Datos
                      MessageBoxIcon.Error);
                 return new Empleados();
             }
+        }
+
+        public static string GenerarNuevoIdEmpleado()
+        {
+            ultimoIdEmpleado++;
+            return ultimoIdEmpleado.ToString();
         }
     }
 }

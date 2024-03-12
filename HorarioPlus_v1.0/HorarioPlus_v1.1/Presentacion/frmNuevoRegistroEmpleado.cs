@@ -62,18 +62,30 @@ namespace HorarioPlus_v1._1.Presentacion
 
                 if (string.IsNullOrEmpty(errorMsg))
                 {
-                    dgvTablaEmpleados.Rows.Add(new object[] { "",
-                txtIdEmpleado.Text,
-                txtNombre.Text,
-                txtPrimerApellido.Text,
-                txtSegundoApellido.Text,
-                txtCorreo.Text, numEdad.Value.ToString(),
-                textoRol});
+                    int rowIndex = dgvTablaEmpleados.Rows.Add();
+
+                    if (rowIndex >= 0 && rowIndex < dgvTablaEmpleados.Rows.Count)
+                    {
+                        // Acceder a cada celda de la fila recién agregada y asignarle el valor correspondiente
+                        dgvTablaEmpleados.Rows[rowIndex].Cells[0].Value = "";  // Dejamos la primera celda en blanco según tu código
+                        dgvTablaEmpleados.Rows[rowIndex].Cells[1].Value = txtIdEmpleado.Text;
+                        dgvTablaEmpleados.Rows[rowIndex].Cells[2].Value = txtNombre.Text;
+                        dgvTablaEmpleados.Rows[rowIndex].Cells[3].Value = txtPrimerApellido.Text;
+                        dgvTablaEmpleados.Rows[rowIndex].Cells[4].Value = txtSegundoApellido.Text;
+                        dgvTablaEmpleados.Rows[rowIndex].Cells[5].Value = txtCorreo.Text;
+                        dgvTablaEmpleados.Rows[rowIndex].Cells[6].Value = numEdad.Value.ToString();
+                        dgvTablaEmpleados.Rows[rowIndex].Cells[7].Value = textoRol;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar la fila al DataGridView.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                     LimpiarEntradasTexto();
                 }
                 else
                 {
-                    MessageBox.Show("Se encontraron los siguiente errores : " + Environment.NewLine +
+                    MessageBox.Show("Se encontraron los siguientes errores: " + Environment.NewLine +
                          errorMsg,
                          "Error de validación",
                          MessageBoxButtons.OK,

@@ -317,6 +317,8 @@
             // 
             this.dgvTablaEmpleados.AllowUserToAddRows = false;
             this.dgvTablaEmpleados.AllowUserToDeleteRows = false;
+            this.dgvTablaEmpleados.AllowUserToResizeColumns = false;
+            this.dgvTablaEmpleados.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGray;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dgvTablaEmpleados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -356,6 +358,7 @@
             this.dgvTablaEmpleados.ReadOnly = true;
             this.dgvTablaEmpleados.RowHeadersVisible = false;
             this.dgvTablaEmpleados.RowHeadersWidth = 62;
+            this.dgvTablaEmpleados.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvTablaEmpleados.Size = new System.Drawing.Size(464, 281);
             this.dgvTablaEmpleados.TabIndex = 21;
             // 

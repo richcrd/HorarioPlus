@@ -26,14 +26,14 @@ namespace HorarioPlus_v1._1.Datos
                 
                 foreach(Empleados empleado in empleados)
                 {
-                    dataGridView.Rows.Add(
-                        empleado.IdEmpleado,
-                        empleado.Nombre,
-                        empleado.Apellido1,
-                        empleado.Apellido2,
-                        empleado.Correo,
-                        empleado.Edad,
-                        empleado.Rol);
+                    int rowIndex = dataGridView.Rows.Add();
+                    dataGridView.Rows[rowIndex].Cells["IdEmpleado"].Value = empleado.IdEmpleado;
+                    dataGridView.Rows[rowIndex].Cells["Nombre"].Value = empleado.Nombre;
+                    dataGridView.Rows[rowIndex].Cells["Apellido1"].Value = empleado.Apellido1;
+                    dataGridView.Rows[rowIndex].Cells["Apellido2"].Value = empleado.Apellido2;
+                    dataGridView.Rows[rowIndex].Cells["Correo"].Value = empleado.Correo;
+                    dataGridView.Rows[rowIndex].Cells["Edad"].Value = empleado.Edad;
+                    dataGridView.Rows[rowIndex].Cells["Rol"].Value = empleado.Rol;
                 }
             }
             catch(Exception ex)

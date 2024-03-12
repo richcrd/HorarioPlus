@@ -62,19 +62,20 @@ namespace HorarioPlus_v1._1.Presentacion
 
                 if (string.IsNullOrEmpty(errorMsg))
                 {
+                    // Agregar una nueva fila al DataGridView
                     int rowIndex = dgvTablaEmpleados.Rows.Add();
 
+                    // Verificar si la fila se agregó correctamente antes de asignar valores a las celdas
                     if (rowIndex >= 0 && rowIndex < dgvTablaEmpleados.Rows.Count)
                     {
-                        // Acceder a cada celda de la fila recién agregada y asignarle el valor correspondiente
-                        dgvTablaEmpleados.Rows[rowIndex].Cells[0].Value = "";  // Dejamos la primera celda en blanco según tu código
-                        dgvTablaEmpleados.Rows[rowIndex].Cells[1].Value = txtIdEmpleado.Text;
-                        dgvTablaEmpleados.Rows[rowIndex].Cells[2].Value = txtNombre.Text;
-                        dgvTablaEmpleados.Rows[rowIndex].Cells[3].Value = txtPrimerApellido.Text;
-                        dgvTablaEmpleados.Rows[rowIndex].Cells[4].Value = txtSegundoApellido.Text;
-                        dgvTablaEmpleados.Rows[rowIndex].Cells[5].Value = txtCorreo.Text;
-                        dgvTablaEmpleados.Rows[rowIndex].Cells[6].Value = numEdad.Value.ToString();
-                        dgvTablaEmpleados.Rows[rowIndex].Cells[7].Value = textoRol;
+                        // Asignar valores a las celdas de la nueva fila
+                        dgvTablaEmpleados.Rows[rowIndex].Cells[0].Value = txtIdEmpleado.Text;
+                        dgvTablaEmpleados.Rows[rowIndex].Cells[1].Value = txtNombre.Text;
+                        dgvTablaEmpleados.Rows[rowIndex].Cells[2].Value = txtPrimerApellido.Text;
+                        dgvTablaEmpleados.Rows[rowIndex].Cells[3].Value = txtSegundoApellido.Text;
+                        dgvTablaEmpleados.Rows[rowIndex].Cells[4].Value = txtCorreo.Text;
+                        dgvTablaEmpleados.Rows[rowIndex].Cells[5].Value = numEdad.Value.ToString();
+                        dgvTablaEmpleados.Rows[rowIndex].Cells[6].Value = textoRol;
                     }
                     else
                     {
@@ -94,10 +95,7 @@ namespace HorarioPlus_v1._1.Presentacion
             }
             else
             {
-                MessageBox.Show("El DataGridView no se ha inicializado correctamente.",
-                     "Error",
-                     MessageBoxButtons.OK,
-                     MessageBoxIcon.Error);
+                MessageBox.Show("El DataGridView no se ha inicializado correctamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

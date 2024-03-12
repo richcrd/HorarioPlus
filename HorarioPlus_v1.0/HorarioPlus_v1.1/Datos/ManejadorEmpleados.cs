@@ -28,7 +28,7 @@ namespace HorarioPlus_v1._1.Datos
                 {
                     int rowIndex = dataGridView.Rows.Add();
                     dataGridView.Rows[rowIndex].Cells["IdEmpleado"].Value = empleado.IdEmpleado;
-                    dataGridView.Rows[rowIndex].Cells["Nombre"].Value = empleado.Nombre;
+                    dataGridView.Rows[rowIndex].Cells["NombreEmpleado"].Value = empleado.Nombre;
                     dataGridView.Rows[rowIndex].Cells["Apellido1"].Value = empleado.Apellido1;
                     dataGridView.Rows[rowIndex].Cells["Apellido2"].Value = empleado.Apellido2;
                     dataGridView.Rows[rowIndex].Cells["Correo"].Value = empleado.Correo;

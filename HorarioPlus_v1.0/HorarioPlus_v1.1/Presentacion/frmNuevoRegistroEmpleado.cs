@@ -15,6 +15,8 @@ namespace HorarioPlus_v1._1.Presentacion
 {
     public partial class frmNuevoRegistroEmpleado : Form
     {
+        private bool enModoEdicion = false;
+        private string idEmpleadoEditar;
         public frmNuevoRegistroEmpleado()
         {
             InitializeComponent();
@@ -62,24 +64,32 @@ namespace HorarioPlus_v1._1.Presentacion
 
                 if (string.IsNullOrEmpty(errorMsg))
                 {
-                    // Agregar una nueva fila al DataGridView
-                    int rowIndex = dgvTablaEmpleados.Rows.Add();
-
-                    // Verificar si la fila se agregó correctamente antes de asignar valores a las celdas
-                    if (rowIndex >= 0 && rowIndex < dgvTablaEmpleados.Rows.Count)
+                    if (enModoEdicion)
                     {
-                        // Asignar valores a las celdas de la nueva fila
-                        dgvTablaEmpleados.Rows[rowIndex].Cells[0].Value = txtIdEmpleado.Text;
-                        dgvTablaEmpleados.Rows[rowIndex].Cells[1].Value = txtNombre.Text;
-                        dgvTablaEmpleados.Rows[rowIndex].Cells[2].Value = txtPrimerApellido.Text;
-                        dgvTablaEmpleados.Rows[rowIndex].Cells[3].Value = txtSegundoApellido.Text;
-                        dgvTablaEmpleados.Rows[rowIndex].Cells[4].Value = numEdad.Value.ToString();
-                        dgvTablaEmpleados.Rows[rowIndex].Cells[5].Value = txtCorreo.Text;
-                        dgvTablaEmpleados.Rows[rowIndex].Cells[6].Value = textoRol;
+                        Empleados empleadoModificado = new Empleados()
+                        {
+                            IdEmpleado = txtIdEmpleado.Text,
+                            Nombre = txtNombre.Text,
+                            Apellido1 = txtPrimerApellido.Text,
+                            Apellido2 = txtSegundoApellido.Text,
+                            Edad = (int)numEdad.Value,
+                            Correo = txtCorreo.Text,
+                            Rol = textoRol
+                        };
+
+                        ManejadorEmpleados.ActualizarEmpleado(txtIdEmpleado.Text, empleadoModificado);
+                        enModoEdicion = false; // Salir del modo de edición
                     }
                     else
                     {
-                        MessageBox.Show("Error al agregar la fila al DataGridView.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        dgvTablaEmpleados.Rows.Add(new object[] { "",
+                    txtIdEmpleado.Text,
+                    txtNombre.Text,
+                    txtPrimerApellido.Text,
+                    txtSegundoApellido.Text,
+                    numEdad.Value.ToString(),
+                    txtCorreo.Text,
+                    textoRol});
                     }
 
                     LimpiarEntradasTexto();
@@ -95,9 +105,13 @@ namespace HorarioPlus_v1._1.Presentacion
             }
             else
             {
-                MessageBox.Show("El DataGridView no se ha inicializado correctamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El DataGridView no se ha inicializado correctamente.",
+                     "Error",
+                     MessageBoxButtons.OK,
+                     MessageBoxIcon.Error);
             }
         }
+
 
         private void LimpiarEntradasTexto()
         {
@@ -130,44 +144,34 @@ namespace HorarioPlus_v1._1.Presentacion
         {
             if (dgvTablaEmpleados.SelectedRows.Count > 0)
             {
-                string idEmpleadoModificar = dgvTablaEmpleados.SelectedRows[0].Cells[0].Value.ToString();
+                idEmpleadoEditar = dgvTablaEmpleados.SelectedRows[0].Cells[0].Value.ToString();
+                Empleados empleadoModificar = ManejadorEmpleados.BuscarEmpleado(idEmpleadoEditar);
 
-                // Llama al método BuscarEmpleado para obtener el empleado correspondiente
-                Empleados empleadoModificar = ManejadorEmpleados.BuscarEmpleado(idEmpleadoModificar);
-
-                // Verifica si se encontró un empleado con el id especificado
                 if (empleadoModificar != null)
                 {
-                    // Actualiza los campos del formulario con la información del empleado
+                    enModoEdicion = true; // Establecer el modo de edición
                     txtIdEmpleado.Text = empleadoModificar.IdEmpleado;
                     txtNombre.Text = empleadoModificar.Nombre;
                     txtPrimerApellido.Text = empleadoModificar.Apellido1;
                     txtSegundoApellido.Text = empleadoModificar.Apellido2;
                     numEdad.Value = empleadoModificar.Edad;
                     txtCorreo.Text = empleadoModificar.Correo;
-
-                    // Selecciona el rol correspondiente en el ComboBox
                     cbxRol.SelectedItem = cbxRol.Items.Cast<OpcionCombo>().FirstOrDefault(item => item.Texto == empleadoModificar.Rol);
                 }
                 else
                 {
-                    MessageBox.Show("No se encontró ningún empleado con el ID especificado.",
-                         "Error",
-                         MessageBoxButtons.OK,
-                         MessageBoxIcon.Error);
+                    MessageBox.Show("No se encontró ningún empleado con el ID especificado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("No has seleccionado ningun empleado",
-                     "Error",
-                     MessageBoxButtons.OK,
-                     MessageBoxIcon.Error);
+                MessageBox.Show("No has seleccionado ningún empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            enModoEdicion = false; // Salir del modo de edición
             string nuevoIdEmpleado = ManejadorEmpleados.GenerarNuevoIdEmpleado();
             txtIdEmpleado.Text = nuevoIdEmpleado;
             LimpiarEntradasTexto();

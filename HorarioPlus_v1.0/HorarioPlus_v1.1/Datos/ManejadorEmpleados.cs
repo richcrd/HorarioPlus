@@ -156,12 +156,6 @@ namespace HorarioPlus_v1._1.Datos
             }
         }
 
-        //public static void GuardarCambios(List<Empleados> listaEmpleados)
-        //{
-        //    string json = JsonSerializer.Serialize(listaEmpleados, new JsonSerializerOptions { WriteIndented = true });
-        //    File.WriteAllText(RUTA_ARCHIVO_EMPLEADOS, json);
-        //}
-
         public static void EliminarEmpleado(string id)
         {
             Empleados.RemoveAll(e => e.IdEmpleado.Equals(id));

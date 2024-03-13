@@ -16,7 +16,7 @@ namespace HorarioPlus_v1._1.Datos
         public string Correo { get; set; }
         public string Rol { get; set; }
 
-        public Empleados()
+        public Empleados() // Constructor vacio debido a los archivos json
         {
 
         }

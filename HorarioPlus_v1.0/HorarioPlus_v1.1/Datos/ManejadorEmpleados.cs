@@ -16,7 +16,6 @@ namespace HorarioPlus_v1._1.Datos
     {
         #region VARIABLES && PROPIEDADES
         private const string RUTA_ARCHIVO_EMPLEADOS = @"C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\archivos_empleados\Empleados.json";
-        private static int ultimoIdEmpleado = 0;
         public static List<Empleados> lista_Empleados { get; set; } = new List<Empleados>();
 
         #endregion
@@ -173,13 +172,22 @@ namespace HorarioPlus_v1._1.Datos
         }
 
         // Metodo para eliminar empleado de lista
-        public static void EliminarEmpleado(string id)
+        public static void EliminarEmpleado(List<Empleados> lista_Empleados, string id)
         {
-            lista_Empleados.RemoveAll(e => e.IdEmpleado.Equals(id));
+            int indiceEmpleado = lista_Empleados.FindIndex(e => e.IdEmpleado == id);
+            if(indiceEmpleado != -1)
+            {
+                lista_Empleados.RemoveAt(indiceEmpleado);
+                GuardarArchivoJson();
+            }
+            else
+            {
+                MessageBox.Show("No se encontro el empleado con el ID especificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         // Metodo para actualizar empleado de lista
-        public static void ActualizarEmpleado(string idEmpleadoOrigen, Empleados empleadoModificado)
+        public static void ActualizarEmpleado(List<Empleados> lista_Empleados, string idEmpleadoOrigen, Empleados empleadoModificado)
         {
             int indiceEmpleadoOriginal = lista_Empleados.FindIndex(e => e.IdEmpleado == idEmpleadoOrigen);
             if (indiceEmpleadoOriginal != -1)

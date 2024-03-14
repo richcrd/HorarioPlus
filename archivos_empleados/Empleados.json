@@ -49,9 +49,9 @@
     "Nombre": "Nombre",
     "Apellido1": "apellido1",
     "Apellido2": "apellido2",
-    "Edad": 32,
+    "Edad": 30,
     "Correo": "test2@gmail.com",
-    "Rol": "Empleado"
+    "Rol": "Administrador"
   },
   {
     "IdEmpleado": "7",

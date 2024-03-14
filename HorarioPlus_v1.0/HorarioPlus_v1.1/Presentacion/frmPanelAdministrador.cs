@@ -54,6 +54,7 @@ namespace HorarioPlus_v1._1.Presentacion
 
         private void btnAjustes_Click(object sender, EventArgs e)
         {
+            // Codigo temporal
             DialogResult resultadoCierre = MessageBox.Show("Confirmas el cierre del sistema", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (resultadoCierre == DialogResult.OK)
             {
@@ -90,37 +91,30 @@ namespace HorarioPlus_v1._1.Presentacion
         {
             AbrirFormulario((IconMenuItem)sender, new frmAsistencias());
         }
-
         private void subMenuNuevoRegistro_Click_1(object sender, EventArgs e)
         {
             AbrirFormulario(menuEmpleados, new frmNuevoRegistroEmpleado());
         }
-
         private void subMenuHorarios_Click(object sender, EventArgs e)
         {
             AbrirFormulario(menuEmpleados, new frmHorarioEmpleados());
         }
-
         private void subMenuPagos_Click(object sender, EventArgs e)
         {
             AbrirFormulario(menuPagos, new frmPagos());
         }
-
         private void subMenuDeducciones_Click(object sender, EventArgs e)
         {
             AbrirFormulario(menuPagos, new frmDeducciones());
         }
-
         private void menuNominas_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmNominas());
         }
-
         private void menuCarnet_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmCarnet());
         }
-
         private void menuActividad_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmActividad());

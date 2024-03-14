@@ -5,12 +5,9 @@ using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
-using HorarioPlus_v1._1.Presentacion;
-using HorarioPlus_v1._1.Presentacion.Utilidades;
 
 
 namespace HorarioPlus_v1._1.Datos

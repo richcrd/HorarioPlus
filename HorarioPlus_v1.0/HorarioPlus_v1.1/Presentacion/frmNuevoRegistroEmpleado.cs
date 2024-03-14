@@ -15,15 +15,18 @@ namespace HorarioPlus_v1._1.Presentacion
 {
     public partial class frmNuevoRegistroEmpleado : Form
     {
+        #region VARIABLES
         private bool enModoEdicion = false;
         private string idEmpleadoEditar;
+        #endregion
+
+        #region INICIO && CIERRE FORMULARIO
         public frmNuevoRegistroEmpleado()
         {
             InitializeComponent();
-            ManejadorEmpleados.InicializarRepositorioEmpleado();
-            ManejadorEmpleados.CargarInfoEmpleados(dgvTablaEmpleados);
+            ManejadorEmpleados.CargarArchivoJson(dgvTablaEmpleados);
+            ManejadorEmpleados.MostrarTabla(dgvTablaEmpleados);
         }
-
         private void frmNuevoRegistroEmpleado_Load(object sender, EventArgs e)
         {
             cbxRol.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Empleado" });
@@ -44,6 +47,13 @@ namespace HorarioPlus_v1._1.Presentacion
                 }
             }
         }
+        private void frmPanelAdministrador_FormClosing(object sender, FormClosedEventArgs e)
+        {
+            ManejadorEmpleados.GuardarArchivoJson();
+        }
+        #endregion
+
+        #region CRUD - EVENTOS CLICK
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -83,13 +93,13 @@ namespace HorarioPlus_v1._1.Presentacion
                     else
                     {
                         dgvTablaEmpleados.Rows.Add(new object[] { "",
-                    txtIdEmpleado.Text,
-                    txtNombre.Text,
-                    txtPrimerApellido.Text,
-                    txtSegundoApellido.Text,
-                    numEdad.Value.ToString(),
-                    txtCorreo.Text,
-                    textoRol});
+                        txtIdEmpleado.Text,
+                        txtNombre.Text,
+                        txtPrimerApellido.Text,
+                        txtSegundoApellido.Text,
+                        numEdad.Value.ToString(),
+                        txtCorreo.Text,
+                        textoRol});
                     }
 
                     LimpiarEntradasTexto();
@@ -112,24 +122,13 @@ namespace HorarioPlus_v1._1.Presentacion
             }
         }
 
-
-        private void LimpiarEntradasTexto()
-        {
-            txtNombre.Text = "";
-            txtPrimerApellido.Text = "";
-            txtSegundoApellido.Text = "";
-            txtCorreo.Text = "";
-            numEdad.Value = 0;
-            cbxRol.SelectedIndex = 0;
-        }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvTablaEmpleados.SelectedRows.Count > 0)
             {
                 string idEmpleadoEliminar = dgvTablaEmpleados.SelectedRows[0].Cells[0].Value.ToString();
                 ManejadorEmpleados.EliminarEmpleado(idEmpleadoEliminar);
-                ManejadorEmpleados.CargarInfoEmpleados(dgvTablaEmpleados);
+                ManejadorEmpleados.MostrarTabla(dgvTablaEmpleados);
             }
             else
             {
@@ -175,6 +174,17 @@ namespace HorarioPlus_v1._1.Presentacion
             string nuevoIdEmpleado = ManejadorEmpleados.GenerarNuevoIdEmpleado();
             txtIdEmpleado.Text = nuevoIdEmpleado;
             LimpiarEntradasTexto();
+        }
+        #endregion
+
+        public void LimpiarEntradasTexto()
+        {
+            txtNombre.Text = "";
+            txtPrimerApellido.Text = "";
+            txtSegundoApellido.Text = "";
+            txtCorreo.Text = "";
+            numEdad.Value = 0;
+            cbxRol.SelectedIndex = 0;
         }
     }
 }

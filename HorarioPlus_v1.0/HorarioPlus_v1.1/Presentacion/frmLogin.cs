@@ -1,11 +1,6 @@
 ﻿using HorarioPlus_v1._1.Datos;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text.Json;
 using System.Windows.Forms;
-using Microsoft.VisualBasic;
-using System.Drawing;
 
 namespace HorarioPlus_v1._1.Presentacion
 {
@@ -17,12 +12,13 @@ namespace HorarioPlus_v1._1.Presentacion
             timerHora.Start();
         }
 
+        // Metodo para mostrar reloj en pantalla
         private void timerHora_Tick(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
 
-        #region Eventos Click
+        // Evento Boton Marcar
         private void btnMarcarRegistro_Click(object sender, EventArgs e)
         {
             bool volverAMarcar = true;
@@ -30,22 +26,22 @@ namespace HorarioPlus_v1._1.Presentacion
             while (volverAMarcar)
             {
                 string idEmpleado = txtEmpleadoId.Text;
-                Empleados empleado = ManejadorEmpleados.BuscarEmpleado(idEmpleado);
+                Empleados empleado_encontrado = ManejadorEmpleados.BuscarEmpleado(idEmpleado);
 
-                if (empleado != null)
+                if (empleado_encontrado != null)
                 {
-                    string mensaje = $"{empleado.Nombre} {empleado.Apellido1} registrado a las {DateTime.Now.ToString("hh:mm:ss tt")}";
+                    string mensaje = $"{empleado_encontrado.Nombre} {empleado_encontrado.Apellido1} registrado a las {DateTime.Now.ToString("hh:mm:ss tt")}";
                     MessageBox.Show(mensaje, "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtEmpleadoId.Clear();
 
-                    if (empleado.Rol == "Administrador")
+                    if (empleado_encontrado.Rol == "Administrador")
                     {
                         DialogResult resultado = MessageBox.Show("¿Desea ingresar al sistema como administrador?", "Confirmar Acceso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                         if (resultado == DialogResult.Yes)
                         {
                             this.Hide();
-                            frmPanelAdministrador frmPanelAdmin = new frmPanelAdministrador(empleado.Nombre, empleado.Apellido1);
+                            frmPanelAdministrador frmPanelAdmin = new frmPanelAdministrador(empleado_encontrado.Nombre, empleado_encontrado.Apellido1);
                             frmPanelAdmin.ShowDialog();
                             volverAMarcar = false; // No volver a marcar si el usuario decide ingresar como administrador
                         }
@@ -70,6 +66,5 @@ namespace HorarioPlus_v1._1.Presentacion
                 }
             }
         }
-        #endregion
     }
 }

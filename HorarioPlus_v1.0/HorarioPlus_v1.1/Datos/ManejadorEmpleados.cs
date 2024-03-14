@@ -21,28 +21,6 @@ namespace HorarioPlus_v1._1.Datos
 
         #endregion
 
-        #region MANEJADOR_EMPLEADO_COMMENTED
-        //static ManejadorEmpleados()
-        //{
-        //    try
-        //    {
-        //        string json = File.ReadAllText(RUTA_ARCHIVO_EMPLEADOS);
-        //        List<Empleados> empleados = JsonSerializer.Deserialize<List<Empleados>>(json);
-
-        //        foreach (var empleado in empleados)
-        //        {
-        //            int idEmpleado = Convert.ToInt32(empleado.IdEmpleado);
-        //            if (idEmpleado > ultimoIdEmpleado)
-        //                ultimoIdEmpleado = idEmpleado;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error al cargar el archivo de empleados: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
-        #endregion
-
         #region CRUD
         // Metodo para cargar archivo json
         public static List<Empleados> CargarArchivoJson()

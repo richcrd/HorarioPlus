@@ -73,6 +73,12 @@ namespace HorarioPlus_v1._1.Presentacion
         {
             EliminarEmpleado();
         }
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            nuevoBotonPresionado = false;
+            btnNuevo.Enabled = true;
+            LimpiarEntradasTexto();
+        }
         #endregion
 
         #region NUEVOS METODOS PROCEDIMIENTOS
@@ -124,6 +130,13 @@ namespace HorarioPlus_v1._1.Presentacion
                     btnNuevo.Enabled = true;
                 }
             }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado ningun empleado para agregar.",
+                         "Error",
+                         MessageBoxButtons.OK,
+                         MessageBoxIcon.Error);
+            }
         }
         private void ActualizarEmpleadoExistente()
         {
@@ -170,7 +183,7 @@ namespace HorarioPlus_v1._1.Presentacion
             }
             else
             {
-                MessageBox.Show("No se ha seleccionaod ningun empleado para actualizar.",
+                MessageBox.Show("No se ha seleccionado ningun empleado para actualizar.",
                          "Error",
                          MessageBoxButtons.OK,
                          MessageBoxIcon.Error);

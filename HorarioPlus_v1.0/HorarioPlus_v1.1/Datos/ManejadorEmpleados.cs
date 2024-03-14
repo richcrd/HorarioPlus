@@ -21,7 +21,8 @@ namespace HorarioPlus_v1._1.Datos
         private const string RUTA_ARCHIVO_EMPLEADOS = @"C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\archivos_empleados\Empleados.json";
 
         private static int ultimoIdEmpleado = 0;
-        public static List<Empleados> lista_Empleados { get; set; }
+        public static List<Empleados> lista_Empleados { get; set; } = new List<Empleados>();
+
         #endregion
 
         #region MANEJADOR_EMPLEADO_COMMENTED

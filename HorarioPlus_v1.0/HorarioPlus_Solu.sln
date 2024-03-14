@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorarioPlus_v1.0", "HorarioPlus_v1.0\HorarioPlus_v1.0.csproj", "{0B913B4F-7002-4C46-B3FE-8AA1802519D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorarioPlus_v1.1", "HorarioPlus_v1.1\HorarioPlus_v1.1.csproj", "{2F7DFA79-BF06-4F2B-BE23-7AE9342A6B7C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorarioPlus", "HorarioPlus_v1.1\HorarioPlus.csproj", "{2F7DFA79-BF06-4F2B-BE23-7AE9342A6B7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

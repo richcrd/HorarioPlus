@@ -16,19 +16,22 @@ namespace HorarioPlus_v1._1.Presentacion
     public partial class frmNuevoRegistroEmpleado : Form
     {
         #region VARIABLES
+        private List<Empleados> lista_Empleados = new List<Empleados>();
         private bool enModoEdicion = false;
         private string idEmpleadoEditar;
+        private string nuevoIdEmpleado;
+        private bool nuevoBotonPresionado;
         #endregion
 
         #region INICIO && CIERRE FORMULARIO
         public frmNuevoRegistroEmpleado()
         {
             InitializeComponent();
-            ManejadorEmpleados.CargarArchivoJson(dgvTablaEmpleados);
-            ManejadorEmpleados.MostrarTabla(dgvTablaEmpleados);
         }
         private void frmNuevoRegistroEmpleado_Load(object sender, EventArgs e)
         {
+            lista_Empleados = ManejadorEmpleados.CargarArchivoJson();
+            ManejadorEmpleados.MostrarTabla(dgvTablaEmpleados, lista_Empleados);
             cbxRol.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Empleado" });
             cbxRol.Items.Add(new OpcionCombo() { Valor = 2, Texto = "Administrador" });
             cbxRol.DisplayMember = "Texto";
@@ -54,60 +57,112 @@ namespace HorarioPlus_v1._1.Presentacion
         #endregion
 
         #region CRUD - EVENTOS CLICK
-
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            NuevoEmpleado();
+        }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (dgvTablaEmpleados != null)
+            InsertarNuevoEmpleado();
+        }
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            ActualizarEmpleadoExistente();
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            EliminarEmpleado();
+        }
+        #endregion
+
+        #region NUEVOS METODOS PROCEDIMIENTOS
+        private void NuevoEmpleado()
+        {
+            if (!nuevoBotonPresionado) // !enModoEdicion
+            {
+                nuevoBotonPresionado = true;
+                btnNuevo.Enabled = false;
+                nuevoIdEmpleado = ManejadorEmpleados.GenerarNuevoIdEmpleado();
+                txtIdEmpleado.Text = nuevoIdEmpleado;
+                LimpiarEntradasTexto();
+            }
+        }
+        private void InsertarNuevoEmpleado()
+        {
+            if (!string.IsNullOrEmpty(nuevoIdEmpleado))
             {
                 OpcionCombo rolSeleccionado = (OpcionCombo)cbxRol.SelectedItem;
                 string textoRol = rolSeleccionado.Texto;
 
-                ManejadorEmpleados manejadorEmpleados = new ManejadorEmpleados();
-
-                string errorMsg = manejadorEmpleados.ValidarCamposEmpleado(
-                    txtIdEmpleado.Text,
-                    txtNombre.Text,
-                    txtPrimerApellido.Text,
-                    txtSegundoApellido.Text,
-                    txtCorreo.Text,
-                    (int)numEdad.Value);
-
-                if (string.IsNullOrEmpty(errorMsg))
-                {
-                    if (enModoEdicion)
-                    {
-                        Empleados empleadoModificado = new Empleados()
-                        {
-                            IdEmpleado = txtIdEmpleado.Text,
-                            Nombre = txtNombre.Text,
-                            Apellido1 = txtPrimerApellido.Text,
-                            Apellido2 = txtSegundoApellido.Text,
-                            Edad = (int)numEdad.Value,
-                            Correo = txtCorreo.Text,
-                            Rol = textoRol
-                        };
-
-                        ManejadorEmpleados.ActualizarEmpleado(txtIdEmpleado.Text, empleadoModificado);
-                        enModoEdicion = false; // Salir del modo de edición
-                    }
-                    else
-                    {
-                        dgvTablaEmpleados.Rows.Add(new object[] { "",
-                        txtIdEmpleado.Text,
+                ManejadorEmpleados manejador_Empleados = new ManejadorEmpleados();
+                string errorMsg = manejador_Empleados.ValidarCamposEmpleado
+                    (
                         txtNombre.Text,
                         txtPrimerApellido.Text,
                         txtSegundoApellido.Text,
-                        numEdad.Value.ToString(),
-                        txtCorreo.Text,
-                        textoRol});
-                    }
+                        (int)numEdad.Value,
+                        txtCorreo.Text
+                    );
+                if (string.IsNullOrEmpty(errorMsg))
+                {
+                    Empleados nuevoEmpleado = new Empleados()
+                    {
+                        IdEmpleado = nuevoIdEmpleado,
+                        Nombre = txtNombre.Text,
+                        Apellido1 = txtPrimerApellido.Text,
+                        Apellido2 = txtSegundoApellido.Text,
+                        Edad = (int)numEdad.Value,
+                        Correo = txtCorreo.Text,
+                        Rol = textoRol
+                    };
 
+                    ManejadorEmpleados.AgregarEmpleado(nuevoEmpleado, dgvTablaEmpleados);
+                    ManejadorEmpleados.MostrarTabla(dgvTablaEmpleados, lista_Empleados);
                     LimpiarEntradasTexto();
+
+                    nuevoBotonPresionado = false;
+                    btnNuevo.Enabled = true;
+                }
+            }
+        }
+        private void ActualizarEmpleadoExistente()
+        {
+            if (enModoEdicion)
+            {
+                OpcionCombo rolSeleccionado = (OpcionCombo)cbxCategoriaBuscar.SelectedItem;
+                string textoRol = rolSeleccionado.Texto;
+
+                ManejadorEmpleados manejador_Empleados = new ManejadorEmpleados();
+                string errorMsg = manejador_Empleados.ValidarCamposEmpleado
+                     (
+                         txtNombre.Text,
+                         txtPrimerApellido.Text,
+                         txtSegundoApellido.Text,
+                         (int)numEdad.Value,
+                         txtCorreo.Text
+                     );
+                if (string.IsNullOrEmpty(errorMsg))
+                {
+                    Empleados empleadoModificado = new Empleados() // Crear objeto Empleados con los datos modificados
+                    {
+                        IdEmpleado = idEmpleadoEditar,
+                        Nombre = txtNombre.Text,
+                        Apellido1 = txtPrimerApellido.Text,
+                        Apellido2 = txtSegundoApellido.Text,
+                        Edad = (int)numEdad.Value,
+                        Correo = txtCorreo.Text,
+                        Rol = textoRol
+                    };
+
+                    ManejadorEmpleados.ActualizarEmpleado(idEmpleadoEditar, empleadoModificado);
+                    ManejadorEmpleados.MostrarTabla(dgvTablaEmpleados, lista_Empleados);
+                    LimpiarEntradasTexto();
+                    enModoEdicion = false;
                 }
                 else
                 {
                     MessageBox.Show("Se encontraron los siguientes errores: " + Environment.NewLine +
-                         errorMsg,
+                        errorMsg,
                          "Error de validación",
                          MessageBoxButtons.OK,
                          MessageBoxIcon.Error);
@@ -115,68 +170,28 @@ namespace HorarioPlus_v1._1.Presentacion
             }
             else
             {
-                MessageBox.Show("El DataGridView no se ha inicializado correctamente.",
-                     "Error",
-                     MessageBoxButtons.OK,
-                     MessageBoxIcon.Error);
+                MessageBox.Show("No se ha seleccionaod ningun empleado para actualizar.",
+                         "Error",
+                         MessageBoxButtons.OK,
+                         MessageBoxIcon.Error);
             }
         }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void EliminarEmpleado()
         {
-            if (dgvTablaEmpleados.SelectedRows.Count > 0)
+            if(dgvTablaEmpleados.SelectedRows.Count > 0)
             {
                 string idEmpleadoEliminar = dgvTablaEmpleados.SelectedRows[0].Cells[0].Value.ToString();
                 ManejadorEmpleados.EliminarEmpleado(idEmpleadoEliminar);
-                ManejadorEmpleados.MostrarTabla(dgvTablaEmpleados);
+                ManejadorEmpleados.MostrarTabla(dgvTablaEmpleados, lista_Empleados);
             }
             else
             {
-                MessageBox.Show("No has seleccionado ningun empleado",
-                     "Error",
-                     MessageBoxButtons.OK,
-                     MessageBoxIcon.Error);
+                MessageBox.Show("No se ha seleccionado ningun empleado para eliminar",
+                         "Error",
+                         MessageBoxButtons.OK,
+                         MessageBoxIcon.Error);
             }
         }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            if (dgvTablaEmpleados.SelectedRows.Count > 0)
-            {
-                idEmpleadoEditar = dgvTablaEmpleados.SelectedRows[0].Cells[0].Value.ToString();
-                Empleados empleadoModificar = ManejadorEmpleados.BuscarEmpleado(idEmpleadoEditar);
-
-                if (empleadoModificar != null)
-                {
-                    enModoEdicion = true; // Establecer el modo de edición
-                    txtIdEmpleado.Text = empleadoModificar.IdEmpleado;
-                    txtNombre.Text = empleadoModificar.Nombre;
-                    txtPrimerApellido.Text = empleadoModificar.Apellido1;
-                    txtSegundoApellido.Text = empleadoModificar.Apellido2;
-                    numEdad.Value = empleadoModificar.Edad;
-                    txtCorreo.Text = empleadoModificar.Correo;
-                    cbxRol.SelectedItem = cbxRol.Items.Cast<OpcionCombo>().FirstOrDefault(item => item.Texto == empleadoModificar.Rol);
-                }
-                else
-                {
-                    MessageBox.Show("No se encontró ningún empleado con el ID especificado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("No has seleccionado ningún empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            enModoEdicion = false; // Salir del modo de edición
-            string nuevoIdEmpleado = ManejadorEmpleados.GenerarNuevoIdEmpleado();
-            txtIdEmpleado.Text = nuevoIdEmpleado;
-            LimpiarEntradasTexto();
-        }
-        #endregion
-
         public void LimpiarEntradasTexto()
         {
             txtNombre.Text = "";
@@ -186,5 +201,6 @@ namespace HorarioPlus_v1._1.Presentacion
             numEdad.Value = 0;
             cbxRol.SelectedIndex = 0;
         }
+        #endregion
     }
 }

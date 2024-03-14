@@ -16,7 +16,6 @@ namespace HorarioPlus_v1._1.Datos
     {
         #region VARIABLES && PROPIEDADES
         private const string RUTA_ARCHIVO_EMPLEADOS = @"C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\archivos_empleados\Empleados.json";
-
         private static int ultimoIdEmpleado = 0;
         public static List<Empleados> lista_Empleados { get; set; } = new List<Empleados>();
 
@@ -46,7 +45,7 @@ namespace HorarioPlus_v1._1.Datos
 
         #region CRUD
         // Metodo para cargar archivo json
-        public static void CargarArchivoJson(DataGridView dgvTablaEmpleados)
+        public static List<Empleados> CargarArchivoJson()
         {
             if (File.Exists(RUTA_ARCHIVO_EMPLEADOS))
             {
@@ -54,31 +53,33 @@ namespace HorarioPlus_v1._1.Datos
                 {
                     string json = File.ReadAllText(RUTA_ARCHIVO_EMPLEADOS);
                     // Deserializando el archivo JSON en una lista de objetos Empleado
-                    List<Empleados> lista_Empleados = JsonSerializer.Deserialize<List<Empleados>>(json);
+                    lista_Empleados = JsonSerializer.Deserialize<List<Empleados>>(json);
+                    return lista_Empleados;
+                    #region COMMENTED AREA
+                    //foreach (Empleados empleado in lista_Empleados)
+                    //{
+                    //    // Agregar una nueva fila al DataGridView
+                    //    int rowIndex = dgvTablaEmpleados.Rows.Add();
 
-                    foreach (Empleados empleado in lista_Empleados)
-                    {
-                        // Agregar una nueva fila al DataGridView
-                        int rowIndex = dgvTablaEmpleados.Rows.Add();
-
-                        // Verificar si la fila se agregó correctamente antes de asignar valores a las celdas
-                        if (rowIndex >= 0 && rowIndex < dgvTablaEmpleados.Rows.Count)
-                        {
-                            // Asignar valores a las celdas de la nueva fila
-                            dgvTablaEmpleados.Rows[rowIndex].Cells[0].Value = empleado.IdEmpleado;
-                            dgvTablaEmpleados.Rows[rowIndex].Cells[1].Value = empleado.Nombre;
-                            dgvTablaEmpleados.Rows[rowIndex].Cells[2].Value = empleado.Apellido1;
-                            dgvTablaEmpleados.Rows[rowIndex].Cells[3].Value = empleado.Apellido2;
-                            dgvTablaEmpleados.Rows[rowIndex].Cells[4].Value = empleado.Edad;
-                            dgvTablaEmpleados.Rows[rowIndex].Cells[5].Value = empleado.Correo;
-                            dgvTablaEmpleados.Rows[rowIndex].Cells[6].Value = empleado.Rol;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error al agregar la fila al DataGridView.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                } 
+                    //    // Verificar si la fila se agregó correctamente antes de asignar valores a las celdas
+                    //    if (rowIndex >= 0 && rowIndex < dgvTablaEmpleados.Rows.Count)
+                    //    {
+                    //        // Asignar valores a las celdas de la nueva fila
+                    //        dgvTablaEmpleados.Rows[rowIndex].Cells[0].Value = empleado.IdEmpleado;
+                    //        dgvTablaEmpleados.Rows[rowIndex].Cells[1].Value = empleado.Nombre;
+                    //        dgvTablaEmpleados.Rows[rowIndex].Cells[2].Value = empleado.Apellido1;
+                    //        dgvTablaEmpleados.Rows[rowIndex].Cells[3].Value = empleado.Apellido2;
+                    //        dgvTablaEmpleados.Rows[rowIndex].Cells[4].Value = empleado.Edad;
+                    //        dgvTablaEmpleados.Rows[rowIndex].Cells[5].Value = empleado.Correo;
+                    //        dgvTablaEmpleados.Rows[rowIndex].Cells[6].Value = empleado.Rol;
+                    //    }
+                    //    else
+                    //    {
+                    //        MessageBox.Show("Error al agregar la fila al DataGridView.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //    }
+                    //}
+                    #endregion
+                }
                 catch (Exception error) 
                 {
                     MessageBox.Show("Error al cargar el archivo de empleados en el DataGridView: " + 
@@ -92,15 +93,18 @@ namespace HorarioPlus_v1._1.Datos
             {
                 MessageBox.Show("Error: No se encuentra el archivo especificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            return null;
         }
 
         // Metodo para guardar lista en archivo json
         public static void GuardarArchivoJson()
         {
-            string json = JsonSerializer.Serialize(lista_Empleados);
+            JsonSerializerOptions opcionSerializar = new JsonSerializerOptions { WriteIndented = true };
+            string json = JsonSerializer.Serialize(lista_Empleados, opcionSerializar);
             File.WriteAllText(RUTA_ARCHIVO_EMPLEADOS, json);
         }
 
+        // Metodo para BuscarEmpleado usando como parametro id
         public static Empleados BuscarEmpleado(string idEmpleado)
         {
             try
@@ -130,15 +134,31 @@ namespace HorarioPlus_v1._1.Datos
         // Metodo para generar un nuevo id
         public static string GenerarNuevoIdEmpleado()
         {
-            ultimoIdEmpleado++;
-            return ultimoIdEmpleado.ToString();
+            int ultimoIdEmpleado = ObtenerUltimoIdEmpleado();
+            int nuevoIdEmpleado = ultimoIdEmpleado + 1;
+            return nuevoIdEmpleado.ToString();
+        }
+
+        //Metodo para obtener el ultimo ID empleado existente
+        public static int ObtenerUltimoIdEmpleado()
+        {
+            int maxId = 0;
+            foreach(var empleado in lista_Empleados)
+            {
+                int idEmpleado = Convert.ToInt32(empleado.IdEmpleado);
+                if(idEmpleado > maxId)
+                {
+                    maxId = idEmpleado;
+                }
+            }
+            return maxId;
         }
 
         // Metodo para mostrar tabla actualizada
-        public static void MostrarTabla(DataGridView dgvTablaEmpleados)
+        public static void MostrarTabla(DataGridView dgvTablaEmpleados, List<Empleados> lista_Empleados)
         {
-            dgvTablaEmpleados.Rows.Clear();
-            foreach(var empleado in lista_Empleados)
+            dgvTablaEmpleados.Rows.Clear(); // Limpiar tabla antes de agregar los empleados
+            foreach (var empleado in lista_Empleados)
             {
                 dgvTablaEmpleados.Rows.Add(empleado.IdEmpleado, empleado.Nombre, empleado.Apellido1, empleado.Apellido2, empleado.Edad, empleado.Correo, empleado.Rol);
             }
@@ -208,11 +228,10 @@ namespace HorarioPlus_v1._1.Datos
         }
 
         // Metodo para validarCampos en inputs
-        public string ValidarCamposEmpleado(string idEmpleado, string nombre, string primerApellido, string segundoApellido, string correo, int edad)
+        public string ValidarCamposEmpleado(string nombre, string primerApellido, string segundoApellido, int edad, string correo)
         {
             string errorMsg = "";
 
-            errorMsg += ValidarCampoVacio(idEmpleado, "El id del empleado no puede estar vacio");
             errorMsg += ValidarCampoVacio(nombre, "El nombre del empleado no puede estar vacio");
             errorMsg += ValidarCampoVacio(primerApellido, "El primer apellido del empleado no puede estar vacio");
             errorMsg += ValidarCampoVacio(segundoApellido, "El segundo apellido del empleado no puede estar vacio");

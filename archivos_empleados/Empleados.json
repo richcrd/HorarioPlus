@@ -12,8 +12,8 @@
     "IdEmpleado": "2",
     "Nombre": "Juan",
     "Apellido1": "Rodriguez",
-    "Apellido2": "",
-    "Edad": 20,
+    "Apellido2": "Apellido2",
+    "Edad": 21,
     "Correo": "juan@gmail.com",
     "Rol": "Empleado"
   },
@@ -21,9 +21,36 @@
     "IdEmpleado": "3",
     "Nombre": "Carlos",
     "Apellido1": "Lopez",
-    "Apellido2": "",
+    "Apellido2": "test2",
     "Edad": 20,
     "Correo": "richard@gmail.com",
     "Rol": "Administrador"
+  },
+  {
+    "IdEmpleado": "4",
+    "Nombre": "Alex",
+    "Apellido1": "test1",
+    "Apellido2": "test2",
+    "Edad": 19,
+    "Correo": "alex@gmail.com",
+    "Rol": "Empleado"
+  },
+  {
+    "IdEmpleado": "5",
+    "Nombre": "Michael",
+    "Apellido1": "test1",
+    "Apellido2": "test2",
+    "Edad": 24,
+    "Correo": "michael@gmail.com",
+    "Rol": "Administrador"
+  },
+  {
+    "IdEmpleado": "6",
+    "Nombre": "NombreTest1",
+    "Apellido1": "apellido1",
+    "Apellido2": "apellido2",
+    "Edad": 35,
+    "Correo": "test2@gmail.com",
+    "Rol": "Empleado"
   }
 ]

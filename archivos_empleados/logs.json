@@ -1,0 +1,14 @@
+[
+    {
+        "FechaLogs": "2024-03-15T10:30:00",
+        "AccionLogs": "Acción realizada",
+        "IdEmpleado": "ID123",
+        "NombreEmpleado": "Nombre Test 1"
+    },
+    {
+        "FechaLogs": "2024-03-15T11:00:00",
+        "AccionLogs": "Otra acción realizada",
+        "IdEmpleado": "ID456",
+        "NombreEmpleado": "Nombre Test 2"
+    }
+]

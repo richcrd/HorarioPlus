@@ -250,19 +250,6 @@
             this.menuCarnet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.menuCarnet.Click += new System.EventHandler(this.menuCarnet_Click);
             // 
-            // menuActividad
-            // 
-            this.menuActividad.IconChar = FontAwesome.Sharp.IconChar.List;
-            this.menuActividad.IconColor = System.Drawing.Color.Black;
-            this.menuActividad.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuActividad.IconSize = 35;
-            this.menuActividad.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.menuActividad.Name = "menuActividad";
-            this.menuActividad.Size = new System.Drawing.Size(69, 54);
-            this.menuActividad.Text = "Actividad";
-            this.menuActividad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.menuActividad.Click += new System.EventHandler(this.menuActividad_Click);
-            // 
             // pnlContenedor
             // 
             this.pnlContenedor.BackColor = System.Drawing.Color.Silver;

@@ -115,10 +115,6 @@ namespace HorarioPlus_v1._1.Presentacion
         {
             AbrirFormulario((IconMenuItem)sender, new frmCarnet());
         }
-        private void menuActividad_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario((IconMenuItem)sender, new frmActividad());
-        }
         #endregion
     }
 }

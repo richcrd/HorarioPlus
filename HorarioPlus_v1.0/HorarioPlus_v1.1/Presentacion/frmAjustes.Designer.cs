@@ -55,6 +55,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.btnCancelarDatos = new FontAwesome.Sharp.IconButton();
+            this.btnGuardarDatos = new FontAwesome.Sharp.IconButton();
             this.pnlDatosEmpresa.SuspendLayout();
             this.pnlAjustesSistema.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPagoHora)).BeginInit();
@@ -145,7 +147,6 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(190, 20);
             this.txtCorreo.TabIndex = 34;
-            this.txtCorreo.Text = "empresa@gmail.com";
             // 
             // label8
             // 
@@ -164,7 +165,6 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(190, 20);
             this.txtTelefono.TabIndex = 32;
-            this.txtTelefono.Text = "+505 2266-2344";
             // 
             // label7
             // 
@@ -183,7 +183,6 @@
             this.txtDireccionEmpresa.Name = "txtDireccionEmpresa";
             this.txtDireccionEmpresa.Size = new System.Drawing.Size(190, 20);
             this.txtDireccionEmpresa.TabIndex = 30;
-            this.txtDireccionEmpresa.Text = "Calle 50";
             // 
             // label5
             // 
@@ -202,7 +201,6 @@
             this.txtNombreEmpresa.Name = "txtNombreEmpresa";
             this.txtNombreEmpresa.Size = new System.Drawing.Size(190, 20);
             this.txtNombreEmpresa.TabIndex = 28;
-            this.txtNombreEmpresa.Text = "Empresa S,A";
             // 
             // label4
             // 
@@ -364,6 +362,8 @@
             // panelContenedor
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panelContenedor.Controls.Add(this.btnCancelarDatos);
+            this.panelContenedor.Controls.Add(this.btnGuardarDatos);
             this.panelContenedor.Controls.Add(this.pnlAjustesSistema);
             this.panelContenedor.Controls.Add(this.btnCancelar);
             this.panelContenedor.Controls.Add(this.pnlDatosEmpresa);
@@ -375,6 +375,46 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(770, 450);
             this.panelContenedor.TabIndex = 32;
+            // 
+            // btnCancelarDatos
+            // 
+            this.btnCancelarDatos.BackColor = System.Drawing.Color.DimGray;
+            this.btnCancelarDatos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelarDatos.FlatAppearance.BorderSize = 0;
+            this.btnCancelarDatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarDatos.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarDatos.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnCancelarDatos.IconColor = System.Drawing.Color.White;
+            this.btnCancelarDatos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelarDatos.IconSize = 1;
+            this.btnCancelarDatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelarDatos.Location = new System.Drawing.Point(174, 369);
+            this.btnCancelarDatos.Name = "btnCancelarDatos";
+            this.btnCancelarDatos.Size = new System.Drawing.Size(85, 34);
+            this.btnCancelarDatos.TabIndex = 39;
+            this.btnCancelarDatos.Text = "Cancelar";
+            this.btnCancelarDatos.UseVisualStyleBackColor = false;
+            this.btnCancelarDatos.Click += new System.EventHandler(this.btnCancelarDatos_Click);
+            // 
+            // btnGuardarDatos
+            // 
+            this.btnGuardarDatos.BackColor = System.Drawing.Color.Green;
+            this.btnGuardarDatos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardarDatos.FlatAppearance.BorderSize = 0;
+            this.btnGuardarDatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarDatos.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarDatos.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnGuardarDatos.IconColor = System.Drawing.Color.White;
+            this.btnGuardarDatos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardarDatos.IconSize = 1;
+            this.btnGuardarDatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardarDatos.Location = new System.Drawing.Point(83, 369);
+            this.btnGuardarDatos.Name = "btnGuardarDatos";
+            this.btnGuardarDatos.Size = new System.Drawing.Size(85, 34);
+            this.btnGuardarDatos.TabIndex = 38;
+            this.btnGuardarDatos.Text = "Guardar";
+            this.btnGuardarDatos.UseVisualStyleBackColor = false;
+            this.btnGuardarDatos.Click += new System.EventHandler(this.btnGuardarDatos_Click);
             // 
             // frmAjustes
             // 
@@ -425,5 +465,7 @@
         private System.Windows.Forms.DateTimePicker dtpHoraEntrada;
         private System.Windows.Forms.DateTimePicker dtpEntradaTarde;
         private System.Windows.Forms.DateTimePicker dtpHoraSalida;
+        private FontAwesome.Sharp.IconButton btnCancelarDatos;
+        private FontAwesome.Sharp.IconButton btnGuardarDatos;
     }
 }

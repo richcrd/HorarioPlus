@@ -28,284 +28,353 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelContenedor = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.btnActualizar = new FontAwesome.Sharp.IconButton();
-            this.btnNuevo = new FontAwesome.Sharp.IconButton();
-            this.btnEliminar = new FontAwesome.Sharp.IconButton();
-            this.cbxRol = new System.Windows.Forms.ComboBox();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtSegundoApellido = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtPrimerApellido = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtIdEmpleado = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.cbxDiaLaborales = new System.Windows.Forms.ComboBox();
+            this.btnCerrarSistema = new FontAwesome.Sharp.IconButton();
+            this.btnGuardar = new FontAwesome.Sharp.IconButton();
+            this.pnlDatosEmpresa = new System.Windows.Forms.Panel();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtDireccionEmpresa = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtNombreEmpresa = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnCancelar = new FontAwesome.Sharp.IconButton();
+            this.pnlAjustesSistema = new System.Windows.Forms.Panel();
+            this.dtpHoraEntrada = new System.Windows.Forms.DateTimePicker();
+            this.dtpEntradaTarde = new System.Windows.Forms.DateTimePicker();
+            this.dtpHoraSalida = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.numPagoHora = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panelContenedor = new System.Windows.Forms.Panel();
+            this.pnlDatosEmpresa.SuspendLayout();
+            this.pnlAjustesSistema.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPagoHora)).BeginInit();
             this.panelContenedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.White;
+            this.lblTitulo.Location = new System.Drawing.Point(250, 13);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(265, 28);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "CONFIGURACION SISTEMA";
+            // 
+            // cbxDiaLaborales
+            // 
+            this.cbxDiaLaborales.FormattingEnabled = true;
+            this.cbxDiaLaborales.Location = new System.Drawing.Point(13, 54);
+            this.cbxDiaLaborales.Name = "cbxDiaLaborales";
+            this.cbxDiaLaborales.Size = new System.Drawing.Size(190, 21);
+            this.cbxDiaLaborales.TabIndex = 16;
+            // 
+            // btnCerrarSistema
+            // 
+            this.btnCerrarSistema.BackColor = System.Drawing.Color.Crimson;
+            this.btnCerrarSistema.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSistema.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSistema.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSistema.ForeColor = System.Drawing.Color.White;
+            this.btnCerrarSistema.IconChar = FontAwesome.Sharp.IconChar.UserShield;
+            this.btnCerrarSistema.IconColor = System.Drawing.Color.White;
+            this.btnCerrarSistema.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrarSistema.IconSize = 1;
+            this.btnCerrarSistema.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSistema.Location = new System.Drawing.Point(622, 17);
+            this.btnCerrarSistema.Name = "btnCerrarSistema";
+            this.btnCerrarSistema.Size = new System.Drawing.Size(99, 29);
+            this.btnCerrarSistema.TabIndex = 19;
+            this.btnCerrarSistema.Text = "Cerrar Sistema";
+            this.btnCerrarSistema.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrarSistema.UseVisualStyleBackColor = false;
+            this.btnCerrarSistema.Click += new System.EventHandler(this.btnCerrarSistema_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.Green;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnGuardar.IconColor = System.Drawing.Color.White;
+            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardar.IconSize = 1;
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.Location = new System.Drawing.Point(545, 369);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(85, 34);
+            this.btnGuardar.TabIndex = 35;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // pnlDatosEmpresa
+            // 
+            this.pnlDatosEmpresa.Controls.Add(this.txtCorreo);
+            this.pnlDatosEmpresa.Controls.Add(this.label8);
+            this.pnlDatosEmpresa.Controls.Add(this.txtTelefono);
+            this.pnlDatosEmpresa.Controls.Add(this.label7);
+            this.pnlDatosEmpresa.Controls.Add(this.txtDireccionEmpresa);
+            this.pnlDatosEmpresa.Controls.Add(this.label5);
+            this.pnlDatosEmpresa.Controls.Add(this.txtNombreEmpresa);
+            this.pnlDatosEmpresa.Controls.Add(this.label4);
+            this.pnlDatosEmpresa.Controls.Add(this.label3);
+            this.pnlDatosEmpresa.Location = new System.Drawing.Point(35, 114);
+            this.pnlDatosEmpresa.Name = "pnlDatosEmpresa";
+            this.pnlDatosEmpresa.Size = new System.Drawing.Size(224, 240);
+            this.pnlDatosEmpresa.TabIndex = 26;
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.BackColor = System.Drawing.Color.Silver;
+            this.txtCorreo.Location = new System.Drawing.Point(7, 191);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(190, 20);
+            this.txtCorreo.TabIndex = 34;
+            this.txtCorreo.Text = "empresa@gmail.com";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(7, 174);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 13);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Correo Electronico:";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.BackColor = System.Drawing.Color.Silver;
+            this.txtTelefono.Location = new System.Drawing.Point(7, 147);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(190, 20);
+            this.txtTelefono.TabIndex = 32;
+            this.txtTelefono.Text = "+505 2266-2344";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(7, 130);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "Telefono:";
+            // 
+            // txtDireccionEmpresa
+            // 
+            this.txtDireccionEmpresa.BackColor = System.Drawing.Color.Silver;
+            this.txtDireccionEmpresa.Location = new System.Drawing.Point(7, 99);
+            this.txtDireccionEmpresa.Name = "txtDireccionEmpresa";
+            this.txtDireccionEmpresa.Size = new System.Drawing.Size(190, 20);
+            this.txtDireccionEmpresa.TabIndex = 30;
+            this.txtDireccionEmpresa.Text = "Calle 50";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(7, 82);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Direccion:";
+            // 
+            // txtNombreEmpresa
+            // 
+            this.txtNombreEmpresa.BackColor = System.Drawing.Color.Silver;
+            this.txtNombreEmpresa.Location = new System.Drawing.Point(7, 54);
+            this.txtNombreEmpresa.Name = "txtNombreEmpresa";
+            this.txtNombreEmpresa.Size = new System.Drawing.Size(190, 20);
+            this.txtNombreEmpresa.TabIndex = 28;
+            this.txtNombreEmpresa.Text = "Empresa S,A";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(7, 37);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 13);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Nombre de la Empresa:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 20);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Datos Empresa";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.DimGray;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnCancelar.IconColor = System.Drawing.Color.White;
+            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelar.IconSize = 1;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(636, 369);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(85, 34);
+            this.btnCancelar.TabIndex = 36;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            // 
+            // pnlAjustesSistema
+            // 
+            this.pnlAjustesSistema.Controls.Add(this.dtpHoraEntrada);
+            this.pnlAjustesSistema.Controls.Add(this.dtpEntradaTarde);
+            this.pnlAjustesSistema.Controls.Add(this.dtpHoraSalida);
+            this.pnlAjustesSistema.Controls.Add(this.label14);
+            this.pnlAjustesSistema.Controls.Add(this.label6);
+            this.pnlAjustesSistema.Controls.Add(this.label2);
+            this.pnlAjustesSistema.Controls.Add(this.label11);
+            this.pnlAjustesSistema.Controls.Add(this.numPagoHora);
+            this.pnlAjustesSistema.Controls.Add(this.label1);
+            this.pnlAjustesSistema.Controls.Add(this.label13);
+            this.pnlAjustesSistema.Controls.Add(this.cbxDiaLaborales);
+            this.pnlAjustesSistema.Location = new System.Drawing.Point(291, 114);
+            this.pnlAjustesSistema.Name = "pnlAjustesSistema";
+            this.pnlAjustesSistema.Size = new System.Drawing.Size(430, 240);
+            this.pnlAjustesSistema.TabIndex = 37;
+            // 
+            // dtpHoraEntrada
+            // 
+            this.dtpHoraEntrada.CustomFormat = "HH:mm";
+            this.dtpHoraEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpHoraEntrada.Location = new System.Drawing.Point(13, 148);
+            this.dtpHoraEntrada.Name = "dtpHoraEntrada";
+            this.dtpHoraEntrada.ShowUpDown = true;
+            this.dtpHoraEntrada.Size = new System.Drawing.Size(190, 20);
+            this.dtpHoraEntrada.TabIndex = 53;
+            // 
+            // dtpEntradaTarde
+            // 
+            this.dtpEntradaTarde.CustomFormat = "HH:mm";
+            this.dtpEntradaTarde.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEntradaTarde.Location = new System.Drawing.Point(13, 193);
+            this.dtpEntradaTarde.Name = "dtpEntradaTarde";
+            this.dtpEntradaTarde.ShowUpDown = true;
+            this.dtpEntradaTarde.Size = new System.Drawing.Size(190, 20);
+            this.dtpEntradaTarde.TabIndex = 52;
+            // 
+            // dtpHoraSalida
+            // 
+            this.dtpHoraSalida.CustomFormat = "HH:mm";
+            this.dtpHoraSalida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpHoraSalida.Location = new System.Drawing.Point(224, 53);
+            this.dtpHoraSalida.Name = "dtpHoraSalida";
+            this.dtpHoraSalida.ShowUpDown = true;
+            this.dtpHoraSalida.Size = new System.Drawing.Size(190, 20);
+            this.dtpHoraSalida.TabIndex = 51;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(221, 37);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(65, 13);
+            this.label14.TabIndex = 49;
+            this.label14.Text = "Hora Salida:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(10, 177);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(78, 13);
+            this.label6.TabIndex = 47;
+            this.label6.Text = "Entrada Tarde:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(10, 132);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "Hora Entrada:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(13, 37);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 13);
+            this.label11.TabIndex = 43;
+            this.label11.Text = "Dias Laborales:";
+            // 
+            // numPagoHora
+            // 
+            this.numPagoHora.BackColor = System.Drawing.Color.Silver;
+            this.numPagoHora.Location = new System.Drawing.Point(13, 99);
+            this.numPagoHora.Name = "numPagoHora";
+            this.numPagoHora.Size = new System.Drawing.Size(190, 20);
+            this.numPagoHora.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(13, 83);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Pago por Hora:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(3, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(124, 20);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Ajustes Sistema";
             // 
             // panelContenedor
             // 
-            this.panelContenedor.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelContenedor.Controls.Add(this.iconButton1);
-            this.panelContenedor.Controls.Add(this.btnActualizar);
-            this.panelContenedor.Controls.Add(this.btnNuevo);
-            this.panelContenedor.Controls.Add(this.btnEliminar);
-            this.panelContenedor.Controls.Add(this.cbxRol);
-            this.panelContenedor.Controls.Add(this.txtCorreo);
-            this.panelContenedor.Controls.Add(this.label7);
-            this.panelContenedor.Controls.Add(this.iconButton2);
-            this.panelContenedor.Controls.Add(this.label6);
-            this.panelContenedor.Controls.Add(this.numericUpDown1);
-            this.panelContenedor.Controls.Add(this.label1);
-            this.panelContenedor.Controls.Add(this.txtSegundoApellido);
-            this.panelContenedor.Controls.Add(this.label4);
-            this.panelContenedor.Controls.Add(this.txtPrimerApellido);
-            this.panelContenedor.Controls.Add(this.label3);
-            this.panelContenedor.Controls.Add(this.txtNombre);
-            this.panelContenedor.Controls.Add(this.label2);
-            this.panelContenedor.Controls.Add(this.txtIdEmpleado);
-            this.panelContenedor.Controls.Add(this.label8);
+            this.panelContenedor.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panelContenedor.Controls.Add(this.pnlAjustesSistema);
+            this.panelContenedor.Controls.Add(this.btnCancelar);
+            this.panelContenedor.Controls.Add(this.pnlDatosEmpresa);
+            this.panelContenedor.Controls.Add(this.btnGuardar);
+            this.panelContenedor.Controls.Add(this.btnCerrarSistema);
             this.panelContenedor.Controls.Add(this.lblTitulo);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelContenedor.Location = new System.Drawing.Point(0, 0);
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(770, 450);
             this.panelContenedor.TabIndex = 32;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.Gray;
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 1;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(120, 378);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(85, 23);
-            this.iconButton1.TabIndex = 25;
-            this.iconButton1.Text = "Cancelar";
-            this.iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.btnActualizar.IconColor = System.Drawing.Color.White;
-            this.btnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnActualizar.IconSize = 15;
-            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(31, 407);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(83, 23);
-            this.btnActualizar.TabIndex = 24;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.Color.Gray;
-            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevo.FlatAppearance.BorderSize = 0;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.Add;
-            this.btnNuevo.IconColor = System.Drawing.Color.White;
-            this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNuevo.IconSize = 15;
-            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(106, 69);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(112, 23);
-            this.btnNuevo.TabIndex = 23;
-            this.btnNuevo.Text = "Nuevo Registro";
-            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Crimson;
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
-            this.btnEliminar.IconColor = System.Drawing.Color.White;
-            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminar.IconSize = 15;
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(120, 407);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(85, 23);
-            this.btnEliminar.TabIndex = 19;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // cbxRol
-            // 
-            this.cbxRol.FormattingEnabled = true;
-            this.cbxRol.Location = new System.Drawing.Point(28, 341);
-            this.cbxRol.Name = "cbxRol";
-            this.cbxRol.Size = new System.Drawing.Size(190, 21);
-            this.cbxRol.TabIndex = 16;
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Location = new System.Drawing.Point(28, 300);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(190, 20);
-            this.txtCorreo.TabIndex = 15;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 283);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Correo";
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.ForeColor = System.Drawing.Color.White;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
-            this.iconButton2.IconColor = System.Drawing.Color.White;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 15;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(31, 378);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(83, 23);
-            this.iconButton2.TabIndex = 17;
-            this.iconButton2.Text = "Insertar";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton2.UseVisualStyleBackColor = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 325);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(23, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Rol";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(28, 258);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(190, 20);
-            this.numericUpDown1.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 242);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Edad";
-            // 
-            // txtSegundoApellido
-            // 
-            this.txtSegundoApellido.Location = new System.Drawing.Point(28, 212);
-            this.txtSegundoApellido.Name = "txtSegundoApellido";
-            this.txtSegundoApellido.Size = new System.Drawing.Size(190, 20);
-            this.txtSegundoApellido.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 196);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Segundo Apellido";
-            // 
-            // txtPrimerApellido
-            // 
-            this.txtPrimerApellido.Location = new System.Drawing.Point(28, 168);
-            this.txtPrimerApellido.Name = "txtPrimerApellido";
-            this.txtPrimerApellido.Size = new System.Drawing.Size(190, 20);
-            this.txtPrimerApellido.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 151);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Primer Apellido";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(28, 120);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(190, 20);
-            this.txtNombre.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Nombre";
-            // 
-            // txtIdEmpleado
-            // 
-            this.txtIdEmpleado.BackColor = System.Drawing.Color.Silver;
-            this.txtIdEmpleado.Location = new System.Drawing.Point(28, 70);
-            this.txtIdEmpleado.Name = "txtIdEmpleado";
-            this.txtIdEmpleado.ReadOnly = true;
-            this.txtIdEmpleado.Size = new System.Drawing.Size(72, 20);
-            this.txtIdEmpleado.TabIndex = 2;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(28, 53);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 13);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "ID Empleado";
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(23, 12);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(179, 28);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Detalle Empleado";
             // 
             // frmAjustes
             // 
@@ -316,35 +385,45 @@
             this.MinimumSize = new System.Drawing.Size(788, 489);
             this.Name = "frmAjustes";
             this.Text = "frmAjustes";
+            this.pnlDatosEmpresa.ResumeLayout(false);
+            this.pnlDatosEmpresa.PerformLayout();
+            this.pnlAjustesSistema.ResumeLayout(false);
+            this.pnlAjustesSistema.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPagoHora)).EndInit();
             this.panelContenedor.ResumeLayout(false);
             this.panelContenedor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelContenedor;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton btnActualizar;
-        private FontAwesome.Sharp.IconButton btnNuevo;
-        private FontAwesome.Sharp.IconButton btnEliminar;
-        private System.Windows.Forms.ComboBox cbxRol;
-        private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.Label label7;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtSegundoApellido;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtPrimerApellido;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtIdEmpleado;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.ComboBox cbxDiaLaborales;
+        private FontAwesome.Sharp.IconButton btnCerrarSistema;
+        private FontAwesome.Sharp.IconButton btnGuardar;
+        private System.Windows.Forms.Panel pnlDatosEmpresa;
+        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtDireccionEmpresa;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtNombreEmpresa;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private FontAwesome.Sharp.IconButton btnCancelar;
+        private System.Windows.Forms.Panel pnlAjustesSistema;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown numPagoHora;
+        private System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DateTimePicker dtpHoraEntrada;
+        private System.Windows.Forms.DateTimePicker dtpEntradaTarde;
+        private System.Windows.Forms.DateTimePicker dtpHoraSalida;
     }
 }

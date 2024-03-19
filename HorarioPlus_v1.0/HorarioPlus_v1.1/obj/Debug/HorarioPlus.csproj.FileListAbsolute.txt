@@ -31,3 +31,4 @@ C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\Horari
 C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus.csproj.CopyComplete
 C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1.1.exe
 C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1.1.pdb
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1._1.Presentacion.frmAjustes.resources

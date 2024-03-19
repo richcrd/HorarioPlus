@@ -95,9 +95,9 @@
             this.btnCerrarSesionAdmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrarSesionAdmin.IconSize = 15;
             this.btnCerrarSesionAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesionAdmin.Location = new System.Drawing.Point(679, 9);
+            this.btnCerrarSesionAdmin.Location = new System.Drawing.Point(654, 9);
             this.btnCerrarSesionAdmin.Name = "btnCerrarSesionAdmin";
-            this.btnCerrarSesionAdmin.Size = new System.Drawing.Size(70, 23);
+            this.btnCerrarSesionAdmin.Size = new System.Drawing.Size(95, 23);
             this.btnCerrarSesionAdmin.TabIndex = 8;
             this.btnCerrarSesionAdmin.Text = "Cerrar Sesion";
             this.btnCerrarSesionAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -116,7 +116,7 @@
             this.btnAjustes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAjustes.IconSize = 15;
             this.btnAjustes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAjustes.Location = new System.Drawing.Point(603, 9);
+            this.btnAjustes.Location = new System.Drawing.Point(578, 10);
             this.btnAjustes.Name = "btnAjustes";
             this.btnAjustes.Size = new System.Drawing.Size(70, 23);
             this.btnAjustes.TabIndex = 9;
@@ -185,7 +185,7 @@
             // subMenuHorarios
             // 
             this.subMenuHorarios.Name = "subMenuHorarios";
-            this.subMenuHorarios.Size = new System.Drawing.Size(188, 30);
+            this.subMenuHorarios.Size = new System.Drawing.Size(155, 22);
             this.subMenuHorarios.Text = "Horarios";
             this.subMenuHorarios.Click += new System.EventHandler(this.subMenuHorarios_Click);
             // 
@@ -210,7 +210,7 @@
             this.subMenuPagos.IconColor = System.Drawing.Color.Black;
             this.subMenuPagos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuPagos.Name = "subMenuPagos";
-            this.subMenuPagos.Size = new System.Drawing.Size(188, 30);
+            this.subMenuPagos.Size = new System.Drawing.Size(142, 22);
             this.subMenuPagos.Text = "Pagos";
             this.subMenuPagos.Click += new System.EventHandler(this.subMenuPagos_Click);
             // 
@@ -220,7 +220,7 @@
             this.subMenuDeducciones.IconColor = System.Drawing.Color.Black;
             this.subMenuDeducciones.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuDeducciones.Name = "subMenuDeducciones";
-            this.subMenuDeducciones.Size = new System.Drawing.Size(188, 30);
+            this.subMenuDeducciones.Size = new System.Drawing.Size(142, 22);
             this.subMenuDeducciones.Text = "Deducciones";
             this.subMenuDeducciones.Click += new System.EventHandler(this.subMenuDeducciones_Click);
             // 
@@ -249,6 +249,14 @@
             this.menuCarnet.Text = "Carnet";
             this.menuCarnet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.menuCarnet.Click += new System.EventHandler(this.menuCarnet_Click);
+            // 
+            // menuActividad
+            // 
+            this.menuActividad.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.menuActividad.IconColor = System.Drawing.Color.Black;
+            this.menuActividad.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuActividad.Name = "menuActividad";
+            this.menuActividad.Size = new System.Drawing.Size(36, 54);
             // 
             // pnlContenedor
             // 

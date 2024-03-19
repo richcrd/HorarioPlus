@@ -54,12 +54,8 @@ namespace HorarioPlus_v1._1.Presentacion
 
         private void btnAjustes_Click(object sender, EventArgs e)
         {
-            // Codigo temporal
-            DialogResult resultadoCierre = MessageBox.Show("Confirmas el cierre del sistema", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            if (resultadoCierre == DialogResult.OK)
-            {
-                Application.Exit();
-            }
+            frmAjustes formulario_Ajustes = new frmAjustes();
+            formulario_Ajustes.ShowDialog();
         }
         #endregion
 

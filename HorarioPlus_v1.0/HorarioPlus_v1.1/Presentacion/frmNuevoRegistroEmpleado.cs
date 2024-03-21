@@ -1,10 +1,13 @@
 ﻿using HorarioPlus_v1._1.Datos;
 using HorarioPlus_v1._1.Presentacion.Utilidades;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -289,5 +292,58 @@ namespace HorarioPlus_v1._1.Presentacion
             empleadoSeleccionado = SeleccionarEmpleado();
         }
         #endregion
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            // Crea un nuevo documento PDF
+            Document doc = new Document();
+            try
+            {
+                // Especifica la ubicación donde guardar el PDF
+                string filePath = @"C:\ruta\al\archivo.pdf";
+                PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
+
+                // Abre el documento para escribir
+                doc.Open();
+
+                // Añade un título al documento
+                doc.Add(new Paragraph("Tabla de Datos"));
+
+                // Crea una tabla PDF
+                PdfPTable table = new PdfPTable(dgvTablaEmpleados.Columns.Count);
+
+                // Añade los encabezados de columna a la tabla
+                for (int i = 0; i < dgvTablaEmpleados.Columns.Count; i++)
+                {
+                    table.AddCell(new Phrase(dgvTablaEmpleados.Columns[i].HeaderText));
+                }
+
+                // Añade las filas de datos a la tabla
+                for (int i = 0; i < dgvTablaEmpleados.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dgvTablaEmpleados.Columns.Count; j++)
+                    {
+                        if (dgvTablaEmpleados.Rows[i].Cells[j].Value != null)
+                        {
+                            table.AddCell(new Phrase(dgvTablaEmpleados.Rows[i].Cells[j].Value.ToString()));
+                        }
+                    }
+                }
+
+                // Añade la tabla al documento
+                doc.Add(table);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar el PDF: " + ex.Message);
+            }
+            finally
+            {
+                // Cierra el documento
+                doc.Close();
+            }
+
+            MessageBox.Show("PDF generado exitosamente.");
+        }
     }
 }

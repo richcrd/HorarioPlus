@@ -33,3 +33,7 @@ C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\Horari
 C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1._1.Presentacion.frmAjustes.resources
 C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1._1.Presentacion.frmDeducciones.resources
 C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1._1.Presentacion.frmPagos.resources
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\itextsharp.dll
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\itextsharp.xml
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1._1.Presentacion.frmNominas.resources

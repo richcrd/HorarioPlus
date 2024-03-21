@@ -17,7 +17,6 @@ namespace HorarioPlus_v1._1.Datos
         #region VARIABLES && PROPIEDADES
         private const string RUTA_ARCHIVO_EMPLEADOS = @"C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\archivos_empleados\Empleados.json";
         public static List<Empleados> lista_Empleados { get; set; } = new List<Empleados>();
-
         #endregion
 
         #region CRUD
@@ -32,30 +31,6 @@ namespace HorarioPlus_v1._1.Datos
                     // Deserializando el archivo JSON en una lista de objetos Empleado
                     lista_Empleados = JsonSerializer.Deserialize<List<Empleados>>(json);
                     return lista_Empleados;
-                    #region COMMENTED AREA
-                    //foreach (Empleados empleado in lista_Empleados)
-                    //{
-                    //    // Agregar una nueva fila al DataGridView
-                    //    int rowIndex = dgvTablaEmpleados.Rows.Add();
-
-                    //    // Verificar si la fila se agregó correctamente antes de asignar valores a las celdas
-                    //    if (rowIndex >= 0 && rowIndex < dgvTablaEmpleados.Rows.Count)
-                    //    {
-                    //        // Asignar valores a las celdas de la nueva fila
-                    //        dgvTablaEmpleados.Rows[rowIndex].Cells[0].Value = empleado.IdEmpleado;
-                    //        dgvTablaEmpleados.Rows[rowIndex].Cells[1].Value = empleado.Nombre;
-                    //        dgvTablaEmpleados.Rows[rowIndex].Cells[2].Value = empleado.Apellido1;
-                    //        dgvTablaEmpleados.Rows[rowIndex].Cells[3].Value = empleado.Apellido2;
-                    //        dgvTablaEmpleados.Rows[rowIndex].Cells[4].Value = empleado.Edad;
-                    //        dgvTablaEmpleados.Rows[rowIndex].Cells[5].Value = empleado.Correo;
-                    //        dgvTablaEmpleados.Rows[rowIndex].Cells[6].Value = empleado.Rol;
-                    //    }
-                    //    else
-                    //    {
-                    //        MessageBox.Show("Error al agregar la fila al DataGridView.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //    }
-                    //}
-                    #endregion
                 }
                 catch (Exception error) 
                 {
@@ -137,7 +112,7 @@ namespace HorarioPlus_v1._1.Datos
             dgvTablaEmpleados.Rows.Clear(); // Limpiar tabla antes de agregar los empleados
             foreach (var empleado in lista_Empleados)
             {
-                dgvTablaEmpleados.Rows.Add(empleado.IdEmpleado, empleado.Nombre, empleado.Apellido1, empleado.Apellido2, empleado.Edad, empleado.Correo, empleado.Rol);
+                dgvTablaEmpleados.Rows.Add(empleado.IdEmpleado, empleado.Nombre, empleado.Apellido1, empleado.Apellido2, empleado.Edad, empleado.Correo, empleado.Rol, empleado.PagoPorHoras, empleado.TotalHorasAcumuladas, empleado.SalarioNeto, empleado.HorarioEmpleado);
             }
         }
 
@@ -146,6 +121,11 @@ namespace HorarioPlus_v1._1.Datos
         {
             try
             {
+                empleadoNuevo.PagoPorHoras = 0;
+                empleadoNuevo.TotalHorasAcumuladas = 0;
+                empleadoNuevo.SalarioNeto = 0;
+                empleadoNuevo.HorarioEmpleado = "";
+
                 lista_Empleados.Add(empleadoNuevo);
                 GuardarArchivoJson();
 

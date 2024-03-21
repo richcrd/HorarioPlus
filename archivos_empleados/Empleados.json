@@ -6,7 +6,11 @@
     "Apellido2": "Castro",
     "Edad": 20,
     "Correo": "richard12@gmail.com",
-    "Rol": "Administrador"
+    "Rol": "Administrador",
+    "PagoPorHoras": 0,
+    "TotalHorasAcumuladas": 0,
+    "SalarioNeto": 0,
+    "HorarioEmpleado": ""
   },
   {
     "IdEmpleado": "2",
@@ -15,16 +19,24 @@
     "Apellido2": "Apellido2",
     "Edad": 21,
     "Correo": "juan@gmail.com",
-    "Rol": "Administrador"
+    "Rol": "Administrador",
+    "PagoPorHoras": 0,
+    "TotalHorasAcumuladas": 0,
+    "SalarioNeto": 0,
+    "HorarioEmpleado": ""
   },
   {
     "IdEmpleado": "3",
     "Nombre": "Carlos",
-    "Apellido1": "Lopez",
+    "Apellido1": "apellido1",
     "Apellido2": "apellido2",
     "Edad": 20,
     "Correo": "carlos@gmail.com",
-    "Rol": "Empleado"
+    "Rol": "Empleado",
+    "PagoPorHoras": 0,
+    "TotalHorasAcumuladas": 0,
+    "SalarioNeto": 0,
+    "HorarioEmpleado": ""
   },
   {
     "IdEmpleado": "4",
@@ -33,7 +45,11 @@
     "Apellido2": "test2",
     "Edad": 20,
     "Correo": "alex@gmail.com",
-    "Rol": "Empleado"
+    "Rol": "Empleado",
+    "PagoPorHoras": 0,
+    "TotalHorasAcumuladas": 0,
+    "SalarioNeto": 0,
+    "HorarioEmpleado": ""
   },
   {
     "IdEmpleado": "5",
@@ -42,7 +58,11 @@
     "Apellido2": "test2",
     "Edad": 24,
     "Correo": "michael@gmail.com",
-    "Rol": "Administrador"
+    "Rol": "Empleado",
+    "PagoPorHoras": 0,
+    "TotalHorasAcumuladas": 0,
+    "SalarioNeto": 0,
+    "HorarioEmpleado": ""
   },
   {
     "IdEmpleado": "6",
@@ -51,7 +71,11 @@
     "Apellido2": "apellido2",
     "Edad": 30,
     "Correo": "test2@gmail.com",
-    "Rol": "Administrador"
+    "Rol": "Empleado",
+    "PagoPorHoras": 0,
+    "TotalHorasAcumuladas": 0,
+    "SalarioNeto": 0,
+    "HorarioEmpleado": ""
   },
   {
     "IdEmpleado": "7",
@@ -60,7 +84,11 @@
     "Apellido2": "apellido2",
     "Edad": 20,
     "Correo": "test4@gmail.com",
-    "Rol": "Empleado"
+    "Rol": "Empleado",
+    "PagoPorHoras": 0,
+    "TotalHorasAcumuladas": 0,
+    "SalarioNeto": 0,
+    "HorarioEmpleado": ""
   },
   {
     "IdEmpleado": "8",
@@ -69,6 +97,36 @@
     "Apellido2": "test2",
     "Edad": 19,
     "Correo": "abigail@gmail.com",
-    "Rol": "Empleado"
+    "Rol": "Empleado",
+    "PagoPorHoras": 0,
+    "TotalHorasAcumuladas": 0,
+    "SalarioNeto": 0,
+    "HorarioEmpleado": ""
+  },
+  {
+    "IdEmpleado": "9",
+    "Nombre": "test",
+    "Apellido1": "test",
+    "Apellido2": "test",
+    "Edad": 19,
+    "Correo": "test@gmail.com",
+    "Rol": "Empleado",
+    "PagoPorHoras": 0,
+    "TotalHorasAcumuladas": 0,
+    "SalarioNeto": 0,
+    "HorarioEmpleado": ""
+  },
+  {
+    "IdEmpleado": "10",
+    "Nombre": "test",
+    "Apellido1": "test",
+    "Apellido2": "test",
+    "Edad": 20,
+    "Correo": "test@gmail.com",
+    "Rol": "Empleado",
+    "PagoPorHoras": 0,
+    "TotalHorasAcumuladas": 0,
+    "SalarioNeto": 0,
+    "HorarioEmpleado": ""
   }
 ]

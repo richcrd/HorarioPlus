@@ -38,17 +38,6 @@ namespace HorarioPlus_v1._1.Presentacion
             cbxRol.ValueMember = "Valor";
             cbxRol.SelectedIndex = 0;
 
-            foreach (DataGridViewColumn columna in dgvTablaEmpleados.Columns)
-            {
-                if (columna.Visible && columna.Name != "btnSeleccionar")
-                {
-                    // Obtener el nombre de la columna
-                    string nombreColumna = columna.HeaderText;
-
-                    // Agregar el nombre de la columna directamente al ComboBox
-                    cbxCategoriaBuscar.Items.Add(nombreColumna);
-                }
-            }
             dgvTablaEmpleados.SelectionChanged += SeleccionEmpleado_SelectionChanged;
         }
         private void frmPanelAdministrador_FormClosing(object sender, FormClosedEventArgs e)
@@ -79,6 +68,35 @@ namespace HorarioPlus_v1._1.Presentacion
             nuevoBotonPresionado = false;
             btnNuevo.Enabled = true;
             LimpiarEntradasTexto();
+        }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string idEmpleadoBuscar = txtBuscar.Text.Trim();
+            if (!string.IsNullOrEmpty(idEmpleadoBuscar))
+            {
+                Empleados empleadoEncontrado = ManejadorEmpleados.BuscarEmpleado(idEmpleadoBuscar);
+                if (empleadoEncontrado != null)
+                {
+                    lista_Empleados.Clear();
+                    lista_Empleados.Add(empleadoEncontrado);
+                    ManejadorEmpleados.MostrarTabla(dgvTablaEmpleados, lista_Empleados);
+                }
+                else
+                {
+                    MessageBox.Show("Empleado no encontrado", "Error", MessageBoxButtons.OK);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor ingrese un ID de empelado para buscar", "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Text = "";
+            lista_Empleados = ManejadorEmpleados.CargarArchivoJson();
+            ManejadorEmpleados.MostrarTabla(dgvTablaEmpleados, lista_Empleados);
         }
         #endregion
 
@@ -206,7 +224,8 @@ namespace HorarioPlus_v1._1.Presentacion
         {
             if(empleadoSeleccionado != null)
             {
-                DialogResult resultadoEliminacion = MessageBox.Show($"Estas seguro que deseas eliminar a: {empleadoSeleccionado.Nombre} {empleadoSeleccionado.Apellido1} de los archivos?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                DialogResult resultadoEliminacion = MessageBox.Show($"Estas seguro que deseas eliminar a: {empleadoSeleccionado.Nombre} {empleadoSeleccionado.Apellido1} de los archivos?", 
+                    "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (resultadoEliminacion == DialogResult.OK)
                 {
                     ManejadorEmpleados.EliminarEmpleado(lista_Empleados, empleadoSeleccionado.IdEmpleado);
@@ -262,7 +281,6 @@ namespace HorarioPlus_v1._1.Presentacion
             }
             else
             {
-                //MessageBox.Show("No se ha seleccionado ningún empleado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }

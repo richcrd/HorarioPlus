@@ -6,6 +6,7 @@ namespace HorarioPlus_v1._1.Presentacion
 {
     public partial class frmLogin : Form
     {
+        #region INICIALIZACION DE COMPONENTES
         public frmLogin()
         {
             InitializeComponent();
@@ -17,7 +18,9 @@ namespace HorarioPlus_v1._1.Presentacion
         {
             lblHora.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
+        #endregion
 
+        #region EVENTO CLICK
         // Evento Boton Marcar
         private void btnMarcarRegistro_Click(object sender, EventArgs e)
         {
@@ -66,5 +69,6 @@ namespace HorarioPlus_v1._1.Presentacion
                 }
             }
         }
+        #endregion
     }
 }

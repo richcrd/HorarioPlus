@@ -15,13 +15,16 @@ namespace HorarioPlus_v1._1.Datos
         public int Edad { get; set; }
         public string Correo { get; set; }
         public string Rol { get; set; }
-
+        public double PagoPorHoras { get; set; }
+        public double TotalHorasAcumuladas { get; set; }
+        public double SalarioNeto { get; set; }
+        public string HorarioEmpleado { get; set; }
         public Empleados() // Constructor vacio debido a los archivos json
         {
 
         }
 
-        public Empleados(string id, string nombre, string apellido1, string apellido2, int edad, string correo, string rol)
+        public Empleados(string id, string nombre, string apellido1, string apellido2, int edad, string correo, string rol, double pagoPorHoras, double totalHorasAcumuladas, double salarioNeto, string horarioEmpleado)
         {
             this.IdEmpleado = id;
             this.Nombre = nombre;
@@ -30,6 +33,10 @@ namespace HorarioPlus_v1._1.Datos
             this.Edad = edad;
             this.Correo = correo;
             this.Rol = rol;
+            this.PagoPorHoras = pagoPorHoras;
+            this.TotalHorasAcumuladas = totalHorasAcumuladas;
+            this.SalarioNeto = salarioNeto;
+            this.HorarioEmpleado = horarioEmpleado;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HorarioPlus_v1._1.Entidades;
+using HorarioPlus_v1._1.Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,23 +15,14 @@ namespace HorarioPlus_v1._1.Presentacion
     public partial class frmAjustes : Form
     {
         #region VARIABLES
-        public static string nombreEmpresaDefault;
-        public static string direccionDefault;
-        public static string telefonoDefault;
-        public static string correoDefault;
+        public Empresa empresa;
         #endregion
         public frmAjustes()
         {
             InitializeComponent();
-            InicializarDatos();
+            CargarDatosEmpresa();
         }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            //DateTime = horaSeleccionada = dtpHoraEntrada.Value;
-            //MessageBox.Show("Hora Seleccionada: " + horaSeleccionada.ToString("hh:mm: tt"));
-        }
-
+        #region METODOS CLICK
         private void btnCerrarSistema_Click(object sender, EventArgs e)
         {
             // Codigo temporal
@@ -38,37 +31,56 @@ namespace HorarioPlus_v1._1.Presentacion
             {
                 Application.Exit();
             }
-        }
+        } 
+        #endregion
 
-        private void InicializarDatos()
+        #region METODOS VOID
+        private void CargarDatosEmpresa()
         {
-            nombreEmpresaDefault = "Empresa S,A";
-            direccionDefault = "Calle 10";
-            telefonoDefault = "2266-3030";
-            correoDefault = "empresa@gmail.com";
+            empresa = ManejadorEmpresa.CargarArchivoEmpresa();
+            if(empresa != null)
+            {
+                txtNombre.Text = empresa.NombreEmpresa;
+                txtDireccion.Text = empresa.DireccionEmpresa;
+                txtTelefono.Text = empresa.TelefonoEmpresa;
+                txtCorreo.Text = empresa.CorreoEmpresa;
+            }
+            else
+            {
+                empresa = new Empresa
+                {
+                    NombreEmpresa = "Empresa S.A",
+                    DireccionEmpresa = "Calle 10",
+                    TelefonoEmpresa = "2266-2222",
+                    CorreoEmpresa = "empresa@gmail.com"
+                };
 
-            txtNombreEmpresa.Text = nombreEmpresaDefault;
-            txtDireccionEmpresa.Text = direccionDefault;
-            txtTelefono.Text = telefonoDefault;
-            txtCorreo.Text = correoDefault;
+                txtNombre.Text = empresa.NombreEmpresa;
+                txtDireccion.Text = empresa.DireccionEmpresa;
+                txtTelefono.Text = empresa.TelefonoEmpresa;
+                txtCorreo.Text = empresa.CorreoEmpresa;
+
+            }
         }
 
         private void btnGuardarDatos_Click(object sender, EventArgs e)
         {
-            nombreEmpresaDefault = txtNombreEmpresa.Text;
-            direccionDefault = txtDireccionEmpresa.Text;
-            telefonoDefault = txtTelefono.Text;
-            correoDefault = txtCorreo.Text;
+            empresa.NombreEmpresa = txtNombre.Text;
+            empresa.DireccionEmpresa = txtDireccion.Text;
+            empresa.TelefonoEmpresa = txtTelefono.Text;
+            empresa.CorreoEmpresa = txtCorreo.Text;
+            ManejadorEmpresa.GuardarArchivoEmpresa(empresa);
 
-            MessageBox.Show("Datos guardados correctamente.", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Datos de la empresa guardados correctamente.", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnCancelarDatos_Click(object sender, EventArgs e)
         {
-            txtNombreEmpresa.Text = nombreEmpresaDefault;
-            txtDireccionEmpresa.Text = direccionDefault;
-            txtTelefono.Text = telefonoDefault;
-            txtCorreo.Text = correoDefault;
+            txtNombre.Text = empresa.NombreEmpresa;
+            txtDireccion.Text = empresa.DireccionEmpresa;
+            txtTelefono.Text = empresa.TelefonoEmpresa;
+            txtCorreo.Text = empresa.CorreoEmpresa;
         }
+        #endregion
     }
 }

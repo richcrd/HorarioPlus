@@ -81,8 +81,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\DatosDeducciones.cs" />
+    <Compile Include="Datos\ManejadorEmpresa.cs" />
+    <Compile Include="Entidades\Deducciones.cs" />
     <Compile Include="Entidades\Empleados.cs" />
     <Compile Include="Datos\ManejadorEmpleados.cs" />
+    <Compile Include="Entidades\Empresa.cs" />
     <Compile Include="Presentacion\frmAjustes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,12 +104,6 @@
     </Compile>
     <Compile Include="Presentacion\frmCarnet.Designer.cs">
       <DependentUpon>frmCarnet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\frmCerrarSistema.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\frmCerrarSistema.Designer.cs">
-      <DependentUpon>frmCerrarSistema.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\frmDeducciones.cs">
       <SubType>Form</SubType>
@@ -155,14 +153,17 @@
     <EmbeddedResource Include="Presentacion\frmAjustes.resx">
       <DependentUpon>frmAjustes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frmCerrarSistema.resx">
-      <DependentUpon>frmCerrarSistema.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\frmDeducciones.resx">
+      <DependentUpon>frmDeducciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmNuevoRegistroEmpleado.resx">
       <DependentUpon>frmNuevoRegistroEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmPagos.resx">
+      <DependentUpon>frmPagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmPanelAdministrador.resx">
       <DependentUpon>frmPanelAdministrador.cs</DependentUpon>

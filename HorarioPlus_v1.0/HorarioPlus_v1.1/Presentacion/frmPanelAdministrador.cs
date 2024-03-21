@@ -21,8 +21,7 @@ namespace HorarioPlus_v1._1.Presentacion
         private static IconMenuItem MenuActivo = null;
 
         private static Form FormularioActivo = null;
-        
-
+      
         public frmPanelAdministrador(string nombre, string apellido)
         {
             InitializeComponent();
@@ -31,13 +30,12 @@ namespace HorarioPlus_v1._1.Presentacion
         }
         #endregion
 
-        #region CARGA && CIERRE FORMULARIO
+        #region CARGA FORMULARIO
         private void frmPanelAdministrador_Load(object sender, EventArgs e)
         {
             // Configuramos el lblUsuario con el nombre y apellido del administrador
             lblUsuario.Text = $"{NombreAdministrador} {ApellidoAdministrador}";
         }
-
         #endregion
 
         #region EVENTOS CLICK

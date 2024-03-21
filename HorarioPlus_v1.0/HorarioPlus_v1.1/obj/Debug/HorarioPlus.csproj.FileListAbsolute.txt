@@ -21,7 +21,6 @@ C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\Horari
 C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\bin\Debug\System.ValueTuple.xml
 C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus.csproj.AssemblyReference.cache
-C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1._1.Presentacion.frmCerrarSistema.resources
 C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1._1.Presentacion.frmLogin.resources
 C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1._1.Presentacion.frmNuevoRegistroEmpleado.resources
 C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1._1.Presentacion.frmPanelAdministrador.resources
@@ -32,3 +31,5 @@ C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\Horari
 C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1.1.exe
 C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1.1.pdb
 C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1._1.Presentacion.frmAjustes.resources
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1._1.Presentacion.frmDeducciones.resources
+C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\obj\Debug\HorarioPlus_v1._1.Presentacion.frmPagos.resources

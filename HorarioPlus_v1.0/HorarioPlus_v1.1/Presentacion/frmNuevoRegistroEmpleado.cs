@@ -13,6 +13,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Font = iTextSharp.text.Font;
 
 namespace HorarioPlus_v1._1.Presentacion
 {
@@ -23,6 +24,7 @@ namespace HorarioPlus_v1._1.Presentacion
         private string nuevoIdEmpleado;
         private bool nuevoBotonPresionado;
         private Empleados empleadoSeleccionado;
+        private int contadorPDF = 1;
         #endregion
 
         #region INICIO && CIERRE FORMULARIO
@@ -49,7 +51,7 @@ namespace HorarioPlus_v1._1.Presentacion
         }
         #endregion
 
-        #region CRUD - EVENTOS CLICK
+        #region EVENTOS CLICK
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             NuevoEmpleado();
@@ -94,12 +96,66 @@ namespace HorarioPlus_v1._1.Presentacion
                 MessageBox.Show("Por favor ingrese un ID de empelado para buscar", "Error", MessageBoxButtons.OK);
             }
         }
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtBuscar.Text = "";
             lista_Empleados = ManejadorEmpleados.CargarArchivoJson();
             ManejadorEmpleados.MostrarTabla(dgvTablaEmpleados, lista_Empleados);
+        }
+        private void btnGenerarNomina_Click(object sender, EventArgs e)
+        {
+            // Crea un nuevo documento PDF
+            Document doc = new Document();
+
+            // Especifica la ubicación donde guardar el PDF
+            string rutaCarpeta = @"C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\Presentacion\Nominas PDF\";
+            string rutaPDF = Path.Combine(rutaCarpeta, "emp" + contadorPDF + ".pdf");
+
+            PdfWriter.GetInstance(doc, new FileStream(rutaPDF, FileMode.Create));
+
+            // Abre el documento para escribir
+            doc.Open();
+
+            Font tituloHoja = FontFactory.GetFont("Arial", 28, BaseColor.RED);
+
+            Paragraph titulo = new Paragraph("Lista de Empleados", tituloHoja);
+            titulo.Alignment = Element.ALIGN_CENTER;
+            doc.Add(titulo);
+
+            // Crea una tabla PDF
+            PdfPTable table = new PdfPTable(dgvTablaEmpleados.Columns.Count);
+            // Establece el ancho de las columnas
+            float[] anchosColumnas = { 2, 4, 4, 4, 4, 6, 6 };
+            table.SetWidths(anchosColumnas);
+
+            // Añade los encabezados de columna a la tabla
+            for (int i = 0; i < dgvTablaEmpleados.Columns.Count; i++)
+            {
+                table.AddCell(new Phrase(dgvTablaEmpleados.Columns[i].HeaderText));
+            }
+
+            // Añade las filas de datos a la tabla
+            for (int i = 0; i < dgvTablaEmpleados.Rows.Count; i++)
+            {
+                for (int j = 0; j < dgvTablaEmpleados.Columns.Count; j++)
+                {
+                    if (dgvTablaEmpleados.Rows[i].Cells[j].Value != null)
+                    {
+                        table.AddCell(new Phrase(dgvTablaEmpleados.Rows[i].Cells[j].Value.ToString()));
+                    }
+                }
+            }
+
+            // Añade la tabla al documento
+            doc.Add(table);
+
+            // Cierra el documento
+            doc.Close();
+
+            MessageBox.Show($"PDF generado exitosamente en {rutaPDF}", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Incrementa el contador para el próximo PDF
+            contadorPDF++;
         }
         #endregion
 
@@ -292,58 +348,5 @@ namespace HorarioPlus_v1._1.Presentacion
             empleadoSeleccionado = SeleccionarEmpleado();
         }
         #endregion
-
-        private void btnImprimir_Click(object sender, EventArgs e)
-        {
-            // Crea un nuevo documento PDF
-            Document doc = new Document();
-            try
-            {
-                // Especifica la ubicación donde guardar el PDF
-                string filePath = @"C:\ruta\al\archivo.pdf";
-                PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
-
-                // Abre el documento para escribir
-                doc.Open();
-
-                // Añade un título al documento
-                doc.Add(new Paragraph("Tabla de Datos"));
-
-                // Crea una tabla PDF
-                PdfPTable table = new PdfPTable(dgvTablaEmpleados.Columns.Count);
-
-                // Añade los encabezados de columna a la tabla
-                for (int i = 0; i < dgvTablaEmpleados.Columns.Count; i++)
-                {
-                    table.AddCell(new Phrase(dgvTablaEmpleados.Columns[i].HeaderText));
-                }
-
-                // Añade las filas de datos a la tabla
-                for (int i = 0; i < dgvTablaEmpleados.Rows.Count; i++)
-                {
-                    for (int j = 0; j < dgvTablaEmpleados.Columns.Count; j++)
-                    {
-                        if (dgvTablaEmpleados.Rows[i].Cells[j].Value != null)
-                        {
-                            table.AddCell(new Phrase(dgvTablaEmpleados.Rows[i].Cells[j].Value.ToString()));
-                        }
-                    }
-                }
-
-                // Añade la tabla al documento
-                doc.Add(table);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al generar el PDF: " + ex.Message);
-            }
-            finally
-            {
-                // Cierra el documento
-                doc.Close();
-            }
-
-            MessageBox.Show("PDF generado exitosamente.");
-        }
     }
 }

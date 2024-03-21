@@ -33,9 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvTablaPagos = new System.Windows.Forms.DataGridView();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnImprimirNomina = new FontAwesome.Sharp.IconButton();
             this.IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +40,8 @@
             this.PagoPorHoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HorasAcumuladas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pagoNeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnGenerarNomina = new FontAwesome.Sharp.IconButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablaPagos)).BeginInit();
             this.SuspendLayout();
@@ -51,9 +50,8 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.SkyBlue;
             this.panel2.Controls.Add(this.dgvTablaPagos);
-            this.panel2.Controls.Add(this.iconButton1);
             this.panel2.Controls.Add(this.lblTitulo);
-            this.panel2.Controls.Add(this.btnImprimirNomina);
+            this.panel2.Controls.Add(this.btnGenerarNomina);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -109,56 +107,6 @@
             this.dgvTablaPagos.Size = new System.Drawing.Size(661, 281);
             this.dgvTablaPagos.TabIndex = 23;
             // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 15;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(614, 45);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(83, 23);
-            this.iconButton1.TabIndex = 22;
-            this.iconButton1.Text = "Recibo";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(31, 40);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(151, 28);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Detalles Pagos";
-            // 
-            // btnImprimirNomina
-            // 
-            this.btnImprimirNomina.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnImprimirNomina.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImprimirNomina.FlatAppearance.BorderSize = 0;
-            this.btnImprimirNomina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimirNomina.ForeColor = System.Drawing.Color.White;
-            this.btnImprimirNomina.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.btnImprimirNomina.IconColor = System.Drawing.Color.White;
-            this.btnImprimirNomina.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImprimirNomina.IconSize = 15;
-            this.btnImprimirNomina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimirNomina.Location = new System.Drawing.Point(525, 45);
-            this.btnImprimirNomina.Name = "btnImprimirNomina";
-            this.btnImprimirNomina.Size = new System.Drawing.Size(83, 23);
-            this.btnImprimirNomina.TabIndex = 17;
-            this.btnImprimirNomina.Text = "Nomina";
-            this.btnImprimirNomina.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImprimirNomina.UseVisualStyleBackColor = false;
-            // 
             // IdEmpleado
             // 
             this.IdEmpleado.HeaderText = "ID";
@@ -205,6 +153,38 @@
             this.pagoNeto.Name = "pagoNeto";
             this.pagoNeto.ReadOnly = true;
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(31, 40);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(151, 28);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Detalles Pagos";
+            // 
+            // btnGenerarNomina
+            // 
+            this.btnGenerarNomina.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnGenerarNomina.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenerarNomina.FlatAppearance.BorderSize = 0;
+            this.btnGenerarNomina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarNomina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarNomina.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarNomina.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.btnGenerarNomina.IconColor = System.Drawing.Color.White;
+            this.btnGenerarNomina.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGenerarNomina.IconSize = 15;
+            this.btnGenerarNomina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGenerarNomina.Location = new System.Drawing.Point(605, 67);
+            this.btnGenerarNomina.Name = "btnGenerarNomina";
+            this.btnGenerarNomina.Size = new System.Drawing.Size(92, 34);
+            this.btnGenerarNomina.TabIndex = 17;
+            this.btnGenerarNomina.Text = "Nomina";
+            this.btnGenerarNomina.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGenerarNomina.UseVisualStyleBackColor = false;
+            this.btnGenerarNomina.Click += new System.EventHandler(this.btnGenerarNomina_Click);
+            // 
             // frmPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,8 +204,7 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblTitulo;
-        private FontAwesome.Sharp.IconButton btnImprimirNomina;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnGenerarNomina;
         private System.Windows.Forms.DataGridView dgvTablaPagos;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;

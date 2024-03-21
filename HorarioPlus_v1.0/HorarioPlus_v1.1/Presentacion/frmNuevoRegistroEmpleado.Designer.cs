@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnActualizar = new FontAwesome.Sharp.IconButton();
@@ -53,6 +53,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnGenerarNomina = new FontAwesome.Sharp.IconButton();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.dgvTablaEmpleados = new System.Windows.Forms.DataGridView();
             this.IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +67,6 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnImprimir = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numEdad)).BeginInit();
             this.panel2.SuspendLayout();
@@ -335,7 +335,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SkyBlue;
-            this.panel2.Controls.Add(this.btnImprimir);
+            this.panel2.Controls.Add(this.btnGenerarNomina);
             this.panel2.Controls.Add(this.btnLimpiar);
             this.panel2.Controls.Add(this.dgvTablaEmpleados);
             this.panel2.Controls.Add(this.btnBuscar);
@@ -347,6 +347,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(525, 450);
             this.panel2.TabIndex = 1;
+            // 
+            // btnGenerarNomina
+            // 
+            this.btnGenerarNomina.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnGenerarNomina.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenerarNomina.FlatAppearance.BorderSize = 0;
+            this.btnGenerarNomina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarNomina.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarNomina.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.btnGenerarNomina.IconColor = System.Drawing.Color.White;
+            this.btnGenerarNomina.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGenerarNomina.IconSize = 15;
+            this.btnGenerarNomina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGenerarNomina.Location = new System.Drawing.Point(401, 70);
+            this.btnGenerarNomina.Name = "btnGenerarNomina";
+            this.btnGenerarNomina.Size = new System.Drawing.Size(85, 22);
+            this.btnGenerarNomina.TabIndex = 23;
+            this.btnGenerarNomina.Text = "Nomina";
+            this.btnGenerarNomina.UseVisualStyleBackColor = false;
+            this.btnGenerarNomina.Click += new System.EventHandler(this.btnGenerarNomina_Click);
             // 
             // btnLimpiar
             // 
@@ -372,20 +392,20 @@
             this.dgvTablaEmpleados.AllowUserToDeleteRows = false;
             this.dgvTablaEmpleados.AllowUserToResizeColumns = false;
             this.dgvTablaEmpleados.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dgvTablaEmpleados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dgvTablaEmpleados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTablaEmpleados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvTablaEmpleados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTablaEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTablaEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvTablaEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTablaEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdEmpleado,
@@ -395,14 +415,14 @@
             this.Edad,
             this.Correo,
             this.Rol});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTablaEmpleados.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTablaEmpleados.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTablaEmpleados.EnableHeadersVisualStyles = false;
             this.dgvTablaEmpleados.Location = new System.Drawing.Point(22, 120);
             this.dgvTablaEmpleados.MultiSelect = false;
@@ -512,26 +532,6 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "Lista Empleados";
             // 
-            // btnImprimir
-            // 
-            this.btnImprimir.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImprimir.FlatAppearance.BorderSize = 0;
-            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.ForeColor = System.Drawing.Color.White;
-            this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar._0;
-            this.btnImprimir.IconColor = System.Drawing.Color.White;
-            this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnImprimir.IconSize = 1;
-            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(424, 68);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(62, 22);
-            this.btnImprimir.TabIndex = 23;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.UseVisualStyleBackColor = false;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            // 
             // frmNuevoRegistroEmpleado
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -591,6 +591,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
         private FontAwesome.Sharp.IconButton btnCancelar;
-        private FontAwesome.Sharp.IconButton btnImprimir;
+        private FontAwesome.Sharp.IconButton btnGenerarNomina;
     }
 }

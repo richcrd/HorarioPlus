@@ -104,7 +104,7 @@
             this.dgvTablaPagos.RowHeadersWidth = 62;
             this.dgvTablaPagos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvTablaPagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTablaPagos.Size = new System.Drawing.Size(661, 281);
+            this.dgvTablaPagos.Size = new System.Drawing.Size(718, 281);
             this.dgvTablaPagos.TabIndex = 23;
             // 
             // IdEmpleado
@@ -176,7 +176,7 @@
             this.btnGenerarNomina.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGenerarNomina.IconSize = 15;
             this.btnGenerarNomina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerarNomina.Location = new System.Drawing.Point(605, 67);
+            this.btnGenerarNomina.Location = new System.Drawing.Point(662, 41);
             this.btnGenerarNomina.Name = "btnGenerarNomina";
             this.btnGenerarNomina.Size = new System.Drawing.Size(92, 34);
             this.btnGenerarNomina.TabIndex = 17;

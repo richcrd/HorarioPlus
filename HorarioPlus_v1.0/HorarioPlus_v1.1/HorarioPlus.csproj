@@ -147,12 +147,6 @@
     <Compile Include="Presentacion\frmPanelAdministrador.Designer.cs">
       <DependentUpon>frmPanelAdministrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\frmNominas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\frmNominas.Designer.cs">
-      <DependentUpon>frmNominas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\Utilidades\OpcionCombo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -164,9 +158,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frmNominas.resx">
-      <DependentUpon>frmNominas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmNuevoRegistroEmpleado.resx">
       <DependentUpon>frmNuevoRegistroEmpleado.cs</DependentUpon>

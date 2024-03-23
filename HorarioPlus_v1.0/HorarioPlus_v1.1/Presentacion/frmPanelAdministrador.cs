@@ -101,10 +101,6 @@ namespace HorarioPlus_v1._1.Presentacion
         {
             AbrirFormulario(menuPagos, new frmDeducciones());
         }
-        private void menuNominas_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario((IconMenuItem)sender, new frmNominas());
-        }
         private void menuCarnet_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmCarnet());

@@ -15,7 +15,7 @@ namespace HorarioPlus_v1._1.Datos
     public class ManejadorEmpleados
     {
         #region VARIABLES && PROPIEDADES
-        private const string RUTA_ARCHIVO_EMPLEADOS = @"C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\archivos_empleados\Empleados.json";
+        private const string RUTA_ARCHIVO_EMPLEADOS = @"../../../../archivos_empleados/Empleados.json";
         public static List<Empleados> lista_Empleados { get; set; } = new List<Empleados>();
         #endregion
 

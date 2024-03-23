@@ -41,7 +41,6 @@
             this.menuPagos = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuPagos = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuDeducciones = new FontAwesome.Sharp.IconMenuItem();
-            this.menuNominas = new FontAwesome.Sharp.IconMenuItem();
             this.menuCarnet = new FontAwesome.Sharp.IconMenuItem();
             this.menuActividad = new FontAwesome.Sharp.IconMenuItem();
             this.pnlContenedor = new System.Windows.Forms.Panel();
@@ -133,7 +132,6 @@
             this.menuAsistencias,
             this.menuEmpleados,
             this.menuPagos,
-            this.menuNominas,
             this.menuCarnet,
             this.menuActividad});
             this.pnlMenu.Location = new System.Drawing.Point(0, 44);
@@ -224,19 +222,6 @@
             this.subMenuDeducciones.Text = "Deducciones";
             this.subMenuDeducciones.Click += new System.EventHandler(this.subMenuDeducciones_Click);
             // 
-            // menuNominas
-            // 
-            this.menuNominas.IconChar = FontAwesome.Sharp.IconChar.Paste;
-            this.menuNominas.IconColor = System.Drawing.Color.Black;
-            this.menuNominas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuNominas.IconSize = 35;
-            this.menuNominas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.menuNominas.Name = "menuNominas";
-            this.menuNominas.Size = new System.Drawing.Size(67, 54);
-            this.menuNominas.Text = "Nominas";
-            this.menuNominas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.menuNominas.Click += new System.EventHandler(this.menuNominas_Click);
-            // 
             // menuCarnet
             // 
             this.menuCarnet.IconChar = FontAwesome.Sharp.IconChar.IdCard;
@@ -307,6 +292,5 @@
         private FontAwesome.Sharp.IconMenuItem menuPagos;
         private FontAwesome.Sharp.IconMenuItem subMenuPagos;
         private FontAwesome.Sharp.IconMenuItem subMenuDeducciones;
-        private FontAwesome.Sharp.IconMenuItem menuNominas;
     }
 }

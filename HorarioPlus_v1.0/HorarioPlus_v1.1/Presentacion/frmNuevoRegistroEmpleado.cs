@@ -108,7 +108,7 @@ namespace HorarioPlus_v1._1.Presentacion
             Document doc = new Document();
 
             // Especifica la ubicación donde guardar el PDF
-            string rutaCarpeta = @"C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\HorarioPlus_v1.0\HorarioPlus_v1.1\Presentacion\Nominas PDF\";
+            string rutaCarpeta = @"../../../../Nominas PDF/";
             string rutaPDF = Path.Combine(rutaCarpeta, "emp" + contadorPDF + ".pdf");
 
             PdfWriter.GetInstance(doc, new FileStream(rutaPDF, FileMode.Create));

@@ -13,7 +13,7 @@ namespace HorarioPlus_v1._1.Datos
     public class ManejadorEmpresa
     {
         #region RUTA ARCHIVO
-        private static string RUTA_ARCHIVO_EMPRESA = @"C:\Users\maria magdalena\Desktop\HorarioPlus\HorarioPlus\archivos_empleados\Empresa.json";
+        private static string RUTA_ARCHIVO_EMPRESA = @"../../../../archivos_empleados/Empresa.json";
         #endregion
 
         #region METODOS

@@ -39,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtEmpleadoId = new System.Windows.Forms.TextBox();
             this.timerHora = new System.Windows.Forms.Timer(this.components);
+            this.btnIngresoSistema = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -104,7 +105,9 @@
             // 
             this.btnMarcarRegistro.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnMarcarRegistro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMarcarRegistro.FlatAppearance.BorderSize = 0;
             this.btnMarcarRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMarcarRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMarcarRegistro.Location = new System.Drawing.Point(309, 234);
             this.btnMarcarRegistro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnMarcarRegistro.Name = "btnMarcarRegistro";
@@ -140,10 +143,23 @@
             // 
             this.timerHora.Tick += new System.EventHandler(this.timerHora_Tick);
             // 
+            // btnIngresoSistema
+            // 
+            this.btnIngresoSistema.AutoSize = true;
+            this.btnIngresoSistema.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIngresoSistema.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnIngresoSistema.Location = new System.Drawing.Point(472, 9);
+            this.btnIngresoSistema.Name = "btnIngresoSistema";
+            this.btnIngresoSistema.Size = new System.Drawing.Size(96, 13);
+            this.btnIngresoSistema.TabIndex = 14;
+            this.btnIngresoSistema.Text = "Ingresar al Sistema";
+            this.btnIngresoSistema.Click += new System.EventHandler(this.btnIngresoSistema_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(580, 325);
+            this.Controls.Add(this.btnIngresoSistema);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
@@ -175,5 +191,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtEmpleadoId;
         private System.Windows.Forms.Timer timerHora;
+        private System.Windows.Forms.Label btnIngresoSistema;
     }
 }

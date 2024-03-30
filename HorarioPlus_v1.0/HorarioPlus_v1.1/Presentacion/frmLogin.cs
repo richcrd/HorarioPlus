@@ -1,5 +1,7 @@
 ﻿using HorarioPlus_v1._1.Datos;
+using HorarioPlus_v1._1.Entidades;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace HorarioPlus_v1._1.Presentacion
@@ -11,6 +13,7 @@ namespace HorarioPlus_v1._1.Presentacion
         {
             InitializeComponent();
             timerHora.Start();
+            ManejadorEmpleados.CargarArchivoJson();
         }
 
         // Metodo para mostrar reloj en pantalla
@@ -33,41 +36,82 @@ namespace HorarioPlus_v1._1.Presentacion
 
                 if (empleado_encontrado != null)
                 {
-                    string mensaje = $"{empleado_encontrado.Nombre} {empleado_encontrado.Apellido1} registrado a las {DateTime.Now.ToString("hh:mm:ss tt")}";
-                    MessageBox.Show(mensaje, "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtEmpleadoId.Clear();
+                    bool esHoraDeEntrada = true;
+                    DateTime horaActual = DateTime.Now;
+                    // Horario de 7 a 5
+                    bool dentroHorarioLaboral = horaActual.TimeOfDay >= TimeSpan.FromHours(7) && horaActual.TimeOfDay <= TimeSpan.FromHours(17);
 
-                    if (empleado_encontrado.Rol == "Administrador")
+                    if (!dentroHorarioLaboral)
                     {
-                        DialogResult resultado = MessageBox.Show("¿Desea ingresar al sistema como administrador?", "Confirmar Acceso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        MessageBox.Show("Fuera del horario laboral. Debes registrar tu entrada del horario laboral (7am - 5pm)");
+                        txtEmpleadoId.Clear();
+                        return; // salimos del metodo sin marcar
+                    }
 
-                        if (resultado == DialogResult.Yes)
-                        {
-                            this.Hide();
-                            frmPanelAdministrador frmPanelAdmin = new frmPanelAdministrador(empleado_encontrado.Nombre, empleado_encontrado.Apellido1);
-                            frmPanelAdmin.ShowDialog();
-                            volverAMarcar = false; // No volver a marcar si el usuario decide ingresar como administrador
-                        }
-                        else
-                        {
-                            // Si el usuario elige "No", no volvemos a marcar y salimos del bucle
-                            volverAMarcar = false;
-                        }
+                    RegistroAsistencia nuevoRegistro = new RegistroAsistencia
+                    {
+                        Fecha = DateTime.Today,
+                        HoraEntrada = DateTime.Now.ToString("hh:mm::ss tt")
+                    };
+
+                    empleado_encontrado.Registros.Add(nuevoRegistro);
+
+                    if(!esHoraDeEntrada && empleado_encontrado.Registros.Any())
+                    {
+                        var ultimoRegistro = empleado_encontrado.Registros.Last();
+                        ultimoRegistro.HoraSalida = DateTime.Now.ToString("hh:mm:ss: tt");
+                        string mensajeSalida = $"{empleado_encontrado.Nombre} {empleado_encontrado.Apellido1} has registrado tu salida a las {horaActual.ToString("hh:mm:ss tt")}";
+                        MessageBox.Show(mensajeSalida, "Registro Salida", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        txtEmpleadoId.Clear();
-                        volverAMarcar = false;
+                        string mensajeEntrada = $"{empleado_encontrado.Nombre} {empleado_encontrado.Apellido1} has registrado tu entrada a las {horaActual.ToString("hh:mm:ss tt")}";
+                        MessageBox.Show(mensajeEntrada, "Registro Entrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+
+                    
+                    ManejadorEmpleados.ActualizarEmpleado(ManejadorEmpleados.lista_Empleados, idEmpleado, empleado_encontrado);
+                    ManejadorEmpleados.GuardarArchivoJson(ManejadorEmpleados.lista_Empleados);
+                    txtEmpleadoId.Clear();
+                    volverAMarcar = false;
+                    #region Agregado en otro formulario
+                    //if (empleado_encontrado.Rol == "Administrador")
+                    //{
+                    //    DialogResult resultado = MessageBox.Show("¿Desea ingresar al sistema como administrador?", "Confirmar Acceso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    //    if (resultado == DialogResult.Yes)
+                    //    {
+                    //        this.Hide();
+                    //        frmPanelAdministrador frmPanelAdmin = new frmPanelAdministrador(empleado_encontrado.Nombre, empleado_encontrado.Apellido1);
+                    //        frmPanelAdmin.ShowDialog();
+                    //        volverAMarcar = false; // No volver a marcar si el usuario decide ingresar como administrador
+                    //    }
+                    //    else
+                    //    {
+                    //        // Si el usuario elige "No", no volvemos a marcar y salimos del bucle
+                    //        volverAMarcar = false;
+                    //    }
+                    //}
+                    //else
+                    //{
+                    //    txtEmpleadoId.Clear();
+                    //    volverAMarcar = false;
+                    //}
+                    #endregion
                 }
                 else
                 {
-                    // Si el ID del empleado no existe, mostramos un mensaje de error
-                    MessageBox.Show("El ID del empleado no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El ID del empleado no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtEmpleadoId.Clear();
-                    volverAMarcar = false; // No volvemos a marcar si el id del empleado no existe
+                    volverAMarcar = false;
                 }
             }
+        }
+        private void btnIngresoSistema_Click(object sender, EventArgs e)
+        {
+            frmIngreso frmIngreso = new frmIngreso();
+            frmIngreso.ShowDialog();
+            this.Hide();
         }
         #endregion
     }

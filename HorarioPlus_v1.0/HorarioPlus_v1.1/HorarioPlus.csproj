@@ -93,6 +93,7 @@
     <Compile Include="Entidades\Empleados.cs" />
     <Compile Include="Datos\ManejadorEmpleados.cs" />
     <Compile Include="Entidades\Empresa.cs" />
+    <Compile Include="Entidades\RegistroAsistencia.cs" />
     <Compile Include="Presentacion\frmAjustes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +123,12 @@
     </Compile>
     <Compile Include="Presentacion\frmHorarioEmpleados.Designer.cs">
       <DependentUpon>frmHorarioEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frmIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frmIngreso.Designer.cs">
+      <DependentUpon>frmIngreso.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\frmLogin.cs">
       <SubType>Form</SubType>
@@ -153,8 +160,14 @@
     <EmbeddedResource Include="Presentacion\frmAjustes.resx">
       <DependentUpon>frmAjustes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmCarnet.resx">
+      <DependentUpon>frmCarnet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmDeducciones.resx">
       <DependentUpon>frmDeducciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmIngreso.resx">
+      <DependentUpon>frmIngreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

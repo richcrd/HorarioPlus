@@ -36,9 +36,7 @@ namespace HorarioPlus_v1._1.Datos
                 {
                     MessageBox.Show("Error al cargar el archivo de empleados en el DataGridView: " + 
                         error.Message, 
-                        "Error", 
-                        MessageBoxButtons.OK, 
-                        MessageBoxIcon.Error);
+                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             } // Si no existe archivo
             else
@@ -49,10 +47,9 @@ namespace HorarioPlus_v1._1.Datos
         }
 
         // Metodo para guardar lista en archivo json
-        public static void GuardarArchivoJson()
+        public static void GuardarArchivoJson(List<Empleados> lista_Empleados)
         {
-            JsonSerializerOptions opcionSerializar = new JsonSerializerOptions { WriteIndented = true };
-            string json = JsonSerializer.Serialize(lista_Empleados, opcionSerializar);
+            string json = JsonSerializer.Serialize(lista_Empleados, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(RUTA_ARCHIVO_EMPLEADOS, json);
         }
 
@@ -127,7 +124,7 @@ namespace HorarioPlus_v1._1.Datos
                 empleadoNuevo.HorarioEmpleado = "";
 
                 lista_Empleados.Add(empleadoNuevo);
-                GuardarArchivoJson();
+                GuardarArchivoJson(lista_Empleados);
 
                 int rowIndex = dataGridView.Rows.Add();
                 if(rowIndex >= 0 && rowIndex < dataGridView.Rows.Count)
@@ -158,7 +155,7 @@ namespace HorarioPlus_v1._1.Datos
             if(indiceEmpleado != -1)
             {
                 lista_Empleados.RemoveAt(indiceEmpleado);
-                GuardarArchivoJson();
+                GuardarArchivoJson(lista_Empleados);
             }
             else
             {
@@ -167,18 +164,19 @@ namespace HorarioPlus_v1._1.Datos
         }
 
         // Metodo para actualizar empleado de lista
-        public static void ActualizarEmpleado(List<Empleados> lista_Empleados, string idEmpleadoOrigen, Empleados empleadoModificado)
+        public static void ActualizarEmpleado(List<Empleados> lista_Empleados, string idEmpleadoOriginal, Empleados empleadoModificado)
         {
-            int indiceEmpleadoOriginal = lista_Empleados.FindIndex(e => e.IdEmpleado == idEmpleadoOrigen);
+            int indiceEmpleadoOriginal = lista_Empleados.FindIndex(emp => emp.IdEmpleado == idEmpleadoOriginal);
+
             if (indiceEmpleadoOriginal != -1)
             {
                 lista_Empleados[indiceEmpleadoOriginal] = empleadoModificado;
-                GuardarArchivoJson();
             }
             else
             {
-                MessageBox.Show("No se encontro el empleado con el ID especificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lista_Empleados.Add(empleadoModificado);
             }
+            GuardarArchivoJson(lista_Empleados);
         }
         #endregion
 

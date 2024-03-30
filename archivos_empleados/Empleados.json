@@ -10,7 +10,34 @@
     "PagoPorHoras": 0,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
-    "HorarioEmpleado": ""
+    "HorarioEmpleado": "",
+    "Registros": [
+      {
+        "Fecha": "2024-03-29T00:00:00-06:00",
+        "HoraEntrada": "04:34::53 p.\u00A0m.",
+        "HoraSalida": null
+      },
+      {
+        "Fecha": "2024-03-29T00:00:00-06:00",
+        "HoraEntrada": "04:35::16 p.\u00A0m.",
+        "HoraSalida": null
+      },
+      {
+        "Fecha": "2024-03-29T00:00:00-06:00",
+        "HoraEntrada": "04:35::20 p.\u00A0m.",
+        "HoraSalida": null
+      },
+      {
+        "Fecha": "2024-03-29T00:00:00-06:00",
+        "HoraEntrada": "04:35::23 p.\u00A0m.",
+        "HoraSalida": null
+      },
+      {
+        "Fecha": "2024-03-29T00:00:00-06:00",
+        "HoraEntrada": "04:35::38 p.\u00A0m.",
+        "HoraSalida": null
+      }
+    ]
   },
   {
     "IdEmpleado": "2",
@@ -23,7 +50,8 @@
     "PagoPorHoras": 0,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
-    "HorarioEmpleado": ""
+    "HorarioEmpleado": "",
+    "Registros": []
   },
   {
     "IdEmpleado": "3",
@@ -36,7 +64,8 @@
     "PagoPorHoras": 0,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
-    "HorarioEmpleado": ""
+    "HorarioEmpleado": "",
+    "Registros": []
   },
   {
     "IdEmpleado": "4",
@@ -49,7 +78,8 @@
     "PagoPorHoras": 0,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
-    "HorarioEmpleado": ""
+    "HorarioEmpleado": "",
+    "Registros": []
   },
   {
     "IdEmpleado": "5",
@@ -62,7 +92,8 @@
     "PagoPorHoras": 0,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
-    "HorarioEmpleado": ""
+    "HorarioEmpleado": "",
+    "Registros": []
   },
   {
     "IdEmpleado": "6",
@@ -75,7 +106,8 @@
     "PagoPorHoras": 0,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
-    "HorarioEmpleado": ""
+    "HorarioEmpleado": "",
+    "Registros": []
   },
   {
     "IdEmpleado": "7",
@@ -88,7 +120,8 @@
     "PagoPorHoras": 0,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
-    "HorarioEmpleado": ""
+    "HorarioEmpleado": "",
+    "Registros": []
   },
   {
     "IdEmpleado": "8",
@@ -101,7 +134,8 @@
     "PagoPorHoras": 0,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
-    "HorarioEmpleado": ""
+    "HorarioEmpleado": "",
+    "Registros": []
   },
   {
     "IdEmpleado": "9",
@@ -114,7 +148,8 @@
     "PagoPorHoras": 0,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
-    "HorarioEmpleado": ""
+    "HorarioEmpleado": "",
+    "Registros": []
   },
   {
     "IdEmpleado": "10",
@@ -127,6 +162,7 @@
     "PagoPorHoras": 0,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
-    "HorarioEmpleado": ""
+    "HorarioEmpleado": "",
+    "Registros": []
   }
 ]

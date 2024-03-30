@@ -32,7 +32,7 @@ namespace HorarioPlus_v1._1.Presentacion
         }
         private void frmPagos_FormClosing(object sender, FormClosedEventArgs e)
         {
-            ManejadorEmpleados.GuardarArchivoJson();
+            ManejadorEmpleados.GuardarArchivoJson(lista_Empleados);
         }
         #endregion
 

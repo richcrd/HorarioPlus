@@ -42,7 +42,6 @@
             this.subMenuPagos = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuDeducciones = new FontAwesome.Sharp.IconMenuItem();
             this.menuCarnet = new FontAwesome.Sharp.IconMenuItem();
-            this.menuActividad = new FontAwesome.Sharp.IconMenuItem();
             this.pnlContenedor = new System.Windows.Forms.Panel();
             this.pnlTop.SuspendLayout();
             this.pnlMenu.SuspendLayout();
@@ -132,8 +131,7 @@
             this.menuAsistencias,
             this.menuEmpleados,
             this.menuPagos,
-            this.menuCarnet,
-            this.menuActividad});
+            this.menuCarnet});
             this.pnlMenu.Location = new System.Drawing.Point(0, 44);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
@@ -235,14 +233,6 @@
             this.menuCarnet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.menuCarnet.Click += new System.EventHandler(this.menuCarnet_Click);
             // 
-            // menuActividad
-            // 
-            this.menuActividad.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.menuActividad.IconColor = System.Drawing.Color.Black;
-            this.menuActividad.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuActividad.Name = "menuActividad";
-            this.menuActividad.Size = new System.Drawing.Size(36, 54);
-            // 
             // pnlContenedor
             // 
             this.pnlContenedor.BackColor = System.Drawing.Color.Silver;
@@ -283,7 +273,6 @@
         private System.Windows.Forms.Panel pnlContenedor;
         private FontAwesome.Sharp.IconButton btnCerrarSesionAdmin;
         private FontAwesome.Sharp.IconMenuItem menuCarnet;
-        private FontAwesome.Sharp.IconMenuItem menuActividad;
         private FontAwesome.Sharp.IconButton btnAjustes;
         private FontAwesome.Sharp.IconMenuItem menuEmpleados;
         private FontAwesome.Sharp.IconMenuItem subMenuNuevoRegistro;

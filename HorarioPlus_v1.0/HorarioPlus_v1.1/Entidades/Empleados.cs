@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HorarioPlus_v1._1.Entidades;
+
 
 namespace HorarioPlus_v1._1.Datos
 {
@@ -19,6 +21,8 @@ namespace HorarioPlus_v1._1.Datos
         public double TotalHorasAcumuladas { get; set; }
         public double SalarioNeto { get; set; }
         public string HorarioEmpleado { get; set; }
+        public List<RegistroAsistencia> Registros { get; set; } = new List<RegistroAsistencia>();
+
         public Empleados() // Constructor vacio debido a los archivos json
         {
 

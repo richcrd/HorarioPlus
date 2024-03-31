@@ -32,94 +32,23 @@ namespace HorarioPlus_v1._1.Presentacion
      // Evento Boton Marcar
      private void btnMarcarRegistro_Click(object sender, EventArgs e)
      {
-         #region area_comentada
-         /*
-         bool volverAMarcar = true;
-
-         while (volverAMarcar)
-         {
-             string idEmpleado = txtEmpleadoId.Text;
-             Empleados empleado_encontrado = ManejadorEmpleados.BuscarEmpleado(idEmpleado);
-
-             if (empleado_encontrado != null)
-             {
-                 bool esHoraDeEntrada = true;
-                 DateTime horaActual = DateTime.Now;
-                 // Horario de 7 a 5
-                 bool dentroHorarioLaboral = horaActual.TimeOfDay >= TimeSpan.FromHours(7) && horaActual.TimeOfDay <= TimeSpan.FromHours(17);
-
-                 if (!dentroHorarioLaboral)
-                 {
-                     MessageBox.Show("Fuera del horario laboral. Debes registrar tu entrada del horario laboral (7am - 5pm)");
-                     txtEmpleadoId.Clear();
-                     return; // salimos del metodo sin marcar
-                 }
-
-                 RegistroAsistencia nuevoRegistro = new RegistroAsistencia
-                 {
-                     Fecha = DateTime.Today,
-                     HoraEntrada = DateTime.Now.ToString("hh:mm::ss tt")
-                 };
-
-                 empleado_encontrado.Registros.Add(nuevoRegistro);
-
-                 if(!esHoraDeEntrada && empleado_encontrado.Registros.Any())
-                 {
-                     var ultimoRegistro = empleado_encontrado.Registros.Last();
-                     ultimoRegistro.HoraSalida = DateTime.Now.ToString("hh:mm:ss: tt");
-                     string mensajeSalida = $"{empleado_encontrado.Nombre} {empleado_encontrado.Apellido1} has registrado tu salida a las {horaActual.ToString("hh:mm:ss tt")}";
-                     MessageBox.Show(mensajeSalida, "Registro Salida", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                 }
-                 else
-                 {
-                     string mensajeEntrada = $"{empleado_encontrado.Nombre} {empleado_encontrado.Apellido1} has registrado tu entrada a las {horaActual.ToString("hh:mm:ss tt")}";
-                     MessageBox.Show(mensajeEntrada, "Registro Entrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                 }
-
-                 
-                 ManejadorEmpleados.ActualizarEmpleado(ManejadorEmpleados.lista_Empleados, idEmpleado, empleado_encontrado);
-                 ManejadorEmpleados.GuardarArchivoJson(ManejadorEmpleados.lista_Empleados);
-                 txtEmpleadoId.Clear();
-                 volverAMarcar = false;
-                 #region Agregado en otro formulario
-                 //if (empleado_encontrado.Rol == "Administrador")
-                 //{
-                 //    DialogResult resultado = MessageBox.Show("¿Desea ingresar al sistema como administrador?", "Confirmar Acceso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                 //    if (resultado == DialogResult.Yes)
-                 //    {
-                 //        this.Hide();
-                 //        frmPanelAdministrador frmPanelAdmin = new frmPanelAdministrador(empleado_encontrado.Nombre, empleado_encontrado.Apellido1);
-                 //        frmPanelAdmin.ShowDialog();
-                 //        volverAMarcar = false; // No volver a marcar si el usuario decide ingresar como administrador
-                 //    }
-                 //    else
-                 //    {
-                 //        // Si el usuario elige "No", no volvemos a marcar y salimos del bucle
-                 //        volverAMarcar = false;
-                 //    }
-                 //}
-                 //else
-                 //{
-                 //    txtEmpleadoId.Clear();
-                 //    volverAMarcar = false;
-                 //}
-                 #endregion
-             }
-             else
-             {
-                 MessageBox.Show("El ID del empleado no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                 txtEmpleadoId.Clear();
-                 volverAMarcar = false;
-             }
-         }
-         */
-         #endregion
-         string ID = txtEmpleadoId.Text;
-         GestionDelTiempo.RegistrarHoraDelEmpleado(ID);
-         Empleados empleado = ManejadorEmpleados.BuscarEmpleado(ID);
-         empleado.Marcado = true;
-         ManejadorEmpleados.ActualizarEmpleado(ManejadorEmpleados.lista_Empleados, ID, empleado);
+          string ID = txtEmpleadoId.Text;
+          GestionDelTiempo.RegistrarHoraDelEmpleado(ID);
+          Empleados empleado = ManejadorEmpleados.BuscarEmpleado(ID);
+          //empleado.Marcado = true;
+          //ManejadorEmpleados.ActualizarEmpleado(ManejadorEmpleados.lista_Empleados, ID, empleado);
+          
+          if (empleado!= null)
+          {
+              empleado.Marcado = true;
+              ManejadorEmpleados.ActualizarEmpleado(ManejadorEmpleados.lista_Empleados, ID, empleado);
+          }
+          else
+          {
+              MessageBox.Show("El ID del empleado no existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              txtEmpleadoId.Clear();
+              
+          }
      }
      private void btnIngresoSistema_Click(object sender, EventArgs e)
      {

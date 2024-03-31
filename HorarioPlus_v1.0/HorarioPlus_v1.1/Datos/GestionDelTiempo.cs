@@ -36,18 +36,23 @@ namespace HorarioPlus_v1._1.Datos
         #region Metodos_De_Busqueda
         public static GestionDelTiempo Buscar_Registro_Por_Fecha(string ID, DateTime FechaParaBuscar)
         {
-            Empleados empleado = ManejadorEmpleados.BuscarEmpleado(ID);
-
-            var listaDeRegistros = empleado.RegistroDelTiempo;
-
-            foreach (var registro in listaDeRegistros)
-            {
-                if (FechaParaBuscar == registro.FechaMarcada)
-                {
-                    return registro;
-                }
-            }
-            return null;
+             Empleados empleado = ManejadorEmpleados.BuscarEmpleado(ID);
+             if (empleado!=null)
+             {
+                 var listaDeRegistros = empleado.RegistroDelTiempo;
+                 foreach (var registro in listaDeRegistros)
+                 {
+                     if (FechaParaBuscar == registro.FechaMarcada)
+                     {
+                         return registro;
+                     }
+                 }
+             }
+             else
+             {
+                 System.Windows.Forms.MessageBox.Show("Registro No encontrado", "ID ERRONEO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+             }
+             return null;
         }
         #endregion
 
@@ -136,109 +141,110 @@ namespace HorarioPlus_v1._1.Datos
         {
             Empleados empleado = ManejadorEmpleados.BuscarEmpleado(ID);
             GestionDelTiempo Registro = new GestionDelTiempo();
-
-            int horaMarcada = 6; //GestionDelTiempo.FechaParaBuscar.Hour;
-            int minutoMarcado = 30;// GestionDelTiempo.FechaParaBuscar.Minute;
-
-            Registro.FechaMarcada = HOY;
-            TimeSpan tiempoMarcado = new TimeSpan(horaMarcada, minutoMarcado, 0);
-
-            int ultimoElemento = empleado.RegistroDelTiempo.Count() - 1;
-
-            if (empleado.RegistroDelTiempo.Count == 0)
+            if (empleado != null)
             {
-                if (tiempoMarcado <= ENTRADA)
-                {
-                    //Ha marcado entrada
-                    Registro.Entrada_Marcada = tiempoMarcado;
-                    MessageBox.Show($"Entrada: {Registro.Entrada_Marcada}");
-                    
-                }
-                else if (tiempoMarcado >= SALIDA)
-                {
-                    //Ha marcado Salida
-                    Registro.Salida_Marcada = tiempoMarcado;
-                    MessageBox.Show($"Salida: {Registro.Salida_Marcada}");
-                }
-                else
-                {
-                    //Marcado de tiempo entre la entrada y la salida
-                    Registro.Entrada_Marcada = tiempoMarcado;
-                    MessageBox.Show($"Entrada: {Registro.Entrada_Marcada}");
-                }
-
-                empleado.RegistroDelTiempo.Add(Registro);
-            }
-            else
-            {
-
-                //Verificamos si ya marco en el mismo dia
-                if (empleado.RegistroDelTiempo.Last().FechaMarcada == HOY)
-                {
-                    if (tiempoMarcado <= ENTRADA)
-                    {
-                        //Ha marcado entrada
-                        empleado.RegistroDelTiempo[ultimoElemento].Entrada_Marcada = tiempoMarcado;
-                        MessageBox.Show($"Entrada: {empleado.RegistroDelTiempo[ultimoElemento].Entrada_Marcada}");
-
-                    }
-                    else if (tiempoMarcado >= SALIDA)
-                    {
-                        //Ha marcado Salida
-                        empleado.RegistroDelTiempo[ultimoElemento].Salida_Marcada = tiempoMarcado;
-                        MessageBox.Show($"Salida: {empleado.RegistroDelTiempo[ultimoElemento].Salida_Marcada}");
-                    }
-                    else
-                    {
-                        //Marcado de tiempo entre la entrada y la salida
-                        empleado.RegistroDelTiempo[ultimoElemento].Entrada_Marcada = tiempoMarcado;
-                        MessageBox.Show($"Entrada: {Registro.Entrada_Marcada}");
-                    }
-
-                    //empleados.RegistroDelTiempo[ultimoElemento] = Registro;
-
-                    ManejadorEmpleados.ActualizarEmpleado(ManejadorEmpleados.lista_Empleados, ID, empleado);
-
-                }
-                else
+                int horaMarcada = 6; //GestionDelTiempo.FechaParaBuscar.Hour;
+                int minutoMarcado = 30;// GestionDelTiempo.FechaParaBuscar.Minute;
+            
+                Registro.FechaMarcada = HOY;
+                TimeSpan tiempoMarcado = new TimeSpan(horaMarcada, minutoMarcado, 0);
+            
+                int ultimoElemento = empleado.RegistroDelTiempo.Count() - 1;
+            
+                if (empleado.RegistroDelTiempo.Count == 0)
                 {
                     if (tiempoMarcado <= ENTRADA)
                     {
                         //Ha marcado entrada
                         Registro.Entrada_Marcada = tiempoMarcado;
-                        MessageBox.Show($"Entrada: {Registro.Entrada_Marcada}");
-
+                        System.Windows.Forms.MessageBox.Show($"Entrada: {Registro.Entrada_Marcada}");
+            
                     }
                     else if (tiempoMarcado >= SALIDA)
                     {
                         //Ha marcado Salida
                         Registro.Salida_Marcada = tiempoMarcado;
-                        MessageBox.Show($"Salida: {Registro.Salida_Marcada}");
+                        System.Windows.Forms.MessageBox.Show($"Salida: {Registro.Salida_Marcada}");
                     }
                     else
                     {
                         //Marcado de tiempo entre la entrada y la salida
                         Registro.Entrada_Marcada = tiempoMarcado;
-                        MessageBox.Show($"Entrada: {Registro.Entrada_Marcada}");
-
-
-
+                        System.Windows.Forms.MessageBox.Show($"Entrada: {Registro.Entrada_Marcada}");
                     }
+            
                     empleado.RegistroDelTiempo.Add(Registro);
-                    ManejadorEmpleados.ActualizarEmpleado(ManejadorEmpleados.lista_Empleados, ID, empleado);
-                }
-                if (VerificarAsistencia(ID, HOY))
-                {
-                    empleado.RegistroDelTiempo[ultimoElemento].Asistencia = true;
                 }
                 else
                 {
-                    empleado.RegistroDelTiempo[ultimoElemento].Asistencia = false;
-
+            
+                    //Verificamos si ya marco en el mismo dia
+                    if (empleado.RegistroDelTiempo.Last().FechaMarcada == HOY)
+                    {
+                        if (tiempoMarcado <= ENTRADA)
+                        {
+                            //Ha marcado entrada
+                            empleado.RegistroDelTiempo[ultimoElemento].Entrada_Marcada = tiempoMarcado;
+                            System.Windows.Forms.MessageBox.Show($"Entrada: {empleado.RegistroDelTiempo[ultimoElemento].Entrada_Marcada}");
+            
+                        }
+                        else if (tiempoMarcado >= SALIDA)
+                        {
+                            //Ha marcado Salida
+                            empleado.RegistroDelTiempo[ultimoElemento].Salida_Marcada = tiempoMarcado;
+                            System.Windows.Forms.MessageBox.Show($"Salida: {empleado.RegistroDelTiempo[ultimoElemento].Salida_Marcada}");
+                        }
+                        else
+                        {
+                            //Marcado de tiempo entre la entrada y la salida
+                            empleado.RegistroDelTiempo[ultimoElemento].Entrada_Marcada = tiempoMarcado;
+                            System.Windows.Forms.MessageBox.Show($"Entrada: {Registro.Entrada_Marcada}");
+                        }
+            
+                        //empleados.RegistroDelTiempo[ultimoElemento] = Registro;
+            
+                        ManejadorEmpleados.ActualizarEmpleado(ManejadorEmpleados.lista_Empleados, ID, empleado);
+            
+                    }
+                    else
+                    {
+                        if (tiempoMarcado <= ENTRADA)
+                        {
+                            //Ha marcado entrada
+                            Registro.Entrada_Marcada = tiempoMarcado;
+                            System.Windows.Forms.MessageBox.Show($"Entrada: {Registro.Entrada_Marcada}");
+            
+                        }
+                        else if (tiempoMarcado >= SALIDA)
+                        {
+                            //Ha marcado Salida
+                            Registro.Salida_Marcada = tiempoMarcado;
+                            System.Windows.Forms.MessageBox.Show($"Salida: {Registro.Salida_Marcada}");
+                        }
+                        else
+                        {
+                            //Marcado de tiempo entre la entrada y la salida
+                            Registro.Entrada_Marcada = tiempoMarcado;
+                            System.Windows.Forms.MessageBox.Show($"Entrada: {Registro.Entrada_Marcada}");
+            
+            
+            
+                        }
+                        empleado.RegistroDelTiempo.Add(Registro);
+                        ManejadorEmpleados.ActualizarEmpleado(ManejadorEmpleados.lista_Empleados, ID, empleado);
+                    }
+                    if (VerificarAsistencia(ID, HOY))
+                    {
+                        empleado.RegistroDelTiempo[ultimoElemento].Asistencia = true;
+                    }
+                    else
+                    {
+                        empleado.RegistroDelTiempo[ultimoElemento].Asistencia = false;
+            
+                    }
+            
                 }
-
-            }
-            ManejadorEmpleados.ActualizarEmpleado(ManejadorEmpleados.lista_Empleados, ID, empleado);
+                ManejadorEmpleados.ActualizarEmpleado(ManejadorEmpleados.lista_Empleados, ID, empleado);
 
         }
         #endregion

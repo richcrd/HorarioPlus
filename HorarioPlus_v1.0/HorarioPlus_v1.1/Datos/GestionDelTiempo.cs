@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Forms;
 
 namespace HorarioPlus_v1._1.Datos
 {
@@ -143,14 +144,14 @@ namespace HorarioPlus_v1._1.Datos
             GestionDelTiempo Registro = new GestionDelTiempo();
             if (empleado != null)
             {
-                int horaMarcada = 6; //GestionDelTiempo.FechaParaBuscar.Hour;
+                int horaMarcada = 16; //GestionDelTiempo.FechaParaBuscar.Hour;
                 int minutoMarcado = 30;// GestionDelTiempo.FechaParaBuscar.Minute;
-            
+
                 Registro.FechaMarcada = HOY;
                 TimeSpan tiempoMarcado = new TimeSpan(horaMarcada, minutoMarcado, 0);
-            
+
                 int ultimoElemento = empleado.RegistroDelTiempo.Count() - 1;
-            
+
                 if (empleado.RegistroDelTiempo.Count == 0)
                 {
                     if (tiempoMarcado <= ENTRADA)
@@ -158,7 +159,7 @@ namespace HorarioPlus_v1._1.Datos
                         //Ha marcado entrada
                         Registro.Entrada_Marcada = tiempoMarcado;
                         System.Windows.Forms.MessageBox.Show($"Entrada: {Registro.Entrada_Marcada}");
-            
+
                     }
                     else if (tiempoMarcado >= SALIDA)
                     {
@@ -172,12 +173,12 @@ namespace HorarioPlus_v1._1.Datos
                         Registro.Entrada_Marcada = tiempoMarcado;
                         System.Windows.Forms.MessageBox.Show($"Entrada: {Registro.Entrada_Marcada}");
                     }
-            
+
                     empleado.RegistroDelTiempo.Add(Registro);
                 }
                 else
                 {
-            
+
                     //Verificamos si ya marco en el mismo dia
                     if (empleado.RegistroDelTiempo.Last().FechaMarcada == HOY)
                     {
@@ -186,7 +187,7 @@ namespace HorarioPlus_v1._1.Datos
                             //Ha marcado entrada
                             empleado.RegistroDelTiempo[ultimoElemento].Entrada_Marcada = tiempoMarcado;
                             System.Windows.Forms.MessageBox.Show($"Entrada: {empleado.RegistroDelTiempo[ultimoElemento].Entrada_Marcada}");
-            
+
                         }
                         else if (tiempoMarcado >= SALIDA)
                         {
@@ -200,11 +201,11 @@ namespace HorarioPlus_v1._1.Datos
                             empleado.RegistroDelTiempo[ultimoElemento].Entrada_Marcada = tiempoMarcado;
                             System.Windows.Forms.MessageBox.Show($"Entrada: {Registro.Entrada_Marcada}");
                         }
-            
+
                         //empleados.RegistroDelTiempo[ultimoElemento] = Registro;
-            
+
                         ManejadorEmpleados.ActualizarEmpleado(ManejadorEmpleados.lista_Empleados, ID, empleado);
-            
+
                     }
                     else
                     {
@@ -213,7 +214,7 @@ namespace HorarioPlus_v1._1.Datos
                             //Ha marcado entrada
                             Registro.Entrada_Marcada = tiempoMarcado;
                             System.Windows.Forms.MessageBox.Show($"Entrada: {Registro.Entrada_Marcada}");
-            
+
                         }
                         else if (tiempoMarcado >= SALIDA)
                         {
@@ -226,9 +227,9 @@ namespace HorarioPlus_v1._1.Datos
                             //Marcado de tiempo entre la entrada y la salida
                             Registro.Entrada_Marcada = tiempoMarcado;
                             System.Windows.Forms.MessageBox.Show($"Entrada: {Registro.Entrada_Marcada}");
-            
-            
-            
+
+
+
                         }
                         empleado.RegistroDelTiempo.Add(Registro);
                         ManejadorEmpleados.ActualizarEmpleado(ManejadorEmpleados.lista_Empleados, ID, empleado);
@@ -240,13 +241,18 @@ namespace HorarioPlus_v1._1.Datos
                     else
                     {
                         empleado.RegistroDelTiempo[ultimoElemento].Asistencia = false;
-            
+
                     }
-            
+
                 }
                 ManejadorEmpleados.ActualizarEmpleado(ManejadorEmpleados.lista_Empleados, ID, empleado);
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Registro No encontrado", "ID ERRONEO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
-        #endregion
+            #endregion
     }
 }

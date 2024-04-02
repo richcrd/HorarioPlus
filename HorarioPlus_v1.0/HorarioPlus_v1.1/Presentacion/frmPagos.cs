@@ -21,9 +21,11 @@ namespace HorarioPlus_v1._1.Presentacion
         #region VARIABLES
         private int contadorPDF = 1;
         private  List<Empleados> lista_Empleados = new List<Empleados>();
+        private int horas_Trabajadas = 8;
+        private double pagoPorHora = 52.56;
         #endregion
 
-        #region INICIALIZACION && CARGA
+        #region INICIALIZACION && SALIDA FORMULARIO
         public frmPagos()
         {
             InitializeComponent();
@@ -36,33 +38,31 @@ namespace HorarioPlus_v1._1.Presentacion
         }
         #endregion
 
-        #region METODOS VOID
+        #region METODO_MUESTRA_TABLA
         private void MostrarTablaPagos()
         {
             dgvTablaPagos.Rows.Clear();
             foreach (var empleado in lista_Empleados)
             {
-                double totalDeducciones = CalculaTotalDeducciones(empleado);
-                double pagoNeto = CalculaPagoNeto(empleado);
+                double salarioNeto = empleado.Calcular_Salario_Neto();
+                double totalHoras = empleado.Calcular_Horas_Acumuladas();
+                double totalDeducciones = empleado.Calcular_Deducciones();
 
-                dgvTablaPagos.Rows.Add(empleado.IdEmpleado, empleado.Nombre, empleado.Apellido1, totalDeducciones, empleado.PagoPorHoras, empleado.TotalHorasAcumuladas, pagoNeto);
+                dgvTablaPagos.Rows.Add
+                    (
+                    empleado.IdEmpleado, 
+                    empleado.Nombre, 
+                    empleado.Apellido1, 
+                    totalDeducciones, 
+                    empleado.PagoPorHoras, 
+                    empleado.TotalHorasAcumuladas,
+                    empleado.Calcular_Salario_Neto() 
+                    );
             }
-        }
-        private double CalculaTotalDeducciones(Empleados empleado)
-        {
-            double totalDeducciones = 0;
-            // Logica para calcular
-            return totalDeducciones;
-        }
-        private double CalculaPagoNeto(Empleados empleado)
-        {
-            double pagoNeto = 0;
-            // Logica para calcular
-            return pagoNeto;
         }
         #endregion
 
-        #region EVENTOS CLICK
+        #region METODO_GENERA_NOMINA_PDF
         private void btnGenerarNomina_Click(object sender, EventArgs e)
         {
             // Crea un nuevo documento PDF

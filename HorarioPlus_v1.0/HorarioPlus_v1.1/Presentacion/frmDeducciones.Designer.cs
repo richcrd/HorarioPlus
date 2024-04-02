@@ -83,7 +83,7 @@
             this.dgvTablaDeducciones.RowHeadersWidth = 62;
             this.dgvTablaDeducciones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvTablaDeducciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTablaDeducciones.Size = new System.Drawing.Size(687, 324);
+            this.dgvTablaDeducciones.Size = new System.Drawing.Size(422, 163);
             this.dgvTablaDeducciones.TabIndex = 21;
             // 
             // IdEmpleado

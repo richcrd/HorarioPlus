@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\DatosDeducciones.cs" />
+    <Compile Include="Datos\GestionDelTiempo.cs" />
     <Compile Include="Datos\ManejadorEmpresa.cs" />
     <Compile Include="Entidades\Deducciones.cs" />
     <Compile Include="Entidades\Empleados.cs" />

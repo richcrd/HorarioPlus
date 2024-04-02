@@ -14,12 +14,12 @@ namespace HorarioPlus_v1._1.Datos
 {
     public class ManejadorEmpleados
     {
-        #region VARIABLES && PROPIEDADES
+        #region Variables
         private const string RUTA_ARCHIVO_EMPLEADOS = @"../../../../archivos_empleados/Empleados.json";
         public static List<Empleados> lista_Empleados { get; set; } = new List<Empleados>();
         #endregion
 
-        #region CRUD
+        #region Sistema_Archivos_Json
         // Metodo para cargar archivo json
         public static List<Empleados> CargarArchivoJson()
         {
@@ -180,7 +180,7 @@ namespace HorarioPlus_v1._1.Datos
         }
         #endregion
 
-        #region VALIDACION DATOS
+        #region validacion_de_datos
         // Metodo para validarCampo
         public string ValidarCampoVacio(string valor, string mensajeError)
         {

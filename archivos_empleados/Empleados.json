@@ -7,37 +7,19 @@
     "Edad": 20,
     "Correo": "richard12@gmail.com",
     "Rol": "Administrador",
-    "PagoPorHoras": 0,
+    "PagoPorHoras": 150,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
     "HorarioEmpleado": "",
-    "Registros": [
+    "RegistroDelTiempo": [
       {
-        "Fecha": "2024-03-29T00:00:00-06:00",
-        "HoraEntrada": "04:34::53 p.\u00A0m.",
-        "HoraSalida": null
-      },
-      {
-        "Fecha": "2024-03-29T00:00:00-06:00",
-        "HoraEntrada": "04:35::16 p.\u00A0m.",
-        "HoraSalida": null
-      },
-      {
-        "Fecha": "2024-03-29T00:00:00-06:00",
-        "HoraEntrada": "04:35::20 p.\u00A0m.",
-        "HoraSalida": null
-      },
-      {
-        "Fecha": "2024-03-29T00:00:00-06:00",
-        "HoraEntrada": "04:35::23 p.\u00A0m.",
-        "HoraSalida": null
-      },
-      {
-        "Fecha": "2024-03-29T00:00:00-06:00",
-        "HoraEntrada": "04:35::38 p.\u00A0m.",
-        "HoraSalida": null
+        "FechaMarcada": "2024-04-02T00:00:00-06:00",
+        "Entrada_Marcada": "00:00:00",
+        "Salida_Marcada": "16:30:00",
+        "Asistencia": false
       }
-    ]
+    ],
+    "Marcado": true
   },
   {
     "IdEmpleado": "2",
@@ -47,11 +29,19 @@
     "Edad": 21,
     "Correo": "juan@gmail.com",
     "Rol": "Administrador",
-    "PagoPorHoras": 0,
+    "PagoPorHoras": 150,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
     "HorarioEmpleado": "",
-    "Registros": []
+    "RegistroDelTiempo": [
+      {
+        "FechaMarcada": "2024-04-02T00:00:00-06:00",
+        "Entrada_Marcada": "00:00:00",
+        "Salida_Marcada": "00:00:00",
+        "Asistencia": false
+      }
+    ],
+    "Marcado": false
   },
   {
     "IdEmpleado": "3",
@@ -61,11 +51,19 @@
     "Edad": 20,
     "Correo": "carlos@gmail.com",
     "Rol": "Empleado",
-    "PagoPorHoras": 0,
+    "PagoPorHoras": 150,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
     "HorarioEmpleado": "",
-    "Registros": []
+    "RegistroDelTiempo": [
+      {
+        "FechaMarcada": "2024-04-02T00:00:00-06:00",
+        "Entrada_Marcada": "00:00:00",
+        "Salida_Marcada": "00:00:00",
+        "Asistencia": false
+      }
+    ],
+    "Marcado": false
   },
   {
     "IdEmpleado": "4",
@@ -75,11 +73,19 @@
     "Edad": 20,
     "Correo": "alex@gmail.com",
     "Rol": "Empleado",
-    "PagoPorHoras": 0,
+    "PagoPorHoras": 150,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
     "HorarioEmpleado": "",
-    "Registros": []
+    "RegistroDelTiempo": [
+      {
+        "FechaMarcada": "2024-04-02T00:00:00-06:00",
+        "Entrada_Marcada": "00:00:00",
+        "Salida_Marcada": "00:00:00",
+        "Asistencia": false
+      }
+    ],
+    "Marcado": false
   },
   {
     "IdEmpleado": "5",
@@ -89,11 +95,19 @@
     "Edad": 24,
     "Correo": "michael@gmail.com",
     "Rol": "Empleado",
-    "PagoPorHoras": 0,
+    "PagoPorHoras": 150,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
     "HorarioEmpleado": "",
-    "Registros": []
+    "RegistroDelTiempo": [
+      {
+        "FechaMarcada": "2024-04-02T00:00:00-06:00",
+        "Entrada_Marcada": "00:00:00",
+        "Salida_Marcada": "00:00:00",
+        "Asistencia": false
+      }
+    ],
+    "Marcado": false
   },
   {
     "IdEmpleado": "6",
@@ -103,11 +117,19 @@
     "Edad": 30,
     "Correo": "test2@gmail.com",
     "Rol": "Empleado",
-    "PagoPorHoras": 0,
+    "PagoPorHoras": 150,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
     "HorarioEmpleado": "",
-    "Registros": []
+    "RegistroDelTiempo": [
+      {
+        "FechaMarcada": "2024-04-02T00:00:00-06:00",
+        "Entrada_Marcada": "00:00:00",
+        "Salida_Marcada": "00:00:00",
+        "Asistencia": false
+      }
+    ],
+    "Marcado": false
   },
   {
     "IdEmpleado": "7",
@@ -117,11 +139,19 @@
     "Edad": 20,
     "Correo": "test4@gmail.com",
     "Rol": "Empleado",
-    "PagoPorHoras": 0,
+    "PagoPorHoras": 150,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
     "HorarioEmpleado": "",
-    "Registros": []
+    "RegistroDelTiempo": [
+      {
+        "FechaMarcada": "2024-04-02T00:00:00-06:00",
+        "Entrada_Marcada": "00:00:00",
+        "Salida_Marcada": "00:00:00",
+        "Asistencia": false
+      }
+    ],
+    "Marcado": false
   },
   {
     "IdEmpleado": "8",
@@ -131,11 +161,19 @@
     "Edad": 19,
     "Correo": "abigail@gmail.com",
     "Rol": "Empleado",
-    "PagoPorHoras": 0,
+    "PagoPorHoras": 150,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
     "HorarioEmpleado": "",
-    "Registros": []
+    "RegistroDelTiempo": [
+      {
+        "FechaMarcada": "2024-04-02T00:00:00-06:00",
+        "Entrada_Marcada": "00:00:00",
+        "Salida_Marcada": "00:00:00",
+        "Asistencia": false
+      }
+    ],
+    "Marcado": false
   },
   {
     "IdEmpleado": "9",
@@ -145,11 +183,19 @@
     "Edad": 19,
     "Correo": "test@gmail.com",
     "Rol": "Empleado",
-    "PagoPorHoras": 0,
+    "PagoPorHoras": 150,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
     "HorarioEmpleado": "",
-    "Registros": []
+    "RegistroDelTiempo": [
+      {
+        "FechaMarcada": "2024-04-02T00:00:00-06:00",
+        "Entrada_Marcada": "00:00:00",
+        "Salida_Marcada": "00:00:00",
+        "Asistencia": false
+      }
+    ],
+    "Marcado": false
   },
   {
     "IdEmpleado": "10",
@@ -159,10 +205,18 @@
     "Edad": 20,
     "Correo": "test@gmail.com",
     "Rol": "Empleado",
-    "PagoPorHoras": 0,
+    "PagoPorHoras": 150,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
     "HorarioEmpleado": "",
-    "Registros": []
+    "RegistroDelTiempo": [
+      {
+        "FechaMarcada": "2024-04-02T00:00:00-06:00",
+        "Entrada_Marcada": "00:00:00",
+        "Salida_Marcada": "00:00:00",
+        "Asistencia": false
+      }
+    ],
+    "Marcado": false
   }
 ]

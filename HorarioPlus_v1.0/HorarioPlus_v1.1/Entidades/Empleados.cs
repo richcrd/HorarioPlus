@@ -21,10 +21,13 @@ namespace HorarioPlus_v1._1.Datos
         public double TotalHorasAcumuladas { get; set; }
         public double SalarioNeto { get; set; }
         public string HorarioEmpleado { get; set; }
-         //Datos cronometricos del empleado
-         public List<GestionDelTiempo> RegistroDelTiempo { get; set; } = new List<GestionDelTiempo>();
-         public bool Marcado { get; set; } = false;
-         public Empleados() {}
+
+        //Datos cronometricos del empleado
+        public List<GestionDelTiempo> RegistroDelTiempo { get; set; } = new List<GestionDelTiempo>();
+        public bool Marcado { get; set; } = false;
+
+        #region CONSTRUCTORES
+        public Empleados() {}
         
          public Empleados(string id, string nombre, string apellido1, string apellido2, int edad, string correo, string rol, double pagoPorHoras, double totalHorasAcumuladas, double salarioNeto, string horarioEmpleado)
          {
@@ -40,9 +43,10 @@ namespace HorarioPlus_v1._1.Datos
              SalarioNeto = salarioNeto;
              HorarioEmpleado = horarioEmpleado;
          }
-         
-         #region Metodos_Adicionales
-         public static bool CambiarValorLogico()
+        #endregion
+
+        #region Metodos_Adicionales
+        public static bool CambiarValorLogico()
          {
              //cambiar a false la propiedad "Marcado" si el dia es diferente del actual
              List<Empleados> ListaEmpleados = ManejadorEmpleados.lista_Empleados;
@@ -69,6 +73,39 @@ namespace HorarioPlus_v1._1.Datos
         
              }
          }
-         #endregion
+        #endregion
+
+        #region METODOS_PARA_CALCULAR_PAGOS
+        // Metodo que nos sera util para sacar el total horas acumuladas, hacemos uso del metodo TotalHours de TimeSpan
+        public double Calcular_Horas_Acumuladas()
+        {
+            double totalHoras = 0;
+            foreach (var registro in RegistroDelTiempo)
+            {
+                TimeSpan diferencia_tiempo = registro.Salida_Marcada - registro.Entrada_Marcada;
+                totalHoras += diferencia_tiempo.TotalHours;
+            }
+            return totalHoras;
+        }
+
+        public double Calcular_Salario_Neto()
+        {
+            double horas_trabajadas = Calcular_Horas_Acumuladas();
+            double deducciones = Calcular_Deducciones();
+            double salarioNeto = horas_trabajadas * PagoPorHoras - deducciones;
+            return salarioNeto;
+        }
+
+        public double Calcular_Deducciones()
+        {
+            double totalDeducciones = 0;
+            List<Deducciones> lista_Deducciones = DatosDeducciones.ObtenerDeducciones();
+            foreach (var deduccion in lista_Deducciones)
+            {
+                totalDeducciones += deduccion.Monto;
+            }
+            return totalDeducciones;
+        }
+        #endregion
     }
 }

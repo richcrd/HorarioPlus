@@ -17,7 +17,7 @@ namespace HorarioPlus_v1._1.Datos
         #region Variables
         //private const string RUTA_ARCHIVO_EMPLEADOS = @"../../../../archivos_empleados/Empleados.json";
         //demo
-        private const string RUTA_ARCHIVO_EMPLEADOS = @"../../../../C# Projects/demo.json";
+        private const string RUTA_ARCHIVO_EMPLEADOS = @"../../../../archivos_empleados/demo.json";
         public static List<Empleados> lista_Empleados { get; set; } = new List<Empleados>();
         #endregion
 

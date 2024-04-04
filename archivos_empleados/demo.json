@@ -21,11 +21,11 @@
       {
         "FechaMarcada": "2024-04-03T00:00:00-06:00",
         "Entrada_Marcada": "00:00:00",
-        "Salida_Marcada": "00:00:00",
+        "Salida_Marcada": "16:30:00",
         "Asistencia": false
       }
     ],
-    "Marcado": false
+    "Marcado": true
   },
   {
     "IdEmpleado": "2",
@@ -34,18 +34,12 @@
     "Apellido2": "Apellido2",
     "Edad": 21,
     "Correo": "juan@gmail.com",
-    "Rol": "Administrador",
-    "PagoPorHoras": 150,
+    "Rol": "Empleado",
+    "PagoPorHoras": 0,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
-    "HorarioEmpleado": "",
+    "HorarioEmpleado": null,
     "RegistroDelTiempo": [
-      {
-        "FechaMarcada": "2024-04-02T00:00:00-06:00",
-        "Entrada_Marcada": "07:15:23",
-        "Salida_Marcada": "16:30:10",
-        "Asistencia": true
-      },
       {
         "FechaMarcada": "2024-04-03T00:00:00-06:00",
         "Entrada_Marcada": "00:00:00",

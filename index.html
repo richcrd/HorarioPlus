@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planilla de Pagos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: red;
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        /* Estilos para la sección de datos de la empresa */
+        #datosEmpresa {
+            float: right;
+            border: 1px solid black;
+            padding: 10px;
+            margin-top: 20px;
+            margin-right: 40px;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sección de datos de la empresa -->
+    <div id="datosEmpresa">
+        <p>Nombre: <span id="nombreEmpresa">Nombre Empresa</span></p>
+        <p>Dirección: <span id="direccionEmpresa">Dirección Empresa</span></p>
+        <p>Teléfono: <span id="telefonoEmpresa">Teléfono Empresa</span></p>
+        <p>Correo: <span id="correoEmpresa">Correo Empresa</span></p>
+    </div>
+
+    <!-- Título principal -->
+    <h1>Planilla de Pagos</h1>
+
+    <!-- Tabla de empleados -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID Empleado</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Deducciones</th>
+                <th>Pago por Hora</th>
+                <th>Total Horas</th>
+                <th>Salario Neto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se insertarán los datos dinámicamente -->
+        </tbody>
+    </table>
+</body>
+</html>
+

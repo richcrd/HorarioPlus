@@ -18,7 +18,7 @@ namespace HorarioPlus_v1._1.Presentacion
 {
     public partial class frmPagos : Form
     {
-        #region VARIABLES
+        #region VARIABLES && LISTA
         private int contadorPDF = 1;
         private  List<Empleados> lista_Empleados = new List<Empleados>();
         #endregion
@@ -30,6 +30,9 @@ namespace HorarioPlus_v1._1.Presentacion
             lista_Empleados = ManejadorEmpleados.CargarArchivoJson();
             MostrarTablaPagos();
         }
+        #endregion
+
+        #region EVENTO_CIERRE_FORMULARIO
         private void frmPagos_FormClosing(object sender, FormClosedEventArgs e)
         {
             ManejadorEmpleados.GuardarArchivoJson(lista_Empleados);

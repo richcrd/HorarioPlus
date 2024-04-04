@@ -1,0 +1,80 @@
+[
+  {
+    "IdEmpleado": "1",
+    "Nombre": "Richard",
+    "Apellido1": "Rodriguez",
+    "Apellido2": "Castro",
+    "Edad": 20,
+    "Correo": "richard12@gmail.com",
+    "Rol": "Administrador",
+    "PagoPorHoras": 150,
+    "TotalHorasAcumuladas": 0,
+    "SalarioNeto": 0,
+    "HorarioEmpleado": "",
+    "RegistroDelTiempo": [
+      {
+        "FechaMarcada": "2024-04-02T00:00:00-06:00",
+        "Entrada_Marcada": "08:00:12",
+        "Salida_Marcada": "17:00:00",
+        "Asistencia": true
+      },
+      {
+        "FechaMarcada": "2024-04-03T00:00:00-06:00",
+        "Entrada_Marcada": "00:00:00",
+        "Salida_Marcada": "16:30:00",
+        "Asistencia": false
+      }
+    ],
+    "Marcado": true
+  },
+  {
+    "IdEmpleado": "2",
+    "Nombre": "Juan",
+    "Apellido1": "Apellido1",
+    "Apellido2": "Apellido2",
+    "Edad": 21,
+    "Correo": "juan@gmail.com",
+    "Rol": "Empleado",
+    "PagoPorHoras": 0,
+    "TotalHorasAcumuladas": 0,
+    "SalarioNeto": 0,
+    "HorarioEmpleado": null,
+    "RegistroDelTiempo": [
+      {
+        "FechaMarcada": "2024-04-03T00:00:00-06:00",
+        "Entrada_Marcada": "00:00:00",
+        "Salida_Marcada": "00:00:00",
+        "Asistencia": false
+      }
+    ],
+    "Marcado": false
+  },
+  {
+    "IdEmpleado": "3",
+    "Nombre": "Carlos",
+    "Apellido1": "apellido1",
+    "Apellido2": "apellido2",
+    "Edad": 20,
+    "Correo": "carlos@gmail.com",
+    "Rol": "Empleado",
+    "PagoPorHoras": 150,
+    "TotalHorasAcumuladas": 0,
+    "SalarioNeto": 0,
+    "HorarioEmpleado": "",
+    "RegistroDelTiempo": [
+      {
+        "FechaMarcada": "2024-04-02T00:00:00-06:00",
+        "Entrada_Marcada": "07:12:20",
+        "Salida_Marcada": "17:13:30",
+        "Asistencia": true
+      },
+      {
+        "FechaMarcada": "2024-04-03T00:00:00-06:00",
+        "Entrada_Marcada": "00:00:00",
+        "Salida_Marcada": "00:00:00",
+        "Asistencia": false
+      }
+    ],
+    "Marcado": false
+  }
+]

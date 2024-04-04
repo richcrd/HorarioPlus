@@ -18,11 +18,9 @@ namespace HorarioPlus_v1._1.Presentacion
 {
     public partial class frmPagos : Form
     {
-        #region VARIABLES
+        #region VARIABLES && LISTA
         private int contadorPDF = 1;
         private  List<Empleados> lista_Empleados = new List<Empleados>();
-        private int horas_Trabajadas = 8;
-        private double pagoPorHora = 52.56;
         #endregion
 
         #region INICIALIZACION && SALIDA FORMULARIO
@@ -32,6 +30,9 @@ namespace HorarioPlus_v1._1.Presentacion
             lista_Empleados = ManejadorEmpleados.CargarArchivoJson();
             MostrarTablaPagos();
         }
+        #endregion
+
+        #region EVENTO_CIERRE_FORMULARIO
         private void frmPagos_FormClosing(object sender, FormClosedEventArgs e)
         {
             ManejadorEmpleados.GuardarArchivoJson(lista_Empleados);
@@ -48,6 +49,9 @@ namespace HorarioPlus_v1._1.Presentacion
                 double totalHoras = empleado.Calcular_Horas_Acumuladas();
                 double totalDeducciones = empleado.Calcular_Deducciones();
 
+                string tthFormateadas = totalHoras.ToString("N2");
+                string sslNeto = salarioNeto.ToString("N2");
+
                 dgvTablaPagos.Rows.Add
                     (
                     empleado.IdEmpleado, 
@@ -55,8 +59,8 @@ namespace HorarioPlus_v1._1.Presentacion
                     empleado.Apellido1, 
                     totalDeducciones, 
                     empleado.PagoPorHoras, 
-                    empleado.TotalHorasAcumuladas,
-                    empleado.Calcular_Salario_Neto() 
+                    tthFormateadas,
+                    sslNeto 
                     );
             }
         }

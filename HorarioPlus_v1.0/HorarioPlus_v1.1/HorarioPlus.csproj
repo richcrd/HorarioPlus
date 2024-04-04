@@ -308,6 +308,9 @@
     <EmbeddedResource Include="Presentacion\frmAjustes.resx">
       <DependentUpon>frmAjustes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frmAsistencias.resx">
+      <DependentUpon>frmAsistencias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frmCarnet.resx">
       <DependentUpon>frmCarnet.cs</DependentUpon>
     </EmbeddedResource>

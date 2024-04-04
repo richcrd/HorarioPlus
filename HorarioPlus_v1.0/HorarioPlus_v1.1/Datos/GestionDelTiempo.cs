@@ -10,8 +10,9 @@ namespace HorarioPlus_v1._1.Datos
 {
     public class GestionDelTiempo
     {
+        #region Variables_tiempo
         //Tiempo del sistema en el programa
-        public static DateTime HOY = DateTime.Now.Date;//.AddDays(2)
+        public static DateTime HOY = DateTime.Now.Date.AddDays(1);//.AddDays(2)
         public static int Hora = DateTime.Now.Hour;
         public static int Minuto = DateTime.Now.Minute;
         public static int Segundo = DateTime.Now.Second;
@@ -20,12 +21,18 @@ namespace HorarioPlus_v1._1.Datos
         //Definiendo jornada Laboral
         public static TimeSpan ENTRADA = new TimeSpan(6, 30, 0);//Hora, Minuto, Segundo
         public static TimeSpan SALIDA = new TimeSpan(16, 30, 0);
+        #endregion
 
+        #region Propiedades_tiempo
         //Definiendo datos del registro cronometrico para cada empleado
         public DateTime FechaMarcada { get; set; }
         public TimeSpan Entrada_Marcada { get; set; }
+        public bool EsTarde { get; set; } = false;
         public TimeSpan Salida_Marcada { get; set; }
         public bool Asistencia { get; set; }
+        #endregion
+
+        #region Constructores
         public GestionDelTiempo() { }
         public GestionDelTiempo(DateTime fecha, TimeSpan hora_De_Entrada, TimeSpan hora_De_Salida)
         {
@@ -33,6 +40,7 @@ namespace HorarioPlus_v1._1.Datos
             Entrada_Marcada = hora_De_Entrada;
             Salida_Marcada = hora_De_Salida;
         }
+        #endregion
 
         #region Metodos_De_Busqueda
         public static GestionDelTiempo Buscar_Registro_Por_Fecha(string ID, DateTime FechaParaBuscar)
@@ -79,12 +87,12 @@ namespace HorarioPlus_v1._1.Datos
         #region Metodos_De_Registro
         public static void Asignar_Registro_A_Los_Ausentes()
         {
-            //fin del dia
-            TimeSpan Intervalo_de_Tiempo_1 = new TimeSpan(20, 0, 0);
-            TimeSpan Intervalo_de_Tiempo_2 = new TimeSpan(24, 59, 59);
-
-            if (HourMinSec == Intervalo_de_Tiempo_1)//&& HourMinSec<=finDelDia2
+            //fin del dia -> Mala idea
+            //TimeSpan Intervalo_de_Tiempo_1 = new TimeSpan(20, 0, 0);
+            //TimeSpan Intervalo_de_Tiempo_2 = new TimeSpan(24, 59, 59);
+            if (true)//Tenia una condicion, pero fue poco practico, mejor todos estaran ausentes hasta que demuestren lo contrario en la fecha actual
             {
+                //Me dio pereza quitar el if anterior, ademas daba problemas usar el bucle foreach asique
                 for (int i = 0; i < ManejadorEmpleados.lista_Empleados.Count(); i++)
                 {
                     int ultimoElemento = ManejadorEmpleados.lista_Empleados[i].RegistroDelTiempo.Count() - 1;
@@ -98,6 +106,7 @@ namespace HorarioPlus_v1._1.Datos
                             Registro.Entrada_Marcada = TimeSpan.Zero;
                             Registro.Salida_Marcada = TimeSpan.Zero;
                             Registro.Asistencia = false;
+
 
                             ManejadorEmpleados.lista_Empleados[i].RegistroDelTiempo.Add(Registro);
                             ManejadorEmpleados.ActualizarEmpleado(ManejadorEmpleados.lista_Empleados, ManejadorEmpleados.lista_Empleados[i].IdEmpleado, ManejadorEmpleados.lista_Empleados[i]);
@@ -144,8 +153,8 @@ namespace HorarioPlus_v1._1.Datos
             GestionDelTiempo Registro = new GestionDelTiempo();
             if (empleado != null)
             {
-                int horaMarcada = 16; //GestionDelTiempo.FechaParaBuscar.Hour;
-                int minutoMarcado = 30;// GestionDelTiempo.FechaParaBuscar.Minute;
+                int horaMarcada = Hora; //GestionDelTiempo.FechaParaBuscar.Hour;
+                int minutoMarcado = Minuto;// GestionDelTiempo.FechaParaBuscar.Minute;
 
                 Registro.FechaMarcada = HOY;
                 TimeSpan tiempoMarcado = new TimeSpan(horaMarcada, minutoMarcado, 0);
@@ -170,7 +179,7 @@ namespace HorarioPlus_v1._1.Datos
                     else
                     {
                         //Marcado de tiempo entre la entrada y la salida
-                        Registro.Entrada_Marcada = tiempoMarcado;
+                        Registro.EsTarde = true;
                         System.Windows.Forms.MessageBox.Show($"Entrada: {Registro.Entrada_Marcada}");
                     }
 
@@ -198,8 +207,9 @@ namespace HorarioPlus_v1._1.Datos
                         else
                         {
                             //Marcado de tiempo entre la entrada y la salida
+                            empleado.RegistroDelTiempo[ultimoElemento].EsTarde = true;
                             empleado.RegistroDelTiempo[ultimoElemento].Entrada_Marcada = tiempoMarcado;
-                            System.Windows.Forms.MessageBox.Show($"Entrada: {Registro.Entrada_Marcada}");
+                            System.Windows.Forms.MessageBox.Show($"Entrada: {empleado.RegistroDelTiempo[ultimoElemento].Entrada_Marcada}");
                         }
 
                         //empleados.RegistroDelTiempo[ultimoElemento] = Registro;
@@ -225,9 +235,9 @@ namespace HorarioPlus_v1._1.Datos
                         else
                         {
                             //Marcado de tiempo entre la entrada y la salida
+                            empleado.RegistroDelTiempo[ultimoElemento].EsTarde = true;
                             Registro.Entrada_Marcada = tiempoMarcado;
                             System.Windows.Forms.MessageBox.Show($"Entrada: {Registro.Entrada_Marcada}");
-
 
 
                         }
@@ -253,6 +263,6 @@ namespace HorarioPlus_v1._1.Datos
             }
 
         }
-            #endregion
+        #endregion
     }
 }

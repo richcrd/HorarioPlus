@@ -9,12 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using iTextSharp.text.pdf;
-using iTextSharp.text;
-using iTextSharp.text.html.simpleparser;
-//using Font = iTextSharp.text.Font;
 using System.IO;
-using iTextSharp.text.html;
 using System.Collections;
 using System.Text.RegularExpressions;
 
@@ -73,103 +68,103 @@ namespace HorarioPlus_v1._1.Presentacion
         #endregion
 
         #region Metodo_Genera_Planilla
-        private void GenerarNominaPDF()
-        {
-            try
-            {
-                string HTML_RUTA_ARCHIVO = @"../../../../index.html";
-                string html = File.ReadAllText(HTML_RUTA_ARCHIVO);
+        //private void GenerarNominaPDF()
+        //{
+        //    try
+        //    {
+        //        string HTML_RUTA_ARCHIVO = @"../../../../index.html";
+        //        string html = File.ReadAllText(HTML_RUTA_ARCHIVO);
 
-                // Para extraer los estilos CSS dentro de la etiqueta <style>
-                var styleMatch = Regex.Match(html, "<style[^>]*>(.*?)</style>", RegexOptions.Singleline);
-                string styleContent = styleMatch.Success ? styleMatch.Groups[1].Value : string.Empty;
+        //        // Para extraer los estilos CSS dentro de la etiqueta <style>
+        //        var styleMatch = Regex.Match(html, "<style[^>]*>(.*?)</style>", RegexOptions.Singleline);
+        //        string styleContent = styleMatch.Success ? styleMatch.Groups[1].Value : string.Empty;
 
-                // Aplicamos los estilos CSS al documento PDF
-                StyleSheet styles = new StyleSheet();
-                styles.LoadTagStyle(HtmlTags.TABLE, "border", "1");
-                styles.LoadTagStyle(HtmlTags.TABLE, "width", "100%");
-                styles.LoadTagStyle(HtmlTags.TD, "padding", "5px");
-                styles.LoadTagStyle(HtmlTags.TH, "padding", "5px");
-                styles.LoadTagStyle(HtmlTags.TH, "background-color", "#dddddd");
+        //        // Aplicamos los estilos CSS al documento PDF
+        //        StyleSheet styles = new StyleSheet();
+        //        styles.LoadTagStyle(HtmlTags.TABLE, "border", "1");
+        //        styles.LoadTagStyle(HtmlTags.TABLE, "width", "100%");
+        //        styles.LoadTagStyle(HtmlTags.TD, "padding", "5px");
+        //        styles.LoadTagStyle(HtmlTags.TH, "padding", "5px");
+        //        styles.LoadTagStyle(HtmlTags.TH, "background-color", "#dddddd");
 
-                // Para aregar los estilos CSS al documento
-                styles.LoadStyle("estilos", "font-family", "Arial, sans-serif");
-                styles.LoadStyle("estilos", "margin", "0");
-                styles.LoadStyle("estilos", "padding", "0");
-                styles.LoadStyle("estilos h1", "color", "red");
-                styles.LoadStyle("estilos h1", "text-align", "center");
-                styles.LoadStyle("estilos h1", "margin-top", "40px");
-                styles.LoadStyle("estilos h1", "margin-bottom", "40px");
-                styles.LoadStyle("estilos #tabla-empleados", "width", "70%");
-                styles.LoadStyle("estilos #tabla-empleados", "border-collapse", "collapse");
-                styles.LoadStyle("estilos #tabla-empleados", "margin", "0 auto");
-                styles.LoadStyle("estilos th, td", "border", "1px solid black");
-                styles.LoadStyle("estilos th, td", "padding", "8px");
-                styles.LoadStyle("estilos th, td", "text-align", "left");
+        //        // Para aregar los estilos CSS al documento
+        //        styles.LoadStyle("estilos", "font-family", "Arial, sans-serif");
+        //        styles.LoadStyle("estilos", "margin", "0");
+        //        styles.LoadStyle("estilos", "padding", "0");
+        //        styles.LoadStyle("estilos h1", "color", "red");
+        //        styles.LoadStyle("estilos h1", "text-align", "center");
+        //        styles.LoadStyle("estilos h1", "margin-top", "40px");
+        //        styles.LoadStyle("estilos h1", "margin-bottom", "40px");
+        //        styles.LoadStyle("estilos #tabla-empleados", "width", "70%");
+        //        styles.LoadStyle("estilos #tabla-empleados", "border-collapse", "collapse");
+        //        styles.LoadStyle("estilos #tabla-empleados", "margin", "0 auto");
+        //        styles.LoadStyle("estilos th, td", "border", "1px solid black");
+        //        styles.LoadStyle("estilos th, td", "padding", "8px");
+        //        styles.LoadStyle("estilos th, td", "text-align", "left");
 
-                // Para remover los estilos que son generados en forma de codigo
-                html = Regex.Replace(html, "<style[^>]*>.*?</style>", string.Empty, RegexOptions.Singleline);
+        //        // Para remover los estilos que son generados en forma de codigo
+        //        html = Regex.Replace(html, "<style[^>]*>.*?</style>", string.Empty, RegexOptions.Singleline);
 
-                // Reemplazamos de los marcadores de posición con los datos de la empresa
-                html = html.Replace("{{NombreEmpresa}}", empresa.NombreEmpresa);
-                html = html.Replace("{{DireccionEmpresa}}", empresa.DireccionEmpresa);
-                html = html.Replace("{{TelefonoEmpresa}}", empresa.TelefonoEmpresa);
-                html = html.Replace("{{CorreoEmpresa}}", empresa.CorreoEmpresa);
+        //        // Reemplazamos de los marcadores de posición con los datos de la empresa
+        //        html = html.Replace("{{NombreEmpresa}}", empresa.NombreEmpresa);
+        //        html = html.Replace("{{DireccionEmpresa}}", empresa.DireccionEmpresa);
+        //        html = html.Replace("{{TelefonoEmpresa}}", empresa.TelefonoEmpresa);
+        //        html = html.Replace("{{CorreoEmpresa}}", empresa.CorreoEmpresa);
 
-                // Generamos las filas de la tabla de empleados en HTML
-                StringBuilder tbody = new StringBuilder();
-                foreach (var empleado in lista_Empleados)
-                {
-                    tbody.AppendLine("<tr>");
-                    tbody.AppendLine($"<td>{empleado.IdEmpleado}</td>");
-                    tbody.AppendLine($"<td>{empleado.Nombre}</td>");
-                    tbody.AppendLine($"<td>{empleado.Apellido1}</td>");
-                    tbody.AppendLine($"<td>{empleado.Calcular_Deducciones().ToString("N2")}</td>");
-                    tbody.AppendLine($"<td>{empleado.PagoPorHoras.ToString("N2")}</td>");
-                    tbody.AppendLine($"<td>{empleado.Calcular_Horas_Acumuladas().ToString("N2")}</td>");
-                    tbody.AppendLine($"<td>{empleado.Calcular_Salario_Neto().ToString("N2")}</td>");
-                    tbody.AppendLine("</tr>");
-                }
-                html = html.Replace("<!-- Aquí se insertarán los datos dinámicamente -->", tbody.ToString());
+        //        // Generamos las filas de la tabla de empleados en HTML
+        //        StringBuilder tbody = new StringBuilder();
+        //        foreach (var empleado in lista_Empleados)
+        //        {
+        //            tbody.AppendLine("<tr>");
+        //            tbody.AppendLine($"<td>{empleado.IdEmpleado}</td>");
+        //            tbody.AppendLine($"<td>{empleado.Nombre}</td>");
+        //            tbody.AppendLine($"<td>{empleado.Apellido1}</td>");
+        //            tbody.AppendLine($"<td>{empleado.Calcular_Deducciones().ToString("N2")}</td>");
+        //            tbody.AppendLine($"<td>{empleado.PagoPorHoras.ToString("N2")}</td>");
+        //            tbody.AppendLine($"<td>{empleado.Calcular_Horas_Acumuladas().ToString("N2")}</td>");
+        //            tbody.AppendLine($"<td>{empleado.Calcular_Salario_Neto().ToString("N2")}</td>");
+        //            tbody.AppendLine("</tr>");
+        //        }
+        //        html = html.Replace("<!-- Aquí se insertarán los datos dinámicamente -->", tbody.ToString());
 
-                // Creación del documento PDF
-                Document doc = new Document();
-                string RUTA_CARPETA = @"../../../../Nominas PDF/";
-                string RUTA_PDF = Path.Combine(RUTA_CARPETA, $"Pagos{contadorPDF}.pdf");
+        //        // Creación del documento PDF
+        //        Document doc = new Document();
+        //        string RUTA_CARPETA = @"../../../../Nominas PDF/";
+        //        string RUTA_PDF = Path.Combine(RUTA_CARPETA, $"Pagos{contadorPDF}.pdf");
 
-                // Escritura del archivo PDF
-                using (FileStream fs = new FileStream(RUTA_PDF, FileMode.Create))
-                {
-                    PdfWriter.GetInstance(doc, fs);
-                    doc.Open();
+        //        // Escritura del archivo PDF
+        //        using (FileStream fs = new FileStream(RUTA_PDF, FileMode.Create))
+        //        {
+        //            PdfWriter.GetInstance(doc, fs);
+        //            doc.Open();
 
-                    // Creación del archivo PDF desde el HTML con estilos
-                    using (StringReader sr = new StringReader(html))
-                    {
-                        List<iTextSharp.text.IElement> elementos = HTMLWorker.ParseToList(sr, styles);
-                        foreach (IElement element in elementos)
-                        {
-                            doc.Add(element);
-                        }
-                    }
-                    doc.Close();
-                }
+        //            // Creación del archivo PDF desde el HTML con estilos
+        //            using (StringReader sr = new StringReader(html))
+        //            {
+        //                List<iTextSharp.text.IElement> elementos = HTMLWorker.ParseToList(sr, styles);
+        //                foreach (IElement element in elementos)
+        //                {
+        //                    doc.Add(element);
+        //                }
+        //            }
+        //            doc.Close();
+        //        }
 
-                MessageBox.Show($"PDF generado en esta ruta: {RUTA_PDF}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                contadorPDF++;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        //        MessageBox.Show($"PDF generado en esta ruta: {RUTA_PDF}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        contadorPDF++;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
         #endregion
 
         #region EVENTO_NOMINA_PDF
-        private void btnGenerarNomina_Click(object sender, EventArgs e)
-        {
-            GenerarNominaPDF();
-        }
+        //private void btnGenerarNomina_Click(object sender, EventArgs e)
+        //{
+        //    GenerarNominaPDF();
+        //}
         #endregion
     }
 }

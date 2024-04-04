@@ -1,19 +1,14 @@
 ﻿using HorarioPlus_v1._1.Datos;
 using HorarioPlus_v1._1.Presentacion.Utilidades;
-using iTextSharp.text.pdf;
-using iTextSharp.text;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Font = iTextSharp.text.Font;
 
 namespace HorarioPlus_v1._1.Presentacion
 {
@@ -102,61 +97,61 @@ namespace HorarioPlus_v1._1.Presentacion
             lista_Empleados = ManejadorEmpleados.CargarArchivoJson();
             ManejadorEmpleados.MostrarTabla(dgvTablaEmpleados, lista_Empleados);
         }
-        private void btnGenerarNomina_Click(object sender, EventArgs e)
-        {
-            // Crea un nuevo documento PDF
-            Document doc = new Document();
+        //private void btnGenerarNomina_Click(object sender, EventArgs e)
+        //{
+        //    // Crea un nuevo documento PDF
+        //    Document doc = new Document();
 
-            // Especifica la ubicación donde guardar el PDF
-            string rutaCarpeta = @"../../../../Nominas PDF/";
-            string rutaPDF = Path.Combine(rutaCarpeta, "emp" + contadorPDF + ".pdf");
+        //    // Especifica la ubicación donde guardar el PDF
+        //    string rutaCarpeta = @"../../../../Nominas PDF/";
+        //    string rutaPDF = Path.Combine(rutaCarpeta, "emp" + contadorPDF + ".pdf");
 
-            PdfWriter.GetInstance(doc, new FileStream(rutaPDF, FileMode.Create));
+        //    PdfWriter.GetInstance(doc, new FileStream(rutaPDF, FileMode.Create));
 
-            // Abre el documento para escribir
-            doc.Open();
+        //    // Abre el documento para escribir
+        //    doc.Open();
 
-            Font tituloHoja = FontFactory.GetFont("Arial", 28, BaseColor.RED);
+        //    Font tituloHoja = FontFactory.GetFont("Arial", 28, BaseColor.RED);
 
-            Paragraph titulo = new Paragraph("Lista de Empleados", tituloHoja);
-            titulo.Alignment = Element.ALIGN_CENTER;
-            doc.Add(titulo);
+        //    Paragraph titulo = new Paragraph("Lista de Empleados", tituloHoja);
+        //    titulo.Alignment = Element.ALIGN_CENTER;
+        //    doc.Add(titulo);
 
-            // Crea una tabla PDF
-            PdfPTable table = new PdfPTable(dgvTablaEmpleados.Columns.Count);
-            // Establece el ancho de las columnas
-            float[] anchosColumnas = { 2, 4, 4, 4, 4, 6, 6 };
-            table.SetWidths(anchosColumnas);
+        //    // Crea una tabla PDF
+        //    PdfPTable table = new PdfPTable(dgvTablaEmpleados.Columns.Count);
+        //    // Establece el ancho de las columnas
+        //    float[] anchosColumnas = { 2, 4, 4, 4, 4, 6, 6 };
+        //    table.SetWidths(anchosColumnas);
 
-            // Añade los encabezados de columna a la tabla
-            for (int i = 0; i < dgvTablaEmpleados.Columns.Count; i++)
-            {
-                table.AddCell(new Phrase(dgvTablaEmpleados.Columns[i].HeaderText));
-            }
+        //    // Añade los encabezados de columna a la tabla
+        //    for (int i = 0; i < dgvTablaEmpleados.Columns.Count; i++)
+        //    {
+        //        table.AddCell(new Phrase(dgvTablaEmpleados.Columns[i].HeaderText));
+        //    }
 
-            // Añade las filas de datos a la tabla
-            for (int i = 0; i < dgvTablaEmpleados.Rows.Count; i++)
-            {
-                for (int j = 0; j < dgvTablaEmpleados.Columns.Count; j++)
-                {
-                    if (dgvTablaEmpleados.Rows[i].Cells[j].Value != null)
-                    {
-                        table.AddCell(new Phrase(dgvTablaEmpleados.Rows[i].Cells[j].Value.ToString()));
-                    }
-                }
-            }
+        //    // Añade las filas de datos a la tabla
+        //    for (int i = 0; i < dgvTablaEmpleados.Rows.Count; i++)
+        //    {
+        //        for (int j = 0; j < dgvTablaEmpleados.Columns.Count; j++)
+        //        {
+        //            if (dgvTablaEmpleados.Rows[i].Cells[j].Value != null)
+        //            {
+        //                table.AddCell(new Phrase(dgvTablaEmpleados.Rows[i].Cells[j].Value.ToString()));
+        //            }
+        //        }
+        //    }
 
-            // Añade la tabla al documento
-            doc.Add(table);
+        //    // Añade la tabla al documento
+        //    doc.Add(table);
 
-            // Cierra el documento
-            doc.Close();
+        //    // Cierra el documento
+        //    doc.Close();
 
-            MessageBox.Show($"PDF generado exitosamente en {rutaPDF}", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    MessageBox.Show($"PDF generado exitosamente en {rutaPDF}", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Incrementa el contador para el próximo PDF
-            contadorPDF++;
-        }
+        //    // Incrementa el contador para el próximo PDF
+        //    contadorPDF++;
+        //}
         #endregion
 
         #region METODOS PROCEDIMIENTOS

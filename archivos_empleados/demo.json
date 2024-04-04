@@ -35,13 +35,13 @@
       },
       {
         "FechaMarcada": "2024-04-04T00:00:00-06:00",
-        "Entrada_Marcada": "00:00:00",
-        "EsTarde": false,
+        "Entrada_Marcada": "14:22:00",
+        "EsTarde": true,
         "Salida_Marcada": "00:00:00",
         "Asistencia": false
       }
     ],
-    "Marcado": false
+    "Marcado": true
   },
   {
     "IdEmpleado": "2",

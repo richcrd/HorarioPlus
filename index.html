@@ -16,7 +16,7 @@
             margin-top: 40px;
             margin-bottom: 40px;
         }
-        table {
+        #tabla-empleados {
             width: 70%;
             border-collapse: collapse;
             margin: 0 auto;
@@ -26,7 +26,6 @@
             padding: 8px;
             text-align: left;
         }
-        /* Estilos para la sección de datos de la empresa */
         #datosEmpresa {
             float: right;
             border: 1px solid black;
@@ -38,19 +37,14 @@
     </style>
 </head>
 <body>
-    <!-- Sección de datos de la empresa -->
     <div id="datosEmpresa">
         <p>Nombre: <span id="nombreEmpresa">Nombre Empresa</span></p>
         <p>Dirección: <span id="direccionEmpresa">Dirección Empresa</span></p>
         <p>Teléfono: <span id="telefonoEmpresa">Teléfono Empresa</span></p>
         <p>Correo: <span id="correoEmpresa">Correo Empresa</span></p>
     </div>
-
-    <!-- Título principal -->
     <h1>Planilla de Pagos</h1>
-
-    <!-- Tabla de empleados -->
-    <table>
+    <table id="tabla-empleados">
         <thead>
             <tr>
                 <th>ID Empleado</th>
@@ -68,4 +62,3 @@
     </table>
 </body>
 </html>
-

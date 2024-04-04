@@ -28,12 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.pnlContenedor = new System.Windows.Forms.Panel();
+            this.SuspendLayout();
+            // 
+            // pnlContenedor
+            // 
+            this.pnlContenedor.BackColor = System.Drawing.Color.Linen;
+            this.pnlContenedor.Location = new System.Drawing.Point(12, 49);
+            this.pnlContenedor.Name = "pnlContenedor";
+            this.pnlContenedor.Size = new System.Drawing.Size(776, 389);
+            this.pnlContenedor.TabIndex = 0;
+            // 
+            // frmAsistencias
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pnlContenedor);
+            this.Name = "frmAsistencias";
             this.Text = "frmAsistencias";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel pnlContenedor;
     }
 }

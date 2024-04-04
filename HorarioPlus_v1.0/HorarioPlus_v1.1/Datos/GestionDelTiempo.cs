@@ -12,7 +12,7 @@ namespace HorarioPlus_v1._1.Datos
     {
         #region Variables_tiempo
         //Tiempo del sistema en el programa
-        public static DateTime HOY = DateTime.Now.Date.AddDays(1);//.AddDays(2)
+        public static DateTime HOY = DateTime.Now.Date;//.AddDays(2)
         public static int Hora = DateTime.Now.Hour;
         public static int Minuto = DateTime.Now.Minute;
         public static int Segundo = DateTime.Now.Second;

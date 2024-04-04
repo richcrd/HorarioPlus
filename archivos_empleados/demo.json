@@ -4,45 +4,76 @@
     "Nombre": "Richard",
     "Apellido1": "Rodriguez",
     "Apellido2": "Castro",
-    "Edad": 20,
+    "Edad": 19,
     "Correo": "richard12@gmail.com",
     "Rol": "Administrador",
-    "PagoPorHoras": 150,
+    "PagoPorHoras": 50,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
-    "HorarioEmpleado": "",
+    "HorarioEmpleado": null,
     "RegistroDelTiempo": [
       {
         "FechaMarcada": "2024-04-02T00:00:00-06:00",
         "Entrada_Marcada": "08:00:12",
+        "EsTarde": false,
         "Salida_Marcada": "17:00:00",
         "Asistencia": true
       },
       {
         "FechaMarcada": "2024-04-03T00:00:00-06:00",
-        "Entrada_Marcada": "00:00:00",
+        "Entrada_Marcada": "08:00:00",
+        "EsTarde": false,
         "Salida_Marcada": "16:30:00",
+        "Asistencia": false
+      },
+      {
+        "FechaMarcada": "2024-04-05T00:00:00-06:00",
+        "Entrada_Marcada": "08:03:00",
+        "EsTarde": false,
+        "Salida_Marcada": "17:13:00",
+        "Asistencia": false
+      },
+      {
+        "FechaMarcada": "2024-04-04T00:00:00-06:00",
+        "Entrada_Marcada": "00:00:00",
+        "EsTarde": false,
+        "Salida_Marcada": "00:00:00",
         "Asistencia": false
       }
     ],
-    "Marcado": true
+    "Marcado": false
   },
   {
     "IdEmpleado": "2",
     "Nombre": "Juan",
     "Apellido1": "Apellido1",
     "Apellido2": "Apellido2",
-    "Edad": 21,
+    "Edad": 20,
     "Correo": "juan@gmail.com",
     "Rol": "Empleado",
-    "PagoPorHoras": 0,
+    "PagoPorHoras": 50,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
     "HorarioEmpleado": null,
     "RegistroDelTiempo": [
       {
         "FechaMarcada": "2024-04-03T00:00:00-06:00",
+        "Entrada_Marcada": "08:00:00",
+        "EsTarde": false,
+        "Salida_Marcada": "17:00:00",
+        "Asistencia": false
+      },
+      {
+        "FechaMarcada": "2024-04-05T00:00:00-06:00",
+        "Entrada_Marcada": "08:00:00",
+        "EsTarde": false,
+        "Salida_Marcada": "17:00:00",
+        "Asistencia": false
+      },
+      {
+        "FechaMarcada": "2024-04-04T00:00:00-06:00",
         "Entrada_Marcada": "00:00:00",
+        "EsTarde": false,
         "Salida_Marcada": "00:00:00",
         "Asistencia": false
       }
@@ -54,23 +85,62 @@
     "Nombre": "Carlos",
     "Apellido1": "apellido1",
     "Apellido2": "apellido2",
-    "Edad": 20,
+    "Edad": 29,
     "Correo": "carlos@gmail.com",
     "Rol": "Empleado",
-    "PagoPorHoras": 150,
+    "PagoPorHoras": 50,
     "TotalHorasAcumuladas": 0,
     "SalarioNeto": 0,
-    "HorarioEmpleado": "",
+    "HorarioEmpleado": null,
     "RegistroDelTiempo": [
       {
         "FechaMarcada": "2024-04-02T00:00:00-06:00",
         "Entrada_Marcada": "07:12:20",
+        "EsTarde": false,
         "Salida_Marcada": "17:13:30",
         "Asistencia": true
       },
       {
         "FechaMarcada": "2024-04-03T00:00:00-06:00",
+        "Entrada_Marcada": "08:00:00",
+        "EsTarde": false,
+        "Salida_Marcada": "17:00:00",
+        "Asistencia": false
+      },
+      {
+        "FechaMarcada": "2024-04-05T00:00:00-06:00",
+        "Entrada_Marcada": "08:00:00",
+        "EsTarde": false,
+        "Salida_Marcada": "17:00:00",
+        "Asistencia": false
+      },
+      {
+        "FechaMarcada": "2024-04-04T00:00:00-06:00",
         "Entrada_Marcada": "00:00:00",
+        "EsTarde": false,
+        "Salida_Marcada": "00:00:00",
+        "Asistencia": false
+      }
+    ],
+    "Marcado": false
+  },
+  {
+    "IdEmpleado": "4",
+    "Nombre": "Jese",
+    "Apellido1": "test1",
+    "Apellido2": "test2",
+    "Edad": 19,
+    "Correo": "jese@gmail.com",
+    "Rol": "Administrador",
+    "PagoPorHoras": 50,
+    "TotalHorasAcumuladas": 0,
+    "SalarioNeto": 0,
+    "HorarioEmpleado": null,
+    "RegistroDelTiempo": [
+      {
+        "FechaMarcada": "2024-04-04T00:00:00-06:00",
+        "Entrada_Marcada": "00:00:00",
+        "EsTarde": false,
         "Salida_Marcada": "00:00:00",
         "Asistencia": false
       }

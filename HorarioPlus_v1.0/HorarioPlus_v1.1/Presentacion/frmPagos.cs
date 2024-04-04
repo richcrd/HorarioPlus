@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Collections;
 using System.Text.RegularExpressions;
+using SpreadsheetLight;
 
 namespace HorarioPlus_v1._1.Presentacion
 {
@@ -21,6 +22,7 @@ namespace HorarioPlus_v1._1.Presentacion
         private int contadorPDF = 1;
         private List<Empleados> lista_Empleados = new List<Empleados>();
         private Empresa empresa;
+        public static string RUTA_EXCEL = @"../../../../Nominas PDF/Planilla Pagos.xlsx";
         #endregion
 
         #region INICIALIZACION && SALIDA FORMULARIO
@@ -68,6 +70,41 @@ namespace HorarioPlus_v1._1.Presentacion
         #endregion
 
         #region Metodo_Genera_Planilla
+        private void Crear_Excel()
+        {
+            SLDocument planilla_Pagos = new SLDocument();
+            DataTable dt = new DataTable();
+
+            // Para agregar las columnas de la tabla pagos
+            dt.Columns.Add("ID Empleado");
+            dt.Columns.Add("Nombre");
+            dt.Columns.Add("Apellido");
+            dt.Columns.Add("Deducciones");
+            dt.Columns.Add("Pago por Horas");
+            dt.Columns.Add("Total de Horas");
+            dt.Columns.Add("Salario Neto");
+
+            // Agregar los datoss de la tabla
+            foreach (DataGridViewRow fila in dgvTablaPagos.Rows)
+            {
+                string IdEmpleado = fila.Cells["IdEmpleado"].Value.ToString();
+                string nombre = fila.Cells["Nombre"].Value.ToString();
+                string apellido = fila.Cells["Apellido1"].Value.ToString();
+                string deducciones = fila.Cells["totalDeducciones"].Value.ToString();
+                string pagoxhoras = fila.Cells["PagoPorHoras"].Value.ToString();
+                string totalHoras = fila.Cells["HorasAcumuladas"].Value.ToString();
+                string salarioNeto = fila.Cells["salarioNeto"].Value.ToString();
+
+                dt.Rows.Add(IdEmpleado, nombre, apellido, deducciones, pagoxhoras, totalHoras, salarioNeto);
+            }
+
+            // Importamos el dt al excel
+            planilla_Pagos.ImportDataTable(1, 1, dt, true);
+            //Guardamos en la ruta
+            planilla_Pagos.SaveAs(RUTA_EXCEL);
+            MessageBox.Show("Excel creado, revise la carpeta Nominas");
+        }
+        #region Codigo_viejo_paraHtml
         //private void GenerarNominaPDF()
         //{
         //    try
@@ -159,12 +196,13 @@ namespace HorarioPlus_v1._1.Presentacion
         //    }
         //}
         #endregion
+        #endregion
 
         #region EVENTO_NOMINA_PDF
-        //private void btnGenerarNomina_Click(object sender, EventArgs e)
-        //{
-        //    GenerarNominaPDF();
-        //}
+        private void btnGenerarNomina_Click(object sender, EventArgs e)
+        {
+            Crear_Excel();
+        }
         #endregion
     }
 }

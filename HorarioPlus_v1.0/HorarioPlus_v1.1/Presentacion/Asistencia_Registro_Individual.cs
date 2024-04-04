@@ -15,11 +15,13 @@ namespace HorarioPlus_v1._1.Presentacion
     
     public partial class Asistencia_Registro_Individual : Form
     {
+        #region Variables && Objetos
         DataGridView Registros_Del_Tiempo = new DataGridView();//size:502; 258;location:11; 180;
         Empleados EmpleadoObtenido;
         public static string pathExcel = @"../../../../archivos_empleados/Excel.xlsx";
+        #endregion
 
-
+        #region Constructor inicial
         public Asistencia_Registro_Individual(Empleados empleadoDelPanel)
         {
             InitializeComponent();
@@ -28,7 +30,9 @@ namespace HorarioPlus_v1._1.Presentacion
             GenerarDataGrid();
             this.Controls.Add(Registros_Del_Tiempo);
         }
+        #endregion
 
+        #region sin uso
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -38,7 +42,9 @@ namespace HorarioPlus_v1._1.Presentacion
         {
 
         }
+        #endregion
 
+        #region Muestra Tabla
         private void GenerarDataGrid()
         {
             //var Registro = EmpleadoObtenido.RegistroDelTiempo.Last();
@@ -58,7 +64,9 @@ namespace HorarioPlus_v1._1.Presentacion
             }
             
         }
+        #endregion
 
+        #region eventos_click
         private void button1_Click(object sender, EventArgs e)
         {
             var Registros = EmpleadoObtenido.RegistroDelTiempo;
@@ -115,7 +123,9 @@ namespace HorarioPlus_v1._1.Presentacion
             }
 
         }
+        #endregion
 
+        #region Crear_Excel
         private void BTN_Crear_Excel_Click(object sender, EventArgs e)
         {
             SLDocument Excel = new SLDocument();
@@ -145,5 +155,6 @@ namespace HorarioPlus_v1._1.Presentacion
             Excel.SaveAs(pathExcel);
             MessageBox.Show("Excel Creado, revise la carpeta de empleados");
         }
+        #endregion
     }
 }

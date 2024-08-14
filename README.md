@@ -67,11 +67,11 @@ Esta clase maneja las operaciones relacionadas con los empleados, tales como:
 
 ### Pantalla Principal
 
-![Pantalla Principal](HorarioPlus_Doc/vistas/login_ingreso.png)
+![Pantalla Principal](HorarioPlus_Doc/vistas/login_ingreso.PNG)
 
 ### Gestión de Empleados
 
-![Registro de Empleados](HorarioPlus_Doc/vistas/empleados_nuevo_registro.png)
+![Registro de Empleados](HorarioPlus_Doc/vistas/empleados_nuevo_registro.PNG)
 
 ### Sistema de Carnets
 

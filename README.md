@@ -63,6 +63,19 @@ Esta clase maneja las operaciones relacionadas con los empleados, tales como:
   }
 ]
 ```
+## Capturas de Pantalla
+
+### Pantalla Principal
+
+![Pantalla Principal](HorarioPlus_Doc/vistas/login_ingreso.png)
+
+### Gestión de Empleados
+
+![Registro de Empleados](HorarioPlus_Doc/vistas/empleados_nuevo_registro.png)
+
+### Sistema de Carnets
+
+![Identificación](HorarioPlus_Doc/vistas/carnet.PNG)
 
 ## Requisitos del Sistema
 
